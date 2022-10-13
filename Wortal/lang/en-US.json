@@ -1,0 +1,144 @@
+﻿{
+    "languageTag": "en-US",
+    "fileDescription": "Wortal SDK",
+    "text": {
+        "plugins": {
+            "wortal": {
+                "name": "Wortal SDK",
+                "description": "Plugin for integrating the Wortal SDK.",
+                "help-url": "https://sdk.html5gameportal.com",
+                "properties": {
+                },
+                "aceCategories": {
+                    "wortal": "API for the Wortal SDK"
+                },
+                "conditions": {
+                    "on-before-ad": {
+                        "list-name": "On Before Ad",
+                        "display-text": "On Before Ad",
+                        "description": "Called when an ad is returned. Pause the game here."
+                    },
+                    "on-after-ad": {
+                        "list-name": "On After Ad",
+                        "display-text": "On After Ad",
+                        "description": "Called when the ad event is finished. Resume the game here."
+                    },
+                    "on-ad-dismissed": {
+                        "list-name": "On Ad Dismissed",
+                        "display-text": "On Ad Dismissed",
+                        "description": "Called when a rewarded ad was skipped. Do not reward the player."
+                    },
+                    "on-ad-viewed": {
+                        "list-name": "On Ad Viewed",
+                        "display-text": "On Ad Viewed",
+                        "description": "Called when a rewarded ad was watched fully. Reward the player here."
+                    }
+                },
+                "actions": {
+                    "show-interstitial": {
+                        "list-name": "Show Interstitial",
+                        "display-text": "Show Interstitial {0} {1}",
+                        "description": "Shows an interstitial ad.",
+                        "params": {
+                            "placement": {
+                                "name": "Ad Placement",
+                                "desc": "Type of ad placement. Options are: next, pause, browse, start."
+                            },
+                            "description": {
+                                "name": "Description",
+                                "desc": "Description of the ad placement. Ex: NextLevel"
+                            }
+                        }
+                    },
+                    "show-rewarded": {
+                        "list-name": "Show Rewarded",
+                        "display-text": "Show Rewarded {0}",
+                        "description": "Shows a rewarded ad.",
+                        "params": {
+                            "description": {
+                                "name": "Description",
+                                "desc": "Description of the ad placement. Ex: ReviveAndContinue"
+                            }
+                        }
+                    },
+                    "log-level-start": {
+                        "list-name": "Log Level Start",
+                        "display-text": "Log Level Start  {0}",
+                        "description": "Logs the start of the level.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Name of the level that was started."
+                            }
+                        }
+                    },
+                    "log-level-end": {
+                        "list-name": "Log Level End",
+                        "display-text": "Log Level End  {0} {1}",
+                        "description": "Logs the end of the level.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Name of the level that was started."
+                            },
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score the player achieved."
+                            }
+                        }
+                    },
+                    "log-level-up": {
+                        "list-name": "Log Level Up",
+                        "display-text": "Log Level Up {0}",
+                        "description": "Logs the player achieving a level up.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Level the player achieved."
+                            }
+                        }
+                    },
+                    "log-score": {
+                        "list-name": "Log Score",
+                        "display-text": "Log Score {0}",
+                        "description": "Logs the player's score.",
+                        "params": {
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score the player achieved."
+                            }
+                        }
+                    },
+                    "log-game-choice": {
+                        "list-name": "Log Game Choice",
+                        "display-text": "Log Game Choice {0} {1}",
+                        "description": "Logs a choice the player made in the game.",
+                        "params": {
+                            "decision": {
+                                "name": "Decision",
+                                "desc": "Decision the player was faced with."
+                            },
+                            "choice": {
+                                "name": "Choice",
+                                "desc": "Choice the player made."
+                            }
+                        }
+                    },
+                    "set-loading-progress": {
+                        "list-name": "Set Loading Progress",
+                        "display-text": "Set Loading Progress {0}",
+                        "description": "Sets the current loading progress of the game.",
+                        "params": {
+                            "value": {
+                                "name": "Value",
+                                "desc": "Percentage value of the loading progress. Range is 0 to 1."
+                            }
+                        }
+                    }
+                },
+                "expressions": {
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+﻿{
+	"is-c3-addon": true,
+	"type": "plugin",
+	"name": "Wortal",
+	"id": "wortal",
+	"version": "1.0.0",
+	"author": "Digital Will Inc",
+	"website": "https://digitalwill.co.jp",
+	"documentation": "https://sdk.html5gameportal.com",
+	"description": "Addon for integrating Wortal SDK into your Construct game.",
+	"editor-scripts": [
+						"plugin.js",
+						"type.js",
+						"instance.js"
+					],
+	"file-list": [
+		"c3runtime/plugin.js",
+		"c3runtime/type.js",
+		"c3runtime/instance.js",
+		"c3runtime/conditions.js",
+		"c3runtime/actions.js",
+		"c3runtime/expressions.js",
+        "c3runtime/domSide.js",
+		"lang/en-US.json",
+		"aces.json",
+		"addon.json",
+		"icon.svg",
+		"instance.js",
+		"plugin.js",
+		"type.js",
+        "wortal.js",
+        "intl-data.json"
+    ]
+}

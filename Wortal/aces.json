@@ -1,0 +1,101 @@
+﻿{
+	"wortal": {
+		"conditions": [
+			{
+				"id": "on-before-ad",
+				"scriptName": "OnBeforeAd",
+				"highlight": true,
+                "isTrigger": true
+			},
+            {
+                "id": "on-after-ad",
+                "scriptName": "OnAfterAd",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "on-ad-dismissed",
+                "scriptName": "OnAdDismissed",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "on-ad-viewed",
+                "scriptName": "OnAdViewed",
+                "highlight": true,
+                "isTrigger": true
+            }
+        ],
+		"actions": [
+			{
+				"id": "show-interstitial",
+				"scriptName": "ShowInterstitial",
+				"highlight": true,
+                "params": [
+                    { "id": "placement", "type": "string" },
+                    { "id": "description", "type": "string" }
+                ]
+			},
+            {
+                "id": "show-rewarded",
+                "scriptName": "ShowRewarded",
+                "highlight": true,
+                "params": [
+                    { "id": "description", "type": "string" }
+                ]
+            },
+            {
+                "id": "log-level-start",
+                "scriptName": "LogLevelStart",
+                "highlight": true,
+                "params": [
+                    { "id": "level", "type": "string" }
+                ]
+            },
+            {
+                "id": "log-level-end",
+                "scriptName": "LogLevelEnd",
+                "highlight": true,
+                "params": [
+                    { "id": "level", "type": "string" },
+                    { "id": "score", "type": "string" }
+                ]
+            },
+            {
+                "id": "log-level-up",
+                "scriptName": "LogLevelUp",
+                "highlight": true,
+                "params": [
+                    { "id": "level", "type": "string" }
+                ]
+            },
+            {
+                "id": "log-score",
+                "scriptName": "LogScore",
+                "highlight": true,
+                "params": [
+                    { "id": "score", "type": "string" }
+                ]
+            },
+            {
+                "id": "log-game-choice",
+                "scriptName": "LogGameChoice",
+                "highlight": true,
+                "params": [
+                    { "id": "decision", "type": "string" },
+                    { "id": "choice", "type": "string" }
+                ]
+            },
+            {
+                "id": "set-loading-progress",
+                "scriptName": "SetLoadingProgress",
+                "highlight": true,
+                "params": [
+                    { "id": "value", "type": "number" }
+                ]
+            }
+        ],
+		"expressions": [
+		]
+	}
+}
