@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Install the plugin from the [Construct Asset Store](link)
+1. Install the plugin from the [Construct Addons](https://www.construct.net/en/make-games/addons/897/wortal) page
 2. Add the `WortalSDK` object type into your project
 
 ### Building
