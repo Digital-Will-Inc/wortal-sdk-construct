@@ -1,29 +1,172 @@
 ﻿{
+    "ads": {
+        "conditions": [
+            {
+                "id": "ads-before-ad-callback",
+                "scriptName": "BeforeAdCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "ads-after-ad-callback",
+                "scriptName": "AfterAdCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "ads-ad-dismissed-callback",
+                "scriptName": "AdDismissedCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "ads-ad-viewed-callback",
+                "scriptName": "AdViewedCallback",
+                "highlight": true,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "ads-show-interstitial",
+                "scriptName": "AdsShowInterstitial",
+                "highlight": true,
+                "params": [
+                    { "id": "placement", "type": "string" },
+                    { "id": "description", "type": "string" }
+                ]
+            },
+            {
+                "id": "ads-show-rewarded",
+                "scriptName": "AdsShowRewarded",
+                "highlight": true,
+                "params": [
+                    { "id": "description", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": []
+    },
+    "analytics": {
+        "conditions": [],
+        "actions": [
+            {
+                "id": "analytics-log-level-start",
+                "scriptName": "AnalyticsLogLevelStart",
+                "highlight": true,
+                "params": [
+                    { "id": "level", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-level-end",
+                "scriptName": "AnalyticsLogLevelEnd",
+                "highlight": true,
+                "params": [
+                    { "id": "level", "type": "string" },
+                    { "id": "score", "type": "string" },
+                    { "id": "wasCompleted", "type": "number" }
+                ]
+            },
+            {
+                "id": "analytics-log-level-up",
+                "scriptName": "AnalyticsLogLevelUp",
+                "highlight": true,
+                "params": [
+                    { "id": "level", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-score",
+                "scriptName": "AnalyticsLogScore",
+                "highlight": true,
+                "params": [
+                    { "id": "score", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-tutorial-start",
+                "scriptName": "AnalyticsLogTutorialStart",
+                "highlight": true,
+                "params": [
+                    { "id": "tutorial", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-tutorial-end",
+                "scriptName": "AnalyticsLogTutorialEnd",
+                "highlight": true,
+                "params": [
+                    { "id": "tutorial", "type": "string" },
+                    { "id": "wasCompleted", "type": "number" }
+                ]
+            },
+            {
+                "id": "analytics-log-game-choice",
+                "scriptName": "AnalyticsLogGameChoice",
+                "highlight": true,
+                "params": [
+                    { "id": "decision", "type": "string" },
+                    { "id": "choice", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": []
+    },
+    "context": {
+        "conditions": [],
+        "actions": [],
+        "expressions": []
+    },
+    "iap": {
+        "conditions": [],
+        "actions": [],
+        "expressions": []
+    },
+    "leaderboard": {
+        "conditions": [],
+        "actions": [],
+        "expressions": []
+    },
+    "player": {
+        "conditions": [],
+        "actions": [],
+        "expressions": []
+    },
+    "session": {
+        "conditions": [],
+        "actions": [],
+        "expressions": []
+    },
 	"wortal": {
 		"conditions": [
 			{
 				"id": "on-before-ad",
 				"scriptName": "OnBeforeAd",
 				"highlight": true,
-                "isTrigger": true
+                "isTrigger": true,
+                "isDeprecated": true
 			},
             {
                 "id": "on-after-ad",
                 "scriptName": "OnAfterAd",
                 "highlight": true,
-                "isTrigger": true
+                "isTrigger": true,
+                "isDeprecated": true
             },
             {
                 "id": "on-ad-dismissed",
                 "scriptName": "OnAdDismissed",
                 "highlight": true,
-                "isTrigger": true
+                "isTrigger": true,
+                "isDeprecated": true
             },
             {
                 "id": "on-ad-viewed",
                 "scriptName": "OnAdViewed",
                 "highlight": true,
-                "isTrigger": true
+                "isTrigger": true,
+                "isDeprecated": true
             }
         ],
 		"actions": [
@@ -31,6 +174,7 @@
 				"id": "show-interstitial",
 				"scriptName": "ShowInterstitial",
 				"highlight": true,
+                "isDeprecated": true,
                 "params": [
                     { "id": "placement", "type": "string" },
                     { "id": "description", "type": "string" }
@@ -40,6 +184,7 @@
                 "id": "show-rewarded",
                 "scriptName": "ShowRewarded",
                 "highlight": true,
+                "isDeprecated": true,
                 "params": [
                     { "id": "description", "type": "string" }
                 ]
@@ -48,6 +193,7 @@
                 "id": "log-level-start",
                 "scriptName": "LogLevelStart",
                 "highlight": true,
+                "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" }
                 ]
@@ -56,6 +202,7 @@
                 "id": "log-level-end",
                 "scriptName": "LogLevelEnd",
                 "highlight": true,
+                "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" },
                     { "id": "score", "type": "string" }
@@ -65,6 +212,7 @@
                 "id": "log-level-up",
                 "scriptName": "LogLevelUp",
                 "highlight": true,
+                "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" }
                 ]
@@ -73,6 +221,7 @@
                 "id": "log-score",
                 "scriptName": "LogScore",
                 "highlight": true,
+                "isDeprecated": true,
                 "params": [
                     { "id": "score", "type": "string" }
                 ]
@@ -81,6 +230,7 @@
                 "id": "log-game-choice",
                 "scriptName": "LogGameChoice",
                 "highlight": true,
+                "isDeprecated": true,
                 "params": [
                     { "id": "decision", "type": "string" },
                     { "id": "choice", "type": "string" }
@@ -95,7 +245,6 @@
                 ]
             }
         ],
-		"expressions": [
-		]
+		"expressions": []
 	}
 }

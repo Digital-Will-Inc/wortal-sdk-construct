@@ -10,9 +10,36 @@
                 "properties": {
                 },
                 "aceCategories": {
-                    "wortal": "API for the Wortal SDK"
+                    "wortal": "Wortal SDK API",
+                    "ads": "Ads API",
+                    "analytics": "Analytics API",
+                    "context": "Context API",
+                    "iap": "In-App Purchasing API",
+                    "leaderboard": "Leaderboard API",
+                    "player": "Player API",
+                    "session": "Session API"
                 },
                 "conditions": {
+                    "ads-before-ad-callback": {
+                        "list-name": "Before Ad Callback",
+                        "display-text": "Before Ad Callback",
+                        "description": "Called when an ad is returned. Pause the game here."
+                    },
+                    "ads-after-ad-callback": {
+                        "list-name": "After Ad Callback",
+                        "display-text": "After Ad Callback",
+                        "description": "Called when the ad event is finished. Resume the game here."
+                    },
+                    "ads-ad-dismissed-callback": {
+                        "list-name": "Ad Dismissed Callback",
+                        "display-text": "Ad Dismissed Callback",
+                        "description": "Called when a rewarded ad was skipped. Do not reward the player."
+                    },
+                    "ads-ad-viewed-callback": {
+                        "list-name": "Ad Viewed Callback",
+                        "display-text": "Ad Viewed Callback",
+                        "description": "Called when a rewarded ad was watched fully. Reward the player here."
+                    },
                     "on-before-ad": {
                         "list-name": "On Before Ad",
                         "display-text": "On Before Ad",
@@ -35,6 +62,125 @@
                     }
                 },
                 "actions": {
+                    "ads-show-interstitial": {
+                        "list-name": "Ads Show Interstitial",
+                        "display-text": "Ads Show Interstitial {0} {1}",
+                        "description": "Shows an interstitial ad.",
+                        "params": {
+                            "placement": {
+                                "name": "Ad Placement",
+                                "desc": "Type of ad placement. Options are: next, pause, browse, start."
+                            },
+                            "description": {
+                                "name": "Description",
+                                "desc": "Description of the ad placement. Ex: NextLevel"
+                            }
+                        }
+                    },
+                    "ads-show-rewarded": {
+                        "list-name": "Ads Show Rewarded",
+                        "display-text": "Ads Show Rewarded {0}",
+                        "description": "Shows a rewarded ad.",
+                        "params": {
+                            "description": {
+                                "name": "Description",
+                                "desc": "Description of the ad placement. Ex: ReviveAndContinue"
+                            }
+                        }
+                    },
+                    "analytics-log-level-start": {
+                        "list-name": "Analytics Log Level Start",
+                        "display-text": "Analytics Log Level Start {0}",
+                        "description": "Logs the start of the level.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Name of the level that was started."
+                            }
+                        }
+                    },
+                    "analytics-log-level-end": {
+                        "list-name": "Analytics Log Level End",
+                        "display-text": "Analytics Log Level End {0} {1} {2}",
+                        "description": "Logs the end of the level.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Name of the level that ended."
+                            },
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score the player achieved."
+                            },
+                            "wasCompleted": {
+                                "name": "Was Completed",
+                                "desc": "Was the level completed successfully. 0 for no, 1 for yes."
+                            }
+                        }
+                    },
+                    "analytics-log-level-up": {
+                        "list-name": "Analytics Log Level Up",
+                        "display-text": "Analytics Log Level Up {0}",
+                        "description": "Logs the player achieving a level up.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Level the player achieved."
+                            }
+                        }
+                    },
+                    "analytics-log-score": {
+                        "list-name": "Analytics Log Score",
+                        "display-text": "Analytics Log Score {0}",
+                        "description": "Logs the player's score.",
+                        "params": {
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score the player achieved."
+                            }
+                        }
+                    },
+                    "analytics-log-tutorial-start": {
+                        "list-name": "Analytics Log Tutorial Start",
+                        "display-text": "Analytics Log Tutorial Start {0}",
+                        "description": "Logs the start of the tutorial.",
+                        "params": {
+                            "tutorial": {
+                                "name": "Tutorial",
+                                "desc": "Name of the tutorial that was started."
+                            }
+                        }
+                    },
+                    "analytics-log-tutorial-end": {
+                        "list-name": "Analytics Log Tutorial End",
+                        "display-text": "Analytics Log Tutorial End {0} {1}",
+                        "description": "Logs the end of the tutorial.",
+                        "params": {
+                            "tutorial": {
+                                "name": "Tutorial",
+                                "desc": "Name of the tutorial that ended."
+                            },
+                            "wasCompleted": {
+                                "name": "Was Completed",
+                                "desc": "Was the tutorial completed successfully. 0 for no, 1 for yes."
+                            }
+                        }
+                    },
+                    "analytics-log-game-choice": {
+                        "list-name": "Analytics Log Game Choice",
+                        "display-text": "Analytics Log Game Choice {0} {1}",
+                        "description": "Logs a choice the player made in the game.",
+                        "params": {
+                            "decision": {
+                                "name": "Decision",
+                                "desc": "Decision the player was faced with."
+                            },
+                            "choice": {
+                                "name": "Choice",
+                                "desc": "Choice the player made."
+                            }
+                        }
+                    },
                     "show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",

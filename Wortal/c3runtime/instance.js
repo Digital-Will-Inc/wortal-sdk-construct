@@ -8,20 +8,20 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 	{
 		super(inst, DOM_COMPONENT_ID);
 
-        this.AddDOMMessageHandler("before_ad", () => {
-            this.Trigger(C3.Plugins.wortal.Cnds.OnBeforeAd);
+        this.AddDOMMessageHandler("before_ad_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.BeforeAdCallback);
         });
 
-        this.AddDOMMessageHandler("after_ad", () => {
-            this.Trigger(C3.Plugins.wortal.Cnds.OnAfterAd);
+        this.AddDOMMessageHandler("after_ad_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.AfterAdCallback);
         });
 
-        this.AddDOMMessageHandler("ad_dismissed", () => {
-            this.Trigger(C3.Plugins.wortal.Cnds.OnAdDismissed);
+        this.AddDOMMessageHandler("ad_dismissed_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.AdDismissedCallback);
         });
 
-        this.AddDOMMessageHandler("ad_viewed", () => {
-            this.Trigger(C3.Plugins.wortal.Cnds.OnAdViewed);
+        this.AddDOMMessageHandler("ad_viewed_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.AdViewedCallback);
         });
 	}
 
@@ -30,11 +30,27 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 		super.Release();
 	}
 
+    WortalAds(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-ads", obj);
+    };
+
+    WortalAnalytics(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-analytics", obj);
+    };
+
     WortalSDK(event, args) {
         const obj = {
             "event": event,
             "args": args,
         }
         this.PostToDOM("wortal-sdk", obj);
-    }
+    };
 };
