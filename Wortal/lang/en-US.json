@@ -40,6 +40,41 @@
                         "display-text": "Ad Viewed Callback",
                         "description": "Called when a rewarded ad was watched fully. Reward the player here."
                     },
+                    "context-id-set": {
+                        "list-name": "Context ID Set",
+                        "display-text": "Context ID Set",
+                        "description": "Called when a new context ID has been set."
+                    },
+                    "context-share-callback": {
+                        "list-name": "Context Share Callback",
+                        "display-text": "Context Share Callback",
+                        "description": "Called when the context share promise has resolved."
+                    },
+                    "context-update-callback": {
+                        "list-name": "Context Update Callback",
+                        "display-text": "Context Update Callback",
+                        "description": "Called when the context update promise has resolved."
+                    },
+                    "context-choose-callback": {
+                        "list-name": "Context Choose Callback",
+                        "display-text": "Context Choose Callback",
+                        "description": "Called when the context choose promise has resolved."
+                    },
+                    "context-switch-callback": {
+                        "list-name": "Context Switch Callback",
+                        "display-text": "Context Switch Callback",
+                        "description": "Called when the context switch promise has resolved."
+                    },
+                    "context-create-callback": {
+                        "list-name": "Context Create Callback",
+                        "display-text": "Context Create Callback",
+                        "description": "Called when the context create promise has resolved."
+                    },
+                    "error-callback": {
+                        "list-name": "Error Callback",
+                        "display-text": "Error Callback",
+                        "description": "Called when an async SDK function has been rejected. Contains the error message thrown by the SDK."
+                    },
                     "on-before-ad": {
                         "list-name": "On Before Ad",
                         "display-text": "On Before Ad",
@@ -181,6 +216,66 @@
                             }
                         }
                     },
+                    "context-get-id": {
+                        "list-name": "Context Get ID",
+                        "display-text": "Context Get ID",
+                        "description": "Gets the ID of the current context, if one exists."
+                    },
+                    "context-share-async": {
+                        "list-name": "Context Share",
+                        "display-text": "Context Share {0}",
+                        "description": "Shares a message to the player's friends. Will trigger a UI for the player to choose which friends to share with.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the share message."
+                            }
+                        }
+                    },
+                    "context-update-async": {
+                        "list-name": "Context Update",
+                        "display-text": "Context Update {0}",
+                        "description": "Posts an update to the current context. Will send a message to the chat thread of the current context.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the update message."
+                            }
+                        }
+                    },
+                    "context-choose-async": {
+                        "list-name": "Context Choose",
+                        "display-text": "Context Choose {0}",
+                        "description": "Opens the platform UI to select friends to invite and play with.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the options for the context choice."
+                            }
+                        }
+                    },
+                    "context-switch-async": {
+                        "list-name": "Context Switch",
+                        "display-text": "Context Switch {0}",
+                        "description": "Switches the current context to the context with the given ID.",
+                        "params": {
+                            "contextId": {
+                                "name": "Context ID",
+                                "desc": "ID of the context to switch to."
+                            }
+                        }
+                    },
+                    "context-create-async": {
+                        "list-name": "Context Create",
+                        "display-text": "Context Create {0}",
+                        "description": "Creates a context with the given player ID.",
+                        "params": {
+                            "playerId": {
+                                "name": "Player ID",
+                                "desc": "ID of player to create a context with."
+                            }
+                        }
+                    },
                     "show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",
@@ -283,6 +378,18 @@
                     }
                 },
                 "expressions": {
+                    "context-id": {
+                        "description": "Returns the ID of the current context, if one exists. Otherwise returns null.",
+                        "translated-name": "ContextID"
+                    },
+                    "context-share-result": {
+                        "description": "Returns the number of friends the content was shared with.",
+                        "translated-name": "ContextShareResult"
+                    },
+                    "error-status": {
+                        "description": "Returns a JSON string with the error that was thrown last by the SDK.",
+                        "translated-name": "ErrorStatus"
+                    }
                 }
             }
         }

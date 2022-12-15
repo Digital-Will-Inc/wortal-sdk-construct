@@ -1,10 +1,9 @@
 self.C3.Plugins.wortal.Acts =
 {
+    ////////////////////////////////////////////
+    // Ads API
+    ////////////////////////////////////////////
     AdsShowInterstitial(placement, description) {
-        if (placement !== 'next' && placement !== 'browse' && placement !== 'pause' && placement !== 'start') {
-            // This is the most common placement type, we'll just assign this if we've received an invalid type.
-            placement = 'next';
-        }
         this.WortalAds('ads_show_interstitial', {
             placement: placement,
             description: description,
@@ -17,6 +16,9 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
+    ////////////////////////////////////////////
+    // Analytics API
+    ////////////////////////////////////////////
     AnalyticsLogLevelStart(level) {
         this.WortalAnalytics('analytics_log_level_start', {
             level: level,
@@ -63,6 +65,46 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
+    ////////////////////////////////////////////
+    // Context API
+    ////////////////////////////////////////////
+    ContextGetID() {
+        this.WortalContext('context_get_id', {});
+    },
+
+    ContextShareAsync(payload) {
+        this.WortalContext('context_share', {
+            payload: payload,
+        });
+    },
+
+    ContextUpdateAsync(payload) {
+        this.WortalContext('context_update', {
+            payload: payload,
+        });
+    },
+
+    ContextChooseAsync(payload) {
+        this.WortalContext('context_choose', {
+            payload: payload,
+        });
+    },
+
+    ContextSwitchAsync(contextId) {
+        this.WortalContext('context_switch', {
+            contextId: contextId,
+        });
+    },
+
+    ContextCreateAsync(playerId) {
+        this.WortalContext('context_create', {
+            playerId: playerId,
+        });
+    },
+
+    ////////////////////////////////////////////
+    // SDK API
+    ////////////////////////////////////////////
     SetLoadingProgress(value) {
         this.WortalSDK('set_loading_progress', {
             value: value
@@ -73,48 +115,14 @@ self.C3.Plugins.wortal.Acts =
     // V1 FUNCTIONS -- DEPRECATED
     ///////////////////////////////////////////////////////////////////////////////
 
-    ShowInterstitial(placement, description) {
-        this.WortalSDK('show_interstitial', {
-            placement: placement,
-            description: description,
-        });
-    },
+    // Do not remove these as the docs state that will break projects that
+    // were using them.
 
-    ShowRewarded(description) {
-        this.WortalSDK('show_rewarded', {
-            description: description,
-        });
-    },
-
-    LogLevelStart(level) {
-        this.WortalSDK('log_level_start', {
-            level: level,
-        });
-    },
-
-    LogLevelEnd(level, score) {
-        this.WortalSDK('log_level_end', {
-            level: level,
-            score: score,
-        });
-    },
-
-    LogLevelUp(level) {
-        this.WortalSDK('log_level_up', {
-            level: level,
-        });
-    },
-
-    LogScore(score) {
-        this.WortalSDK('log_score', {
-            score: score,
-        });
-    },
-
-    LogGameChoice(decision, choice) {
-        this.WortalSDK('log_game_choice', {
-            decision: decision,
-            choice: choice,
-        });
-    },
+    ShowInterstitial(placement, description) {},
+    ShowRewarded(description) {},
+    LogLevelStart(level) {},
+    LogLevelEnd(level, score) {},
+    LogLevelUp(level) {},
+    LogScore(score) {},
+    LogGameChoice(decision, choice) {},
 };

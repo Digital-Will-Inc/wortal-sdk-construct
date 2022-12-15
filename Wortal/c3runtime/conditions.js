@@ -1,5 +1,8 @@
 self.C3.Plugins.wortal.Cnds =
 {
+    ////////////////////////////////////////////
+    // Ads API
+    ////////////////////////////////////////////
     BeforeAdCallback() {
         return true;
     },
@@ -16,23 +19,49 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    ////////////////////////////////////////////
+    // Context API
+    ////////////////////////////////////////////
+    ContextIDSet() {
+        return true;
+    },
+
+    ContextShareCallback() {
+        return true;
+    },
+
+    ContextUpdateCallback() {
+        return true;
+    },
+
+    ContextChooseCallback() {
+        return true;
+    },
+
+    ContextSwitchCallback() {
+        return true;
+    },
+
+    ContextCreateCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
+    // SDK API
+    ////////////////////////////////////////////
+    ErrorCallback() {
+        return true;
+    },
+
     ///////////////////////////////////////////////////////////////////////////////
     // V1 CALLBACKS -- DEPRECATED
     ///////////////////////////////////////////////////////////////////////////////
 
-    OnBeforeAd() {
-        return true;
-    },
+    // Do not remove these as the docs state that will break projects that
+    // were using them.
 
-    OnAfterAd() {
-        return true;
-    },
-
-    OnAdDismissed() {
-        return true;
-    },
-
-    OnAdViewed() {
-        return true;
-    },
+    OnBeforeAd() {return false;},
+    OnAfterAd() {return false;},
+    OnAdDismissed() {return false;},
+    OnAdViewed() {return false;},
 };

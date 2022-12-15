@@ -53,7 +53,7 @@
             {
                 "id": "analytics-log-level-start",
                 "scriptName": "AnalyticsLogLevelStart",
-                "highlight": true,
+                "highlight": false,
                 "params": [
                     { "id": "level", "type": "string" }
                 ]
@@ -61,7 +61,7 @@
             {
                 "id": "analytics-log-level-end",
                 "scriptName": "AnalyticsLogLevelEnd",
-                "highlight": true,
+                "highlight": false,
                 "params": [
                     { "id": "level", "type": "string" },
                     { "id": "score", "type": "string" },
@@ -71,7 +71,7 @@
             {
                 "id": "analytics-log-level-up",
                 "scriptName": "AnalyticsLogLevelUp",
-                "highlight": true,
+                "highlight": false,
                 "params": [
                     { "id": "level", "type": "string" }
                 ]
@@ -79,7 +79,7 @@
             {
                 "id": "analytics-log-score",
                 "scriptName": "AnalyticsLogScore",
-                "highlight": true,
+                "highlight": false,
                 "params": [
                     { "id": "score", "type": "string" }
                 ]
@@ -87,7 +87,7 @@
             {
                 "id": "analytics-log-tutorial-start",
                 "scriptName": "AnalyticsLogTutorialStart",
-                "highlight": true,
+                "highlight": false,
                 "params": [
                     { "id": "tutorial", "type": "string" }
                 ]
@@ -95,7 +95,7 @@
             {
                 "id": "analytics-log-tutorial-end",
                 "scriptName": "AnalyticsLogTutorialEnd",
-                "highlight": true,
+                "highlight": false,
                 "params": [
                     { "id": "tutorial", "type": "string" },
                     { "id": "wasCompleted", "type": "number" }
@@ -104,7 +104,7 @@
             {
                 "id": "analytics-log-game-choice",
                 "scriptName": "AnalyticsLogGameChoice",
-                "highlight": true,
+                "highlight": false,
                 "params": [
                     { "id": "decision", "type": "string" },
                     { "id": "choice", "type": "string" }
@@ -114,9 +114,103 @@
         "expressions": []
     },
     "context": {
-        "conditions": [],
-        "actions": [],
-        "expressions": []
+        "conditions": [
+            {
+                "id": "context-id-set",
+                "scriptName": "ContextIDSet",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-share-callback",
+                "scriptName": "ContextShareCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-update-callback",
+                "scriptName": "ContextUpdateCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-choose-callback",
+                "scriptName": "ContextChooseCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-switch-callback",
+                "scriptName": "ContextSwitchCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-create-callback",
+                "scriptName": "ContextCreateCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "context-get-id",
+                "scriptName": "ContextGetID",
+                "highlight": false
+            },
+            {
+                "id": "context-share-async",
+                "scriptName": "ContextShareAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-update-async",
+                "scriptName": "ContextUpdateAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-choose-async",
+                "scriptName": "ContextChooseAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-switch-async",
+                "scriptName": "ContextSwitchAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "contextId", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-create-async",
+                "scriptName": "ContextCreateAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "playerId", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "context-id",
+                "expressionName": "ContextID",
+                "returnType": "string"
+            },
+            {
+                "id": "context-share-result",
+                "expressionName": "ContextShareResult",
+                "returnType": "number"
+            }
+        ]
     },
     "iap": {
         "conditions": [],
@@ -140,31 +234,37 @@
     },
 	"wortal": {
 		"conditions": [
+            {
+                "id": "error-callback",
+                "scriptName": "ErrorCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
 			{
 				"id": "on-before-ad",
 				"scriptName": "OnBeforeAd",
-				"highlight": true,
+				"highlight": false,
                 "isTrigger": true,
                 "isDeprecated": true
 			},
             {
                 "id": "on-after-ad",
                 "scriptName": "OnAfterAd",
-                "highlight": true,
+                "highlight": false,
                 "isTrigger": true,
                 "isDeprecated": true
             },
             {
                 "id": "on-ad-dismissed",
                 "scriptName": "OnAdDismissed",
-                "highlight": true,
+                "highlight": false,
                 "isTrigger": true,
                 "isDeprecated": true
             },
             {
                 "id": "on-ad-viewed",
                 "scriptName": "OnAdViewed",
-                "highlight": true,
+                "highlight": false,
                 "isTrigger": true,
                 "isDeprecated": true
             }
@@ -173,7 +273,7 @@
 			{
 				"id": "show-interstitial",
 				"scriptName": "ShowInterstitial",
-				"highlight": true,
+				"highlight": false,
                 "isDeprecated": true,
                 "params": [
                     { "id": "placement", "type": "string" },
@@ -183,7 +283,7 @@
             {
                 "id": "show-rewarded",
                 "scriptName": "ShowRewarded",
-                "highlight": true,
+                "highlight": false,
                 "isDeprecated": true,
                 "params": [
                     { "id": "description", "type": "string" }
@@ -192,7 +292,7 @@
             {
                 "id": "log-level-start",
                 "scriptName": "LogLevelStart",
-                "highlight": true,
+                "highlight": false,
                 "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" }
@@ -201,7 +301,7 @@
             {
                 "id": "log-level-end",
                 "scriptName": "LogLevelEnd",
-                "highlight": true,
+                "highlight": false,
                 "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" },
@@ -211,7 +311,7 @@
             {
                 "id": "log-level-up",
                 "scriptName": "LogLevelUp",
-                "highlight": true,
+                "highlight": false,
                 "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" }
@@ -220,7 +320,7 @@
             {
                 "id": "log-score",
                 "scriptName": "LogScore",
-                "highlight": true,
+                "highlight": false,
                 "isDeprecated": true,
                 "params": [
                     { "id": "score", "type": "string" }
@@ -229,7 +329,7 @@
             {
                 "id": "log-game-choice",
                 "scriptName": "LogGameChoice",
-                "highlight": true,
+                "highlight": false,
                 "isDeprecated": true,
                 "params": [
                     { "id": "decision", "type": "string" },
@@ -245,6 +345,12 @@
                 ]
             }
         ],
-		"expressions": []
+		"expressions": [
+            {
+                "id": "error-status",
+                "expressionName": "ErrorStatus",
+                "returnType": "string"
+            }
+        ]
 	}
 }
