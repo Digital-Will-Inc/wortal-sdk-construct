@@ -8,10 +8,18 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 	{
 		super(inst, DOM_COMPONENT_ID);
 
-        // Initialize SDK properties
+        // SDK properties
+        this._errorStatus = "";
+
+        // Context properties
         this._contextId = "";
         this._shareResult = 0;
-        this._errorStatus = "";
+
+        // IAP properties
+        this._isIAPEnabled = false;
+        this._iapCatalog = "";
+        this._iapPurchases = "";
+        this._iapPurchaseReceipt = "";
 
         ////////////////////////////////////////////
         // Ads API
@@ -62,6 +70,33 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         });
 
         ////////////////////////////////////////////
+        // In-App Purchasing API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("iap_set_enabled", enabled => {
+            this._isIAPEnabled = enabled;
+            this.Trigger(C3.Plugins.wortal.Cnds.IAPEnabledSet);
+        });
+
+        this.AddDOMMessageHandler("iap_get_catalog_callback", catalog => {
+            this._iapCatalog = catalog;
+            this.Trigger(C3.Plugins.wortal.Cnds.IAPGetCatalogCallback);
+        });
+
+        this.AddDOMMessageHandler("iap_get_purchases_callback", purchases => {
+            this._iapPurchases = purchases;
+            this.Trigger(C3.Plugins.wortal.Cnds.IAPGetPurchasesCallback);
+        });
+
+        this.AddDOMMessageHandler("iap_make_purchase_callback", receipt => {
+            this._iapPurchaseReceipt = receipt;
+            this.Trigger(C3.Plugins.wortal.Cnds.IAPMakePurchaseCallback);
+        });
+
+        this.AddDOMMessageHandler("iap_consume_purchase_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.IAPConsumePurchaseCallback);
+        });
+
+        ////////////////////////////////////////////
         // SDK API
         ////////////////////////////////////////////
         this.AddDOMMessageHandler("error_callback", error => {
@@ -97,6 +132,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             "args": args,
         }
         this.PostToDOM("wortal-context", obj);
+    };
+
+    WortalIAP(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-iap", obj);
     };
 
     WortalSDK(event, args) {

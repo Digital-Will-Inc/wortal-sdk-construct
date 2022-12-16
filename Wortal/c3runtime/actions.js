@@ -103,6 +103,29 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // In-App Purchasing API
+    ////////////////////////////////////////////
+    IAPGetCatalogAsync() {
+        this.WortalIAP('iap_get_catalog', {});
+    },
+
+    IAPGetPurchasesAsync() {
+        this.WortalIAP('iap_get_purchases', {});
+    },
+
+    IAPMakePurchaseAsync(purchaseConfig) {
+        this.WortalIAP('iap_make_purchase', {
+            purchaseConfig: purchaseConfig,
+        });
+    },
+
+    IAPConsumePurchaseAsync(token) {
+        this.WortalIAP('iap_consume_purchase', {
+            token: token,
+        });
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     SetLoadingProgress(value) {

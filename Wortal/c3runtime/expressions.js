@@ -12,6 +12,25 @@ self.C3.Plugins.wortal.Exps =
     },
 
     ////////////////////////////////////////////
+    // In-App Purchasing API
+    ////////////////////////////////////////////
+    IAPEnabled() {
+        return this._isIAPEnabled ? 1 : 0;
+    },
+
+    IAPCatalog() {
+        return this._iapCatalog;
+    },
+
+    IAPPurchases() {
+        return this._iapPurchases;
+    },
+
+    IAPPurchaseReceipt() {
+        return this._iapPurchaseReceipt;
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     ErrorStatus() {

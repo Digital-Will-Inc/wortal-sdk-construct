@@ -213,9 +213,88 @@
         ]
     },
     "iap": {
-        "conditions": [],
-        "actions": [],
-        "expressions": []
+        "conditions": [
+            {
+                "id": "iap-enabled-set",
+                "scriptName": "IAPEnabledSet",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "iap-get-catalog-callback",
+                "scriptName": "IAPGetCatalogCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "iap-get-purchases-callback",
+                "scriptName": "IAPGetPurchasesCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "iap-make-purchase-callback",
+                "scriptName": "IAPMakePurchaseCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "iap-consume-purchase-callback",
+                "scriptName": "IAPConsumePurchaseCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "iap-get-catalog-async",
+                "scriptName": "IAPGetCatalogAsync",
+                "highlight": false
+            },
+            {
+                "id": "iap-get-purchases-async",
+                "scriptName": "IAPGetPurchasesAsync",
+                "highlight": false
+            },
+            {
+                "id": "iap-make-purchase-async",
+                "scriptName": "IAPMakePurchaseAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "purchaseConfig", "type": "string" }
+                ]
+            },
+            {
+                "id": "iap-consume-purchase-async",
+                "scriptName": "IAPConsumePurchaseAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "token", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "iap-enabled",
+                "expressionName": "IAPEnabled",
+                "returnType": "number"
+            },
+            {
+                "id": "iap-catalog",
+                "expressionName": "IAPCatalog",
+                "returnType": "string"
+            },
+            {
+                "id": "iap-purchases",
+                "expressionName": "IAPPurchases",
+                "returnType": "string"
+            },
+            {
+                "id": "iap-purchase-receipt",
+                "expressionName": "IAPPurchaseReceipt",
+                "returnType": "string"
+            }
+        ]
     },
     "leaderboard": {
         "conditions": [],

@@ -70,6 +70,31 @@
                         "display-text": "Context Create Callback",
                         "description": "Called when the context create promise has resolved."
                     },
+                    "iap-enabled-set": {
+                        "list-name": "IAP Enabled Set",
+                        "display-text": "IAP Enabled Set",
+                        "description": "Called when the IAP enabled status has been set."
+                    },
+                    "iap-get-catalog-callback": {
+                        "list-name": "IAP Get Catalog Callback",
+                        "display-text": "IAP Get Catalog Callback",
+                        "description": "Called when the IAP get catalog promise has resolved."
+                    },
+                    "iap-get-purchases-callback": {
+                        "list-name": "IAP Get Purchases Callback",
+                        "display-text": "IAP Get Purchases Callback",
+                        "description": "Called when the IAP get purchases promise has resolved."
+                    },
+                    "iap-make-purchase-callback": {
+                        "list-name": "IAP Make Purchase Callback",
+                        "display-text": "IAP Make Purchase Callback",
+                        "description": "Called when the IAP make purchase promise has resolved."
+                    },
+                    "iap-consume-purchase-callback": {
+                        "list-name": "IAP Consume Purchase Callback",
+                        "display-text": "IAP Consume Purchase Callback",
+                        "description": "Called when the IAP consume purchase promise has resolved."
+                    },
                     "error-callback": {
                         "list-name": "Error Callback",
                         "display-text": "Error Callback",
@@ -222,8 +247,8 @@
                         "description": "Gets the ID of the current context, if one exists."
                     },
                     "context-share-async": {
-                        "list-name": "Context Share",
-                        "display-text": "Context Share {0}",
+                        "list-name": "Context Share Async",
+                        "display-text": "Context Share Async {0}",
                         "description": "Shares a message to the player's friends. Will trigger a UI for the player to choose which friends to share with.",
                         "params": {
                             "payload": {
@@ -233,8 +258,8 @@
                         }
                     },
                     "context-update-async": {
-                        "list-name": "Context Update",
-                        "display-text": "Context Update {0}",
+                        "list-name": "Context Update Async",
+                        "display-text": "Context Update Async {0}",
                         "description": "Posts an update to the current context. Will send a message to the chat thread of the current context.",
                         "params": {
                             "payload": {
@@ -244,8 +269,8 @@
                         }
                     },
                     "context-choose-async": {
-                        "list-name": "Context Choose",
-                        "display-text": "Context Choose {0}",
+                        "list-name": "Context Choose Async",
+                        "display-text": "Context Choose Async {0}",
                         "description": "Opens the platform UI to select friends to invite and play with.",
                         "params": {
                             "payload": {
@@ -255,8 +280,8 @@
                         }
                     },
                     "context-switch-async": {
-                        "list-name": "Context Switch",
-                        "display-text": "Context Switch {0}",
+                        "list-name": "Context Switch Async",
+                        "display-text": "Context Switch Async {0}",
                         "description": "Switches the current context to the context with the given ID.",
                         "params": {
                             "contextId": {
@@ -266,13 +291,45 @@
                         }
                     },
                     "context-create-async": {
-                        "list-name": "Context Create",
-                        "display-text": "Context Create {0}",
+                        "list-name": "Context Create Async",
+                        "display-text": "Context Create Async {0}",
                         "description": "Creates a context with the given player ID.",
                         "params": {
                             "playerId": {
                                 "name": "Player ID",
                                 "desc": "ID of player to create a context with."
+                            }
+                        }
+                    },
+                    "iap-get-catalog-async": {
+                        "list-name": "IAP Get Catalog Async",
+                        "display-text": "IAP Get Catalog Async",
+                        "description": "Gets the catalog of available products the player can purchase."
+                    },
+                    "iap-get-purchases-async": {
+                        "list-name": "IAP Get Purchases Async",
+                        "display-text": "IAP Get Purchases Async",
+                        "description": "Gets the purchases the player has made that have not yet been consumed. Purchase signature should be validated on the game developer's server or transaction database before provisioning the purchase to the player."
+                    },
+                    "iap-make-purchase-async": {
+                        "list-name": "IAP Make Purchase Async",
+                        "display-text": "IAP Make Purchase Async {0}",
+                        "description": "Attempts to make a purchase of the given product. Will launch the native IAP screen and return the result.",
+                        "params": {
+                            "purchaseConfig": {
+                                "name": "Purchase Config",
+                                "desc": "Object defining the product ID and purchase information."
+                            }
+                        }
+                    },
+                    "iap-consume-purchase-async": {
+                        "list-name": "IAP Consume Purchase Async",
+                        "display-text": "IAP Consume Purchase Async {0}",
+                        "description": "Consumes the given purchase. This will remove the purchase from the player's available purchases inventory and reset its availability in the catalog.",
+                        "params": {
+                            "token": {
+                                "name": "Purchase Token",
+                                "desc": "String representing the purchaseToken of the item to consume."
                             }
                         }
                     },
@@ -385,6 +442,22 @@
                     "context-share-result": {
                         "description": "Returns the number of friends the content was shared with.",
                         "translated-name": "ContextShareResult"
+                    },
+                    "iap-enabled": {
+                        "description": "Returns whether or not IAP is currently enabled. 0 for false, 1 for true.",
+                        "translated-name": "IAPEnabled"
+                    },
+                    "iap-catalog": {
+                        "description": "Returns a JSON string with the product catalog. Returns an empty string if no purchases are available.",
+                        "translated-name": "IAPCatalog"
+                    },
+                    "iap-purchases": {
+                        "description": "Returns a JSON string with the purchases the player has made.",
+                        "translated-name": "IAPPurchases"
+                    },
+                    "iap-purchase-receipt": {
+                        "description": "Returns a JSON string with the purchase receipt for the most recent purchase.",
+                        "translated-name": "IAPPurchaseReceipt"
                     },
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",
