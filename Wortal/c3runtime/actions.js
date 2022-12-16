@@ -126,6 +126,51 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // Leaderboard API
+    ////////////////////////////////////////////
+    LeaderboardGetLeaderboardAsync(name) {
+        this.WortalLeaderboard('leaderboard_get_leaderboard', {
+            name: name,
+        });
+    },
+
+    LeaderboardSendEntryAsync(name, score, details) {
+        this.WortalLeaderboard('leaderboard_send_entry', {
+            name: name,
+            score: score,
+            details: details,
+        });
+    },
+
+    LeaderboardGetEntriesAsync(name, count, offset) {
+        this.WortalLeaderboard('leaderboard_get_entries', {
+            name: name,
+            count: count,
+            offset: offset,
+        });
+    },
+
+    LeaderboardGetPlayerEntryAsync(name) {
+        this.WortalLeaderboard('leaderboard_get_player_entry', {
+            name: name,
+        });
+    },
+
+    LeaderboardGetEntryCountAsync(name) {
+        this.WortalLeaderboard('leaderboard_get_entry_count', {
+            name: name,
+        });
+    },
+
+    LeaderboardGetConnectedPlayersEntriesAsync(name, count, offset) {
+        this.WortalLeaderboard('leaderboard_get_connected_players_entries', {
+            name: name,
+            count: count,
+            offset: offset,
+        });
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     SetLoadingProgress(value) {

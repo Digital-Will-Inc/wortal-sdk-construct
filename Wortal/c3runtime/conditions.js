@@ -70,6 +70,33 @@ self.C3.Plugins.wortal.Cnds =
     },
 
     ////////////////////////////////////////////
+    // Leaderboard API
+    ////////////////////////////////////////////
+    LeaderboardGetLeaderboardCallback() {
+        return true;
+    },
+
+    LeaderboardSendEntryCallback() {
+        return true;
+    },
+
+    LeaderboardGetEntriesCallback() {
+        return true;
+    },
+
+    LeaderboardGetPlayerEntryCallback() {
+        return true;
+    },
+
+    LeaderboardGetEntryCountCallback() {
+        return true;
+    },
+
+    LeaderboardGetConnectedPlayersEntriesCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     ErrorCallback() {

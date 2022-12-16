@@ -31,6 +31,33 @@ self.C3.Plugins.wortal.Exps =
     },
 
     ////////////////////////////////////////////
+    // Leaderboard API
+    ////////////////////////////////////////////
+    CurrentLeaderboard() {
+        return this._leaderboard;
+    },
+
+    LeaderboardSendResult() {
+        return this._leaderboardSendResult;
+    },
+
+    LeaderboardEntries() {
+        return this._leaderboardEntries;
+    },
+
+    LeaderboardPlayerEntry() {
+        return this._leaderboardPlayerEntry;
+    },
+
+    LeaderboardEntryCount() {
+        return this._leaderboardEntryCount;
+    },
+
+    LeaderboardConnectedPlayersEntries() {
+        return this._leaderboardConnectedPlayersEntries;
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     ErrorStatus() {

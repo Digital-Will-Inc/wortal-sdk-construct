@@ -52,7 +52,6 @@
         _GetCatalogAsync() {
             window.Wortal.iap.getCatalogAsync()
                 .then(catalog => {
-                    console.log(JSON.stringify(catalog));
                     this.PostToRuntime("iap_get_catalog_callback", JSON.stringify(catalog));
                 })
                 .catch(error => {

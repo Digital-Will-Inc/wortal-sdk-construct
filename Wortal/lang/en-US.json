@@ -95,6 +95,36 @@
                         "display-text": "IAP Consume Purchase Callback",
                         "description": "Called when the IAP consume purchase promise has resolved."
                     },
+                    "leaderboard-get-leaderboard-callback": {
+                        "list-name": "Leaderboard Get Leaderboard Callback",
+                        "display-text": "Leaderboard Get Leaderboard Callback",
+                        "description": "Called when the get leaderboard promise has resolved."
+                    },
+                    "leaderboard-send-entry-callback": {
+                        "list-name": "Leaderboard Send Entry Callback",
+                        "display-text": "Leaderboard Send Entry Callback",
+                        "description": "Called when the leaderboard send entry promise has resolved."
+                    },
+                    "leaderboard-get-entries-callback": {
+                        "list-name": "Leaderboard Get Entries Callback",
+                        "display-text": "Leaderboard Get Entries Callback",
+                        "description": "Called when the leaderboard get entries promise has resolved."
+                    },
+                    "leaderboard-get-player-entry-callback": {
+                        "list-name": "Leaderboard Get Player Entry Callback",
+                        "display-text": "Leaderboard Get Player Entry Callback",
+                        "description": "Called when the leaderboard get player entry promise has resolved."
+                    },
+                    "leaderboard-get-entry-count-callback": {
+                        "list-name": "Leaderboard Get Entry Count Callback",
+                        "display-text": "Leaderboard Get Entry Count Callback",
+                        "description": "Called when the leaderboard get entry count promise has resolved."
+                    },
+                    "leaderboard-get-connected-players-entries-callback": {
+                        "list-name": "Leaderboard Get Connected Players Entries Callback",
+                        "display-text": "Leaderboard Get Connected Players Entries Callback",
+                        "description": "Called when the leaderboard get connected players entries promise has resolved."
+                    },
                     "error-callback": {
                         "list-name": "Error Callback",
                         "display-text": "Error Callback",
@@ -333,6 +363,96 @@
                             }
                         }
                     },
+                    "leaderboard-get-leaderboard-async": {
+                        "list-name": "Leaderboard Get Leaderboard Async",
+                        "display-text": "Leaderboard Get Leaderboard Async {0}",
+                        "description": "Gets the leaderboard with the given name. Access the leaderboard API via the Leaderboard returned here.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            }
+                        }
+                    },
+                    "leaderboard-send-entry-async": {
+                        "list-name": "Leaderboard Send Entry Async",
+                        "display-text": "Leaderboard Send Entry Async {0} {1} {2}",
+                        "description": "Sends an entry to be added to the leaderboard, or updated if already existing. Will only update if the score is a higher than the player's previous entry.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            },
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score for the entry."
+                            },
+                            "details": {
+                                "name": "Details",
+                                "desc": "Optional additional details about the entry."
+                            }
+                        }
+                    },
+                    "leaderboard-get-entries-async": {
+                        "list-name": "Leaderboard Get Entries Async",
+                        "display-text": "Leaderboard Get Entries Async {0} {1} {2}",
+                        "description": "Gets a list of leaderboard entries in the leaderboard.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            },
+                            "count": {
+                                "name": "Count",
+                                "desc": "Number of entries to get."
+                            },
+                            "offset": {
+                                "name": "Offset",
+                                "desc": "Offset from the first entry (top rank) to start the count from. Default is 0."
+                            }
+                        }
+                    },
+                    "leaderboard-get-player-entry-async": {
+                        "list-name": "Leaderboard Get Player Entry Async",
+                        "display-text": "Leaderboard Get Player Entry Async {0}",
+                        "description": "Gets the player's entry in the leaderboard.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            }
+                        }
+                    },
+                    "leaderboard-get-entry-count-async": {
+                        "list-name": "Leaderboard Get Entry Count Async",
+                        "display-text": "Leaderboard Get Entry Count Async {0}",
+                        "description": "Gets the total number of entries in the leaderboard.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            }
+                        }
+                    },
+                    "leaderboard-get-connected-players-entries-async": {
+                        "list-name": "Leaderboard Get Connected Players Entries Async",
+                        "display-text": "Leaderboard Get Connected Players Entries Async {0} {1} {2}",
+                        "description": "Gets a list of leaderboard entries of connected players in the leaderboard.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            },
+                            "count": {
+                                "name": "Count",
+                                "desc": "Number of entries to get."
+                            },
+                            "offset": {
+                                "name": "Offset",
+                                "desc": "Offset from the first entry (top rank) to start the count from. Default is 0."
+                            }
+                        }
+                    },
                     "show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",
@@ -458,6 +578,30 @@
                     "iap-purchase-receipt": {
                         "description": "Returns a JSON string with the purchase receipt for the most recent purchase.",
                         "translated-name": "IAPPurchaseReceipt"
+                    },
+                    "current-leaderboard": {
+                        "description": "Returns a JSON string with the current leaderboard.",
+                        "translated-name": "CurrentLeaderboard"
+                    },
+                    "leaderboard-send-result": {
+                        "description": "Returns a JSON string with the entry returned from SendEntryAsync.",
+                        "translated-name": "LeaderboardSendResult"
+                    },
+                    "leaderboard-entries": {
+                        "description": "Returns a JSON string with the entries returned from GetEntriesAsync.",
+                        "translated-name": "LeaderboardEntries"
+                    },
+                    "leaderboard-player-entry": {
+                        "description": "Returns a JSON string with the player's entry in the given leaderboard.",
+                        "translated-name": "LeaderboardPlayerEntry"
+                    },
+                    "leaderboard-entry-count": {
+                        "description": "Returns the number of entries in the given leaderboard.",
+                        "translated-name": "LeaderboardEntryCount"
+                    },
+                    "leaderboard-connected-players-entries": {
+                        "description": "Returns a JSON string with the entries returned from GetConnectedPlayersEntriesAsync.",
+                        "translated-name": "LeaderboardConnectedPlayersEntries"
                     },
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",

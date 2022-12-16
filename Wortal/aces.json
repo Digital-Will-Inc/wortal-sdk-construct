@@ -297,9 +297,132 @@
         ]
     },
     "leaderboard": {
-        "conditions": [],
-        "actions": [],
-        "expressions": []
+        "conditions": [
+            {
+                "id": "leaderboard-get-leaderboard-callback",
+                "scriptName": "LeaderboardGetLeaderboardCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-send-entry-callback",
+                "scriptName": "LeaderboardSendEntryCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-get-entries-callback",
+                "scriptName": "LeaderboardGetEntriesCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-get-player-entry-callback",
+                "scriptName": "LeaderboardGetPlayerEntryCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-get-entry-count-callback",
+                "scriptName": "LeaderboardGetEntryCountCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-get-connected-players-entries-callback",
+                "scriptName": "LeaderboardGetConnectedPlayersEntriesCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "leaderboard-get-leaderboard-async",
+                "scriptName": "LeaderboardGetLeaderboardAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" }
+                ]
+            },
+            {
+                "id": "leaderboard-send-entry-async",
+                "scriptName": "LeaderboardSendEntryAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" },
+                    { "id": "score", "type": "number" },
+                    { "id": "details", "type": "string" }
+                ]
+            },
+            {
+                "id": "leaderboard-get-entries-async",
+                "scriptName": "LeaderboardGetEntriesAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" },
+                    { "id": "count", "type": "number" },
+                    { "id": "offset", "type": "number" }
+                ]
+            },
+            {
+                "id": "leaderboard-get-player-entry-async",
+                "scriptName": "LeaderboardGetPlayerEntryAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" }
+                ]
+            },
+            {
+                "id": "leaderboard-get-entry-count-async",
+                "scriptName": "LeaderboardGetEntryCountAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" }
+                ]
+            },
+            {
+                "id": "leaderboard-get-connected-players-entries-async",
+                "scriptName": "LeaderboardGetConnectedPlayersEntriesAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" },
+                    { "id": "count", "type": "number" },
+                    { "id": "offset", "type": "number" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "current-leaderboard",
+                "expressionName": "CurrentLeaderboard",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-send-result",
+                "expressionName": "LeaderboardSendResult",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-entries",
+                "expressionName": "LeaderboardEntries",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-player-entry",
+                "expressionName": "LeaderboardPlayerEntry",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-entry-count",
+                "expressionName": "LeaderboardEntryCount",
+                "returnType": "number"
+            },
+            {
+                "id": "leaderboard-connected-players-entries",
+                "expressionName": "LeaderboardConnectedPlayersEntries",
+                "returnType": "string"
+            }
+        ]
     },
     "player": {
         "conditions": [],

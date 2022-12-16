@@ -25,6 +25,7 @@
         "c3runtime/wortal-analytics.js",
         "c3runtime/wortal-context.js",
         "c3runtime/wortal-iap.js",
+        "c3runtime/wortal-leaderboard.js",
 		"lang/en-US.json",
 		"aces.json",
 		"addon.json",

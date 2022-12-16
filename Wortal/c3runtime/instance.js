@@ -21,6 +21,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._iapPurchases = "";
         this._iapPurchaseReceipt = "";
 
+        // Leaderboard properties
+        this._leaderboard = "";
+        this._leaderboardSendResult = "";
+        this._leaderboardEntries = "";
+        this._leaderboardPlayerEntry = "";
+        this._leaderboardEntryCount = 0;
+        this._leaderboardConnectedPlayersEntries = "";
+
         ////////////////////////////////////////////
         // Ads API
         ////////////////////////////////////////////
@@ -97,6 +105,39 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         });
 
         ////////////////////////////////////////////
+        // Leaderboard API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("leaderboard_get_leaderboard_callback", leaderboard => {
+            this._leaderboard = leaderboard;
+            this.Trigger(C3.Plugins.wortal.Cnds.LeaderboardGetLeaderboardCallback);
+        });
+
+        this.AddDOMMessageHandler("leaderboard_send_entry_callback", entry => {
+            this._leaderboardSendResult = entry;
+            this.Trigger(C3.Plugins.wortal.Cnds.LeaderboardSendEntryCallback);
+        });
+
+        this.AddDOMMessageHandler("leaderboard_get_entries_callback", entries => {
+            this._leaderboardEntries = entries;
+            this.Trigger(C3.Plugins.wortal.Cnds.LeaderboardGetEntriesCallback);
+        });
+
+        this.AddDOMMessageHandler("leaderboard_get_player_entry_callback", entry => {
+            this._leaderboardPlayerEntry = entry;
+            this.Trigger(C3.Plugins.wortal.Cnds.LeaderboardGetPlayerEntryCallback);
+        });
+
+        this.AddDOMMessageHandler("leaderboard_get_entry_count_callback", count => {
+            this._leaderboardEntryCount = count;
+            this.Trigger(C3.Plugins.wortal.Cnds.LeaderboardGetEntryCountCallback);
+        });
+
+        this.AddDOMMessageHandler("leaderboard_get_connected_players_entries_callback", entries => {
+            this._leaderboardConnectedPlayersEntries = entries;
+            this.Trigger(C3.Plugins.wortal.Cnds.LeaderboardGetConnectedPlayersEntriesCallback);
+        });
+
+        ////////////////////////////////////////////
         // SDK API
         ////////////////////////////////////////////
         this.AddDOMMessageHandler("error_callback", error => {
@@ -141,6 +182,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         }
         this.PostToDOM("wortal-iap", obj);
     };
+
+    WortalLeaderboard(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-leaderboard", obj);
+    }
 
     WortalSDK(event, args) {
         const obj = {
