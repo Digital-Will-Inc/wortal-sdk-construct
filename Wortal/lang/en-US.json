@@ -125,6 +125,26 @@
                         "display-text": "Leaderboard Get Connected Players Entries Callback",
                         "description": "Called when the leaderboard get connected players entries promise has resolved."
                     },
+                    "player-get-data-callback": {
+                        "list-name": "Player Get Data Callback",
+                        "display-text": "Player Get Data Callback",
+                        "description": "Called when the player get data promise has resolved."
+                    },
+                    "player-set-data-callback": {
+                        "list-name": "Player Set Data Callback",
+                        "display-text": "Player Set Data Callback",
+                        "description": "Called when the player set data promise has resolved."
+                    },
+                    "player-get-connected-players-callback": {
+                        "list-name": "Player Get Connected Players Callback",
+                        "display-text": "Player Get Connected Players Callback",
+                        "description": "Called when the player get connected players promise has resolved."
+                    },
+                    "player-get-signed-player-info-callback": {
+                        "list-name": "Player Get Signed Player Info Callback",
+                        "display-text": "Player Get Signed Player Info Callback",
+                        "description": "Called when the player get signed player info promise has resolved."
+                    },
                     "error-callback": {
                         "list-name": "Error Callback",
                         "display-text": "Error Callback",
@@ -453,6 +473,44 @@
                             }
                         }
                     },
+                    "player-get-data-async": {
+                        "list-name": "Player Get Data Async",
+                        "display-text": "Player Get Data Async {0}",
+                        "description": "Gets the game data with the specific keys from the platform's storage.",
+                        "params": {
+                            "keys": {
+                                "name": "Keys",
+                                "desc": "Array of keys for the data to get."
+                            }
+                        }
+                    },
+                    "player-set-data-async": {
+                        "list-name": "Player Set Data Async",
+                        "display-text": "Player Set Data Async {0}",
+                        "description": "Uploads game data to the platform's storage. Max size is 1MB.",
+                        "params": {
+                            "data": {
+                                "name": "Data",
+                                "desc": "Key-value pairs of the data to upload. Nullable values will remove the data."
+                            }
+                        }
+                    },
+                    "player-get-connected-players-async": {
+                        "list-name": "Player Get Connected Players Async",
+                        "display-text": "Player Get Connected Players Async {0}",
+                        "description": "Gets the friends of the player who have also played this game before.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Options for the friends to get."
+                            }
+                        }
+                    },
+                    "player-get-signed-player-info-async": {
+                        "list-name": "Player Get Signed Player Info Async",
+                        "display-text": "Player Get Signed Player Info Async",
+                        "description": "Gets a signed player object that includes the player ID and signature for validation. This can be used to send something to a backend server for validation, such as game or purchase data."
+                    },
                     "show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",
@@ -602,6 +660,34 @@
                     "leaderboard-connected-players-entries": {
                         "description": "Returns a JSON string with the entries returned from GetConnectedPlayersEntriesAsync.",
                         "translated-name": "LeaderboardConnectedPlayersEntries"
+                    },
+                    "player-id": {
+                        "description": "Returns the player's ID.",
+                        "translated-name": "PlayerID"
+                    },
+                    "player-name": {
+                        "description": "Returns the player's name.",
+                        "translated-name": "PlayerName"
+                    },
+                    "player-photo": {
+                        "description": "Returns the player's photo.",
+                        "translated-name": "PlayerPhoto"
+                    },
+                    "player-is-first-play": {
+                        "description": "Returns whether or not this is the first time the player has played this game. 0 for false, 1 for true.",
+                        "translated-name": "PlayerIsFirstPlay"
+                    },
+                    "player-data": {
+                        "description": "Returns a JSON string with the player's saved data on the current platform.",
+                        "translated-name": "PlayerData"
+                    },
+                    "player-connected-players": {
+                        "description": "Returns a JSON string with an array of the player's connections that play this game.",
+                        "translated-name": "PlayerConnectedPlayers"
+                    },
+                    "player-signed-info": {
+                        "description": "Returns a JSON string with the signed info for the player.",
+                        "translated-name": "PlayerSignedInfo"
                     },
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",

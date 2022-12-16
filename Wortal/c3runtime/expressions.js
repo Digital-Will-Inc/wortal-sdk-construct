@@ -58,6 +58,37 @@ self.C3.Plugins.wortal.Exps =
     },
 
     ////////////////////////////////////////////
+    // Player API
+    ////////////////////////////////////////////
+    PlayerID() {
+        return this._playerId;
+    },
+
+    PlayerName() {
+        return this._playerName;
+    },
+
+    PlayerPhoto() {
+        return this._playerPhoto;
+    },
+
+    PlayerIsFirstPlay() {
+        return this._isFirstPlay ? 1 : 0;
+    },
+
+    PlayerData() {
+        return this._playerData;
+    },
+
+    PlayerConnectedPlayers() {
+        return this._playerConnectedPlayers;
+    },
+
+    PlayerSignedInfo() {
+        return this._playerSignedInfo;
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     ErrorStatus() {

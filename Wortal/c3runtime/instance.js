@@ -29,6 +29,15 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._leaderboardEntryCount = 0;
         this._leaderboardConnectedPlayersEntries = "";
 
+        // Player properties
+        this._playerId = "";
+        this._playerName = "";
+        this._playerPhoto = "";
+        this._isFirstPlay = false;
+        this._playerData = "";
+        this._playerConnectedPlayers = "";
+        this._playerSignedInfo = "";
+
         ////////////////////////////////////////////
         // Ads API
         ////////////////////////////////////////////
@@ -138,6 +147,44 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         });
 
         ////////////////////////////////////////////
+        // Player API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("player_set_id", id => {
+            this._playerId = id;
+        });
+
+        this.AddDOMMessageHandler("player_set_name", name => {
+            this._playerName = name;
+        });
+
+        this.AddDOMMessageHandler("player_set_photo", photo => {
+            this._playerPhoto = photo;
+        });
+
+        this.AddDOMMessageHandler("player_set_is_first_play", isFirstPlay => {
+            this._isFirstPlay = isFirstPlay;
+        });
+
+        this.AddDOMMessageHandler("player_get_data_callback", data => {
+            this._playerData = data;
+            this.Trigger(C3.Plugins.wortal.Cnds.PlayerGetDataCallback);
+        });
+
+        this.AddDOMMessageHandler("player_set_data_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.PlayerSetDataCallback);
+        });
+
+        this.AddDOMMessageHandler("player_get_connected_players_callback", players => {
+            this._playerConnectedPlayers = players;
+            this.Trigger(C3.Plugins.wortal.Cnds.PlayerGetConnectedPlayersCallback);
+        });
+
+        this.AddDOMMessageHandler("player_get_signed_player_info_callback", info => {
+            this._playerSignedInfo = info;
+            this.Trigger(C3.Plugins.wortal.Cnds.PlayerGetSignedPlayerInfoCallback);
+        });
+
+        ////////////////////////////////////////////
         // SDK API
         ////////////////////////////////////////////
         this.AddDOMMessageHandler("error_callback", error => {
@@ -189,6 +236,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             "args": args,
         }
         this.PostToDOM("wortal-leaderboard", obj);
+    }
+
+    WortalPlayer(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-player", obj);
     }
 
     WortalSDK(event, args) {

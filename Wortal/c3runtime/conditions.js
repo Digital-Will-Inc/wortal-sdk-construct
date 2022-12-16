@@ -97,6 +97,25 @@ self.C3.Plugins.wortal.Cnds =
     },
 
     ////////////////////////////////////////////
+    // Player API
+    ////////////////////////////////////////////
+    PlayerGetDataCallback() {
+        return true;
+    },
+
+    PlayerSetDataCallback() {
+        return true;
+    },
+
+    PlayerGetConnectedPlayersCallback() {
+        return true;
+    },
+
+    PlayerGetSignedPlayerInfoCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     ErrorCallback() {

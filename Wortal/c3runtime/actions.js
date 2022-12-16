@@ -171,6 +171,31 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // Player API
+    ////////////////////////////////////////////
+    PlayerGetDataAsync(keys) {
+        this.WortalPlayer('player_get_data', {
+            keys: keys,
+        });
+    },
+
+    PlayerSetDataAsync(data) {
+        this.WortalPlayer('player_set_data', {
+            data: data,
+        });
+    },
+
+    PlayerGetConnectedPlayersAsync(payload) {
+        this.WortalPlayer('player_get_connected_players', {
+            payload: payload,
+        });
+    },
+
+    PlayerGetSignedPlayerInfoAsync() {
+        this.WortalPlayer('player_get_signed_player_info', {});
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     SetLoadingProgress(value) {

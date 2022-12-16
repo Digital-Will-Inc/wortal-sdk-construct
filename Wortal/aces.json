@@ -425,9 +425,100 @@
         ]
     },
     "player": {
-        "conditions": [],
-        "actions": [],
-        "expressions": []
+        "conditions": [
+            {
+                "id": "player-get-data-callback",
+                "scriptName": "PlayerGetDataCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-set-data-callback",
+                "scriptName": "PlayerSetDataCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-get-connected-players-callback",
+                "scriptName": "PlayerGetConnectedPlayersCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-get-signed-player-info-callback",
+                "scriptName": "PlayerGetSignedPlayerInfoCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "player-get-data-async",
+                "scriptName": "PlayerGetDataAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "keys", "type": "string" }
+                ]
+            },
+            {
+                "id": "player-set-data-async",
+                "scriptName": "PlayerSetDataAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "data", "type": "string" }
+                ]
+            },
+            {
+                "id": "player-get-connected-players-async",
+                "scriptName": "PlayerGetConnectedPlayersAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "player-get-signed-player-info-async",
+                "scriptName": "PlayerGetSignedPlayerInfoAsync",
+                "highlight": false
+            }
+        ],
+        "expressions": [
+            {
+                "id": "player-id",
+                "expressionName": "PlayerID",
+                "returnType": "string"
+            },
+            {
+                "id": "player-name",
+                "expressionName": "PlayerName",
+                "returnType": "string"
+            },
+            {
+                "id": "player-photo",
+                "expressionName": "PlayerPhoto",
+                "returnType": "string"
+            },
+            {
+                "id": "player-is-first-play",
+                "expressionName": "PlayerIsFirstPlay",
+                "returnType": "number"
+            },
+            {
+                "id": "player-data",
+                "expressionName": "PlayerData",
+                "returnType": "string"
+            },
+            {
+                "id": "player-connected-players",
+                "expressionName": "PlayerConnectedPlayers",
+                "returnType": "string"
+            },
+            {
+                "id": "player-signed-info",
+                "expressionName": "PlayerSignedInfo",
+                "returnType": "string"
+            }
+        ]
     },
     "session": {
         "conditions": [],
