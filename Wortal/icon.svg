@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1"
-	 id="svg2182" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="0.92.4 (5da689c313, 2019-01-14)" sodipodi:docname="LoLAPI.svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300"
-	 style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<!-- Generator: Adobe Illustrator 26.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#DDDA64;}
-	.st1{fill:#A950DD;}
-	.st2{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#000000;stroke-width:48.2992;stroke-linecap:round;stroke-linejoin:round;}
+	.st2{fill:#A950DD;stroke:#000000;stroke-width:45.1575;stroke-linecap:round;stroke-linejoin:round;}
+	.st3{fill:#FFFFFF;}
 </style>
-<sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" id="base" inkscape:current-layer="layer1" inkscape:cx="107.87937" inkscape:cy="-35.713706" inkscape:document-units="mm" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1051" inkscape:window-maximized="1" inkscape:window-width="1842" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:zoom="0.70000001" pagecolor="#ffffff" showgrid="false" units="px">
-	</sodipodi:namedview>
-<polygon class="st0" points="64.7,288.6 20.5,248.4 20.5,170.7 283.7,170.7 283.7,288.6 "/>
-<path d="M288.2,297.5H57.9c-2.2,0-4.3-0.8-5.9-2.2L5.9,255.1c-2-1.7-3.1-4.2-3.1-6.8v-77.5c0-4.9,4-9,9-9h276.4c4.9,0,9,4,9,9v117.7
-	C297.2,293.5,293.2,297.5,288.2,297.5z M61.2,279.5h218v-99.8H20.7v64.5L61.2,279.5z"/>
+<polygon class="st0" points="291.3,899.2 172.2,790.7 172.2,581.5 881.3,581.5 881.3,899.2 291.3,899.2 "/>
+<polygon class="st1" points="272.8,898.9 148.6,790.7 148.6,581.7 893.6,581.7 893.6,898.9 272.8,898.9 "/>
+<polygon class="st2" points="252.3,148 146.6,256.4 146.6,715 895.6,715 895.6,148 253,148 "/>
+<path class="st3" d="M749.5,241.4c-23,0-40.3,0.2-51.9,0.6v105.6c0,101.6-0.2,159.7-0.7,174.5v39.1h-99.2l-0.7-173.9V241.9
+	c-11.6-0.3-28.9-0.6-51.9-0.6c-23,0-40.3-0.1-51.9-0.6v320.3h-50.2l-49.6-0.6V386.1L393,240.3l-51.5-0.6h-51.5v409.8h104.4
+	c44.7-39,77.9-68.4,99.8-88.4h101.8c11.2,9.6,28,24.3,50.6,44c22.5,19.7,39.6,34.4,51.2,44.4h103.7V240.8
+	C789.8,241.3,772.5,241.4,749.5,241.4L749.5,241.4z"/>
 <g>
-	<polygon class="st1" points="50.3,9.9 11,50.1 11,220.3 289,220.3 289,9.9 50.5,9.9 	"/>
-	<path d="M289,228.7H11c-4.6,0-8.4-3.8-8.4-8.4V50.1c0-2.2,0.9-4.3,2.4-5.8L44.3,4c1.6-1.6,3.7-2.5,6-2.5H289c4.6,0,8.4,3.8,8.4,8.4
-		v210.4C297.3,224.9,293.6,228.7,289,228.7z M19.4,211.9h261.2V18.3H53.8L19.4,53.5V211.9z"/>
-</g>
-<path class="st2" d="M234.7,44.5c-8.5,0-15,0.1-19.3,0.2V84c0,37.7-0.1,59.3-0.3,64.7v14.5h-36.8l-0.3-64.5V44.7
-	c-4.3-0.1-10.7-0.2-19.3-0.2s-15,0-19.3-0.2v118.8H121l-18.4-0.2V98.2l-0.1-54.1l-19.1-0.2H64.3V196H103
-	c16.6-14.5,28.9-25.4,37-32.8h37.8c4.2,3.6,10.4,9,18.8,16.3c8.3,7.3,14.7,12.8,19,16.5H254V44.3C249.7,44.5,243.3,44.5,234.7,44.5
-	L234.7,44.5z"/>
-<g>
-	<path d="M123,240.8v6.8H75.9v3.4H123v17.1H68v-6.8h47.1v-3.4H68v-17.1H123z"/>
-	<path d="M177.9,247.6h7.8v20.5h-54.9v-27.3h47.1V247.6z M177.9,247.6h-39.3v13.7h39.2L177.9,247.6L177.9,247.6z"/>
-	<path d="M248.5,251v17.1h-7.8v-10.2h-39.3v10.2h-7.8v-27.3h7.8V251h31.4v-10.2h7.8V251L248.5,251L248.5,251z"/>
+	<path d="M448.2,770.2v18.4H321.3v9.2h126.9v46.1h-148v-18.4h126.9v-9.2H300.2v-46.1H448.2z"/>
+	<path d="M596.3,788.6h21.1v55.3h-148v-73.7h126.9V788.6z M596.3,788.6H490.5v36.8h105.7V788.6z"/>
+	<path d="M786.6,797.8v46.1h-21.1v-27.6H659.7v27.6h-21.1v-73.7h21.1v27.6h84.6v-27.6h21.1v27.6H786.6z"/>
 </g>
 </svg>
