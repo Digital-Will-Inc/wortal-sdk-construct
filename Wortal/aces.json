@@ -521,9 +521,51 @@
         ]
     },
     "session": {
-        "conditions": [],
-        "actions": [],
-        "expressions": []
+        "conditions": [
+            {
+                "id": "session-get-entry-point-callback",
+                "scriptName": "SessionGetEntryPointCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "session-get-entry-point-async",
+                "scriptName": "SessionGetEntryPointAsync",
+                "highlight": false
+            },
+            {
+                "id": "session-set-session-data",
+                "scriptName": "SessionSetSessionData",
+                "highlight": false,
+                "params": [
+                    { "id": "data", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "entry-point-data",
+                "expressionName": "EntryPointData",
+                "returnType": "string"
+            },
+            {
+                "id": "entry-point",
+                "expressionName": "EntryPoint",
+                "returnType": "string"
+            },
+            {
+                "id": "locale",
+                "expressionName": "Locale",
+                "returnType": "string"
+            },
+            {
+                "id": "traffic-source",
+                "expressionName": "TrafficSource",
+                "returnType": "string"
+            }
+        ]
     },
 	"wortal": {
 		"conditions": [

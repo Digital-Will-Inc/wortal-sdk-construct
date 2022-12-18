@@ -196,6 +196,19 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // Session API
+    ////////////////////////////////////////////
+    SessionGetEntryPointAsync() {
+        this.WortalSession('session_get_entry_point', {});
+    },
+
+    SessionSetSessionData(data) {
+        this.WortalSession('session_set_data', {
+            data: data,
+        });
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     SetLoadingProgress(value) {

@@ -145,6 +145,11 @@
                         "display-text": "Player Get Signed Player Info Callback",
                         "description": "Called when the player get signed player info promise has resolved."
                     },
+                    "session-get-entry-point-callback": {
+                        "list-name": "Session Get Entry Point Callback",
+                        "display-text": "Session Get Entry Point Callback",
+                        "description": "Called when the session get entry point promise has resolved."
+                    },
                     "error-callback": {
                         "list-name": "Error Callback",
                         "display-text": "Error Callback",
@@ -511,6 +516,22 @@
                         "display-text": "Player Get Signed Player Info Async",
                         "description": "Gets a signed player object that includes the player ID and signature for validation. This can be used to send something to a backend server for validation, such as game or purchase data."
                     },
+                    "session-get-entry-point-async": {
+                        "list-name": "Session Get Entry Point Async",
+                        "display-text": "Session Get Entry Point Async",
+                        "description": "Gets the entry point of where the game started from."
+                    },
+                    "session-set-session-data": {
+                        "list-name": "Session Set Session Data",
+                        "display-text": "Session Set Session Data {0}",
+                        "description": "Sets the data for this session. This is not persistent and is only used to populate webhook events.",
+                        "params": {
+                            "data": {
+                                "name": "Data",
+                                "desc": "Data to set."
+                            }
+                        }
+                    },
                     "show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",
@@ -688,6 +709,22 @@
                     "player-signed-info": {
                         "description": "Returns a JSON string with the signed info for the player.",
                         "translated-name": "PlayerSignedInfo"
+                    },
+                    "entry-point-data": {
+                        "description": "Returns a JSON string with the entry point data for the current session.",
+                        "translated-name": "EntryPointData"
+                    },
+                    "entry-point": {
+                        "description": "Returns a string with the entry point for the current session.",
+                        "translated-name": "EntryPoint"
+                    },
+                    "locale": {
+                        "description": "Returns a string with the player's locale.",
+                        "translated-name": "Locale"
+                    },
+                    "traffic-source": {
+                        "description": "Returns a JSON string with the URL parameters attached to the game.",
+                        "translated-name": "TrafficSource"
                     },
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",

@@ -38,6 +38,12 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._playerConnectedPlayers = "";
         this._playerSignedInfo = "";
 
+        // Session properties
+        this._entryPointData = "";
+        this._entryPoint = "";
+        this._locale = "";
+        this._trafficSource = "";
+
         ////////////////////////////////////////////
         // Ads API
         ////////////////////////////////////////////
@@ -185,6 +191,26 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         });
 
         ////////////////////////////////////////////
+        // Session API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("session_set_entry_point_data", data => {
+            this._entryPointData = data;
+        });
+
+        this.AddDOMMessageHandler("session_set_locale", locale => {
+            this._locale = locale;
+        });
+
+        this.AddDOMMessageHandler("session_set_traffic_source", source => {
+            this._trafficSource = source;
+        });
+
+        this.AddDOMMessageHandler("session_get_entry_point_callback", data => {
+            this._entryPoint = data;
+            this.Trigger(C3.Plugins.wortal.Cnds.SessionGetEntryPointCallback);
+        });
+
+        ////////////////////////////////////////////
         // SDK API
         ////////////////////////////////////////////
         this.AddDOMMessageHandler("error_callback", error => {
@@ -244,6 +270,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             "args": args,
         }
         this.PostToDOM("wortal-player", obj);
+    }
+
+    WortalSession(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-session", obj);
     }
 
     WortalSDK(event, args) {

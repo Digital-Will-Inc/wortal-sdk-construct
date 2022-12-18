@@ -89,6 +89,25 @@ self.C3.Plugins.wortal.Exps =
     },
 
     ////////////////////////////////////////////
+    // Session API
+    ////////////////////////////////////////////
+    EntryPointData() {
+        return this._entryPointData;
+    },
+
+    EntryPoint() {
+        return this._entryPoint;
+    },
+
+    Locale() {
+        return this._locale;
+    },
+
+    TrafficSource() {
+        return this._trafficSource;
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     ErrorStatus() {
