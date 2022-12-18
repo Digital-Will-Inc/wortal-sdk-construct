@@ -1,36 +1,609 @@
 ﻿{
+    "ads": {
+        "conditions": [
+            {
+                "id": "ads-before-ad-callback",
+                "scriptName": "BeforeAdCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "ads-after-ad-callback",
+                "scriptName": "AfterAdCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "ads-ad-dismissed-callback",
+                "scriptName": "AdDismissedCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "ads-ad-viewed-callback",
+                "scriptName": "AdViewedCallback",
+                "highlight": true,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "ads-show-interstitial",
+                "scriptName": "AdsShowInterstitial",
+                "highlight": true,
+                "params": [
+                    { "id": "placement", "type": "string" },
+                    { "id": "description", "type": "string" }
+                ]
+            },
+            {
+                "id": "ads-show-rewarded",
+                "scriptName": "AdsShowRewarded",
+                "highlight": true,
+                "params": [
+                    { "id": "description", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": []
+    },
+    "analytics": {
+        "conditions": [],
+        "actions": [
+            {
+                "id": "analytics-log-level-start",
+                "scriptName": "AnalyticsLogLevelStart",
+                "highlight": false,
+                "params": [
+                    { "id": "level", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-level-end",
+                "scriptName": "AnalyticsLogLevelEnd",
+                "highlight": false,
+                "params": [
+                    { "id": "level", "type": "string" },
+                    { "id": "score", "type": "string" },
+                    { "id": "wasCompleted", "type": "number" }
+                ]
+            },
+            {
+                "id": "analytics-log-level-up",
+                "scriptName": "AnalyticsLogLevelUp",
+                "highlight": false,
+                "params": [
+                    { "id": "level", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-score",
+                "scriptName": "AnalyticsLogScore",
+                "highlight": false,
+                "params": [
+                    { "id": "score", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-tutorial-start",
+                "scriptName": "AnalyticsLogTutorialStart",
+                "highlight": false,
+                "params": [
+                    { "id": "tutorial", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-tutorial-end",
+                "scriptName": "AnalyticsLogTutorialEnd",
+                "highlight": false,
+                "params": [
+                    { "id": "tutorial", "type": "string" },
+                    { "id": "wasCompleted", "type": "number" }
+                ]
+            },
+            {
+                "id": "analytics-log-game-choice",
+                "scriptName": "AnalyticsLogGameChoice",
+                "highlight": false,
+                "params": [
+                    { "id": "decision", "type": "string" },
+                    { "id": "choice", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": []
+    },
+    "context": {
+        "conditions": [
+            {
+                "id": "context-id-set",
+                "scriptName": "ContextIDSet",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-share-callback",
+                "scriptName": "ContextShareCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-update-callback",
+                "scriptName": "ContextUpdateCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-choose-callback",
+                "scriptName": "ContextChooseCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-switch-callback",
+                "scriptName": "ContextSwitchCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-create-callback",
+                "scriptName": "ContextCreateCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "context-get-id",
+                "scriptName": "ContextGetID",
+                "highlight": false
+            },
+            {
+                "id": "context-share-async",
+                "scriptName": "ContextShareAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-update-async",
+                "scriptName": "ContextUpdateAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-choose-async",
+                "scriptName": "ContextChooseAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-switch-async",
+                "scriptName": "ContextSwitchAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "contextId", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-create-async",
+                "scriptName": "ContextCreateAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "playerId", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "context-id",
+                "expressionName": "ContextID",
+                "returnType": "string"
+            },
+            {
+                "id": "context-share-result",
+                "expressionName": "ContextShareResult",
+                "returnType": "number"
+            }
+        ]
+    },
+    "iap": {
+        "conditions": [
+            {
+                "id": "iap-get-catalog-callback",
+                "scriptName": "IAPGetCatalogCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "iap-get-purchases-callback",
+                "scriptName": "IAPGetPurchasesCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "iap-make-purchase-callback",
+                "scriptName": "IAPMakePurchaseCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "iap-consume-purchase-callback",
+                "scriptName": "IAPConsumePurchaseCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "iap-get-catalog-async",
+                "scriptName": "IAPGetCatalogAsync",
+                "highlight": false
+            },
+            {
+                "id": "iap-get-purchases-async",
+                "scriptName": "IAPGetPurchasesAsync",
+                "highlight": false
+            },
+            {
+                "id": "iap-make-purchase-async",
+                "scriptName": "IAPMakePurchaseAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "purchaseConfig", "type": "string" }
+                ]
+            },
+            {
+                "id": "iap-consume-purchase-async",
+                "scriptName": "IAPConsumePurchaseAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "token", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "iap-enabled",
+                "expressionName": "IAPEnabled",
+                "returnType": "number"
+            },
+            {
+                "id": "iap-catalog",
+                "expressionName": "IAPCatalog",
+                "returnType": "string"
+            },
+            {
+                "id": "iap-purchases",
+                "expressionName": "IAPPurchases",
+                "returnType": "string"
+            },
+            {
+                "id": "iap-purchase-receipt",
+                "expressionName": "IAPPurchaseReceipt",
+                "returnType": "string"
+            }
+        ]
+    },
+    "leaderboard": {
+        "conditions": [
+            {
+                "id": "leaderboard-get-leaderboard-callback",
+                "scriptName": "LeaderboardGetLeaderboardCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-send-entry-callback",
+                "scriptName": "LeaderboardSendEntryCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-get-entries-callback",
+                "scriptName": "LeaderboardGetEntriesCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-get-player-entry-callback",
+                "scriptName": "LeaderboardGetPlayerEntryCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-get-entry-count-callback",
+                "scriptName": "LeaderboardGetEntryCountCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "leaderboard-get-connected-players-entries-callback",
+                "scriptName": "LeaderboardGetConnectedPlayersEntriesCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "leaderboard-get-leaderboard-async",
+                "scriptName": "LeaderboardGetLeaderboardAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" }
+                ]
+            },
+            {
+                "id": "leaderboard-send-entry-async",
+                "scriptName": "LeaderboardSendEntryAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" },
+                    { "id": "score", "type": "number" },
+                    { "id": "details", "type": "string" }
+                ]
+            },
+            {
+                "id": "leaderboard-get-entries-async",
+                "scriptName": "LeaderboardGetEntriesAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" },
+                    { "id": "count", "type": "number" },
+                    { "id": "offset", "type": "number" }
+                ]
+            },
+            {
+                "id": "leaderboard-get-player-entry-async",
+                "scriptName": "LeaderboardGetPlayerEntryAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" }
+                ]
+            },
+            {
+                "id": "leaderboard-get-entry-count-async",
+                "scriptName": "LeaderboardGetEntryCountAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" }
+                ]
+            },
+            {
+                "id": "leaderboard-get-connected-players-entries-async",
+                "scriptName": "LeaderboardGetConnectedPlayersEntriesAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "name", "type": "string" },
+                    { "id": "count", "type": "number" },
+                    { "id": "offset", "type": "number" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "current-leaderboard",
+                "expressionName": "CurrentLeaderboard",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-send-result",
+                "expressionName": "LeaderboardSendResult",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-entries",
+                "expressionName": "LeaderboardEntries",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-player-entry",
+                "expressionName": "LeaderboardPlayerEntry",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-entry-count",
+                "expressionName": "LeaderboardEntryCount",
+                "returnType": "number"
+            },
+            {
+                "id": "leaderboard-connected-players-entries",
+                "expressionName": "LeaderboardConnectedPlayersEntries",
+                "returnType": "string"
+            }
+        ]
+    },
+    "player": {
+        "conditions": [
+            {
+                "id": "player-get-data-callback",
+                "scriptName": "PlayerGetDataCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-set-data-callback",
+                "scriptName": "PlayerSetDataCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-get-connected-players-callback",
+                "scriptName": "PlayerGetConnectedPlayersCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-get-signed-player-info-callback",
+                "scriptName": "PlayerGetSignedPlayerInfoCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "player-get-data-async",
+                "scriptName": "PlayerGetDataAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "keys", "type": "string" }
+                ]
+            },
+            {
+                "id": "player-set-data-async",
+                "scriptName": "PlayerSetDataAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "data", "type": "string" }
+                ]
+            },
+            {
+                "id": "player-get-connected-players-async",
+                "scriptName": "PlayerGetConnectedPlayersAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "player-get-signed-player-info-async",
+                "scriptName": "PlayerGetSignedPlayerInfoAsync",
+                "highlight": false
+            }
+        ],
+        "expressions": [
+            {
+                "id": "player-id",
+                "expressionName": "PlayerID",
+                "returnType": "string"
+            },
+            {
+                "id": "player-name",
+                "expressionName": "PlayerName",
+                "returnType": "string"
+            },
+            {
+                "id": "player-photo",
+                "expressionName": "PlayerPhoto",
+                "returnType": "string"
+            },
+            {
+                "id": "player-is-first-play",
+                "expressionName": "PlayerIsFirstPlay",
+                "returnType": "number"
+            },
+            {
+                "id": "player-data",
+                "expressionName": "PlayerData",
+                "returnType": "string"
+            },
+            {
+                "id": "player-connected-players",
+                "expressionName": "PlayerConnectedPlayers",
+                "returnType": "string"
+            },
+            {
+                "id": "player-signed-info",
+                "expressionName": "PlayerSignedInfo",
+                "returnType": "string"
+            }
+        ]
+    },
+    "session": {
+        "conditions": [
+            {
+                "id": "session-get-entry-point-callback",
+                "scriptName": "SessionGetEntryPointCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "session-get-entry-point-async",
+                "scriptName": "SessionGetEntryPointAsync",
+                "highlight": false
+            },
+            {
+                "id": "session-set-session-data",
+                "scriptName": "SessionSetSessionData",
+                "highlight": false,
+                "params": [
+                    { "id": "data", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "entry-point-data",
+                "expressionName": "EntryPointData",
+                "returnType": "string"
+            },
+            {
+                "id": "entry-point",
+                "expressionName": "EntryPoint",
+                "returnType": "string"
+            },
+            {
+                "id": "locale",
+                "expressionName": "Locale",
+                "returnType": "string"
+            },
+            {
+                "id": "traffic-source",
+                "expressionName": "TrafficSource",
+                "returnType": "string"
+            }
+        ]
+    },
 	"wortal": {
 		"conditions": [
+            {
+                "id": "error-callback",
+                "scriptName": "ErrorCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
 			{
 				"id": "on-before-ad",
 				"scriptName": "OnBeforeAd",
-				"highlight": true,
-                "isTrigger": true
+				"highlight": false,
+                "isTrigger": true,
+                "isDeprecated": true
 			},
             {
                 "id": "on-after-ad",
                 "scriptName": "OnAfterAd",
-                "highlight": true,
-                "isTrigger": true
+                "highlight": false,
+                "isTrigger": true,
+                "isDeprecated": true
             },
             {
                 "id": "on-ad-dismissed",
                 "scriptName": "OnAdDismissed",
-                "highlight": true,
-                "isTrigger": true
+                "highlight": false,
+                "isTrigger": true,
+                "isDeprecated": true
             },
             {
                 "id": "on-ad-viewed",
                 "scriptName": "OnAdViewed",
-                "highlight": true,
-                "isTrigger": true
+                "highlight": false,
+                "isTrigger": true,
+                "isDeprecated": true
             }
         ],
 		"actions": [
 			{
 				"id": "show-interstitial",
 				"scriptName": "ShowInterstitial",
-				"highlight": true,
+				"highlight": false,
+                "isDeprecated": true,
                 "params": [
                     { "id": "placement", "type": "string" },
                     { "id": "description", "type": "string" }
@@ -39,7 +612,8 @@
             {
                 "id": "show-rewarded",
                 "scriptName": "ShowRewarded",
-                "highlight": true,
+                "highlight": false,
+                "isDeprecated": true,
                 "params": [
                     { "id": "description", "type": "string" }
                 ]
@@ -47,7 +621,8 @@
             {
                 "id": "log-level-start",
                 "scriptName": "LogLevelStart",
-                "highlight": true,
+                "highlight": false,
+                "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" }
                 ]
@@ -55,7 +630,8 @@
             {
                 "id": "log-level-end",
                 "scriptName": "LogLevelEnd",
-                "highlight": true,
+                "highlight": false,
+                "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" },
                     { "id": "score", "type": "string" }
@@ -64,7 +640,8 @@
             {
                 "id": "log-level-up",
                 "scriptName": "LogLevelUp",
-                "highlight": true,
+                "highlight": false,
+                "isDeprecated": true,
                 "params": [
                     { "id": "level", "type": "string" }
                 ]
@@ -72,7 +649,8 @@
             {
                 "id": "log-score",
                 "scriptName": "LogScore",
-                "highlight": true,
+                "highlight": false,
+                "isDeprecated": true,
                 "params": [
                     { "id": "score", "type": "string" }
                 ]
@@ -80,7 +658,8 @@
             {
                 "id": "log-game-choice",
                 "scriptName": "LogGameChoice",
-                "highlight": true,
+                "highlight": false,
+                "isDeprecated": true,
                 "params": [
                     { "id": "decision", "type": "string" },
                     { "id": "choice", "type": "string" }
@@ -96,6 +675,11 @@
             }
         ],
 		"expressions": [
-		]
+            {
+                "id": "error-status",
+                "expressionName": "ErrorStatus",
+                "returnType": "string"
+            }
+        ]
 	}
 }

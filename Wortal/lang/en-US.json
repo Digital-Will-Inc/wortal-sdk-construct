@@ -10,9 +10,146 @@
                 "properties": {
                 },
                 "aceCategories": {
-                    "wortal": "API for the Wortal SDK"
+                    "wortal": "Wortal SDK API",
+                    "ads": "Ads API",
+                    "analytics": "Analytics API",
+                    "context": "Context API",
+                    "iap": "In-App Purchasing API",
+                    "leaderboard": "Leaderboard API",
+                    "player": "Player API",
+                    "session": "Session API"
                 },
                 "conditions": {
+                    "ads-before-ad-callback": {
+                        "list-name": "Before Ad Callback",
+                        "display-text": "Before Ad Callback",
+                        "description": "Called when an ad is returned. Pause the game here."
+                    },
+                    "ads-after-ad-callback": {
+                        "list-name": "After Ad Callback",
+                        "display-text": "After Ad Callback",
+                        "description": "Called when the ad event is finished. Resume the game here."
+                    },
+                    "ads-ad-dismissed-callback": {
+                        "list-name": "Ad Dismissed Callback",
+                        "display-text": "Ad Dismissed Callback",
+                        "description": "Called when a rewarded ad was skipped. Do not reward the player."
+                    },
+                    "ads-ad-viewed-callback": {
+                        "list-name": "Ad Viewed Callback",
+                        "display-text": "Ad Viewed Callback",
+                        "description": "Called when a rewarded ad was watched fully. Reward the player here."
+                    },
+                    "context-id-set": {
+                        "list-name": "Context ID Set",
+                        "display-text": "Context ID Set",
+                        "description": "Called when a new context ID has been set."
+                    },
+                    "context-share-callback": {
+                        "list-name": "Share Callback",
+                        "display-text": "Share Callback",
+                        "description": "Called when the context share promise has resolved."
+                    },
+                    "context-update-callback": {
+                        "list-name": "Update Callback",
+                        "display-text": "Update Callback",
+                        "description": "Called when the context update promise has resolved."
+                    },
+                    "context-choose-callback": {
+                        "list-name": "Choose Callback",
+                        "display-text": "Choose Callback",
+                        "description": "Called when the context choose promise has resolved."
+                    },
+                    "context-switch-callback": {
+                        "list-name": "Switch Callback",
+                        "display-text": "Switch Callback",
+                        "description": "Called when the context switch promise has resolved."
+                    },
+                    "context-create-callback": {
+                        "list-name": "Create Callback",
+                        "display-text": "Create Callback",
+                        "description": "Called when the context create promise has resolved."
+                    },
+                    "iap-get-catalog-callback": {
+                        "list-name": "Get Catalog Callback",
+                        "display-text": "Get Catalog Callback",
+                        "description": "Called when the IAP get catalog promise has resolved."
+                    },
+                    "iap-get-purchases-callback": {
+                        "list-name": "Get Purchases Callback",
+                        "display-text": "Get Purchases Callback",
+                        "description": "Called when the IAP get purchases promise has resolved."
+                    },
+                    "iap-make-purchase-callback": {
+                        "list-name": "Make Purchase Callback",
+                        "display-text": "Make Purchase Callback",
+                        "description": "Called when the IAP make purchase promise has resolved."
+                    },
+                    "iap-consume-purchase-callback": {
+                        "list-name": "Consume Purchase Callback",
+                        "display-text": "Consume Purchase Callback",
+                        "description": "Called when the IAP consume purchase promise has resolved."
+                    },
+                    "leaderboard-get-leaderboard-callback": {
+                        "list-name": "Get Leaderboard Callback",
+                        "display-text": "Get Leaderboard Callback",
+                        "description": "Called when the get leaderboard promise has resolved."
+                    },
+                    "leaderboard-send-entry-callback": {
+                        "list-name": "Send Entry Callback",
+                        "display-text": "Send Entry Callback",
+                        "description": "Called when the leaderboard send entry promise has resolved."
+                    },
+                    "leaderboard-get-entries-callback": {
+                        "list-name": "Get Entries Callback",
+                        "display-text": "Get Entries Callback",
+                        "description": "Called when the leaderboard get entries promise has resolved."
+                    },
+                    "leaderboard-get-player-entry-callback": {
+                        "list-name": "Get Player Entry Callback",
+                        "display-text": "Get Player Entry Callback",
+                        "description": "Called when the leaderboard get player entry promise has resolved."
+                    },
+                    "leaderboard-get-entry-count-callback": {
+                        "list-name": "Get Entry Count Callback",
+                        "display-text": "Get Entry Count Callback",
+                        "description": "Called when the leaderboard get entry count promise has resolved."
+                    },
+                    "leaderboard-get-connected-players-entries-callback": {
+                        "list-name": "Get Connected Players Entries Callback",
+                        "display-text": "Get Connected Players Entries Callback",
+                        "description": "Called when the leaderboard get connected players entries promise has resolved."
+                    },
+                    "player-get-data-callback": {
+                        "list-name": "Get Data Callback",
+                        "display-text": "Get Data Callback",
+                        "description": "Called when the player get data promise has resolved."
+                    },
+                    "player-set-data-callback": {
+                        "list-name": "Set Data Callback",
+                        "display-text": "Set Data Callback",
+                        "description": "Called when the player set data promise has resolved."
+                    },
+                    "player-get-connected-players-callback": {
+                        "list-name": "Get Connected Players Callback",
+                        "display-text": "Get Connected Players Callback",
+                        "description": "Called when the player get connected players promise has resolved."
+                    },
+                    "player-get-signed-player-info-callback": {
+                        "list-name": "Get Signed Player Info Callback",
+                        "display-text": "Get Signed Player Info Callback",
+                        "description": "Called when the player get signed player info promise has resolved."
+                    },
+                    "session-get-entry-point-callback": {
+                        "list-name": "Get Entry Point Callback",
+                        "display-text": "Get Entry Point Callback",
+                        "description": "Called when the session get entry point promise has resolved."
+                    },
+                    "error-callback": {
+                        "list-name": "Error Callback",
+                        "display-text": "Error Callback",
+                        "description": "Called when an async SDK function has been rejected. Contains the error message thrown by the SDK."
+                    },
                     "on-before-ad": {
                         "list-name": "On Before Ad",
                         "display-text": "On Before Ad",
@@ -35,6 +172,361 @@
                     }
                 },
                 "actions": {
+                    "ads-show-interstitial": {
+                        "list-name": "Show Interstitial",
+                        "display-text": "Show Interstitial {0} {1}",
+                        "description": "Shows an interstitial ad.",
+                        "params": {
+                            "placement": {
+                                "name": "Ad Placement",
+                                "desc": "Type of ad placement. Options are: next, pause, browse, start."
+                            },
+                            "description": {
+                                "name": "Description",
+                                "desc": "Description of the ad placement. Ex: NextLevel"
+                            }
+                        }
+                    },
+                    "ads-show-rewarded": {
+                        "list-name": "Show Rewarded",
+                        "display-text": "Show Rewarded {0}",
+                        "description": "Shows a rewarded ad.",
+                        "params": {
+                            "description": {
+                                "name": "Description",
+                                "desc": "Description of the ad placement. Ex: ReviveAndContinue"
+                            }
+                        }
+                    },
+                    "analytics-log-level-start": {
+                        "list-name": "Log Level Start",
+                        "display-text": "Log Level Start {0}",
+                        "description": "Logs the start of the level.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Name of the level that was started."
+                            }
+                        }
+                    },
+                    "analytics-log-level-end": {
+                        "list-name": "Log Level End",
+                        "display-text": "Log Level End {0} {1} {2}",
+                        "description": "Logs the end of the level.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Name of the level that ended."
+                            },
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score the player achieved."
+                            },
+                            "wasCompleted": {
+                                "name": "Was Completed",
+                                "desc": "Was the level completed successfully. 0 for no, 1 for yes."
+                            }
+                        }
+                    },
+                    "analytics-log-level-up": {
+                        "list-name": "Log Level Up",
+                        "display-text": "Log Level Up {0}",
+                        "description": "Logs the player achieving a level up.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Level the player achieved."
+                            }
+                        }
+                    },
+                    "analytics-log-score": {
+                        "list-name": "Log Score",
+                        "display-text": "Log Score {0}",
+                        "description": "Logs the player's score.",
+                        "params": {
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score the player achieved."
+                            }
+                        }
+                    },
+                    "analytics-log-tutorial-start": {
+                        "list-name": "Log Tutorial Start",
+                        "display-text": "Log Tutorial Start {0}",
+                        "description": "Logs the start of the tutorial.",
+                        "params": {
+                            "tutorial": {
+                                "name": "Tutorial",
+                                "desc": "Name of the tutorial that was started."
+                            }
+                        }
+                    },
+                    "analytics-log-tutorial-end": {
+                        "list-name": "Log Tutorial End",
+                        "display-text": "Log Tutorial End {0} {1}",
+                        "description": "Logs the end of the tutorial.",
+                        "params": {
+                            "tutorial": {
+                                "name": "Tutorial",
+                                "desc": "Name of the tutorial that ended."
+                            },
+                            "wasCompleted": {
+                                "name": "Was Completed",
+                                "desc": "Was the tutorial completed successfully. 0 for no, 1 for yes."
+                            }
+                        }
+                    },
+                    "analytics-log-game-choice": {
+                        "list-name": "Log Game Choice",
+                        "display-text": "Log Game Choice {0} {1}",
+                        "description": "Logs a choice the player made in the game.",
+                        "params": {
+                            "decision": {
+                                "name": "Decision",
+                                "desc": "Decision the player was faced with."
+                            },
+                            "choice": {
+                                "name": "Choice",
+                                "desc": "Choice the player made."
+                            }
+                        }
+                    },
+                    "context-get-id": {
+                        "list-name": "Get ID",
+                        "display-text": "Get ID",
+                        "description": "Gets the ID of the current context, if one exists."
+                    },
+                    "context-share-async": {
+                        "list-name": "Share Async",
+                        "display-text": "Share Async {0}",
+                        "description": "Shares a message to the player's friends. Will trigger a UI for the player to choose which friends to share with.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the share message."
+                            }
+                        }
+                    },
+                    "context-update-async": {
+                        "list-name": "Update Async",
+                        "display-text": "Update Async {0}",
+                        "description": "Posts an update to the current context. Will send a message to the chat thread of the current context.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the update message."
+                            }
+                        }
+                    },
+                    "context-choose-async": {
+                        "list-name": "Choose Async",
+                        "display-text": "Choose Async {0}",
+                        "description": "Opens the platform UI to select friends to invite and play with.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the options for the context choice."
+                            }
+                        }
+                    },
+                    "context-switch-async": {
+                        "list-name": "Switch Async",
+                        "display-text": "Switch Async {0}",
+                        "description": "Switches the current context to the context with the given ID.",
+                        "params": {
+                            "contextId": {
+                                "name": "Context ID",
+                                "desc": "ID of the context to switch to."
+                            }
+                        }
+                    },
+                    "context-create-async": {
+                        "list-name": "Create Async",
+                        "display-text": "Create Async {0}",
+                        "description": "Creates a context with the given player ID.",
+                        "params": {
+                            "playerId": {
+                                "name": "Player ID",
+                                "desc": "ID of player to create a context with."
+                            }
+                        }
+                    },
+                    "iap-get-catalog-async": {
+                        "list-name": "Get Catalog Async",
+                        "display-text": "Get Catalog Async",
+                        "description": "Gets the catalog of available products the player can purchase."
+                    },
+                    "iap-get-purchases-async": {
+                        "list-name": "Get Purchases Async",
+                        "display-text": "Get Purchases Async",
+                        "description": "Gets the purchases the player has made that have not yet been consumed. Purchase signature should be validated on the game developer's server or transaction database before provisioning the purchase to the player."
+                    },
+                    "iap-make-purchase-async": {
+                        "list-name": "Make Purchase Async",
+                        "display-text": "Make Purchase Async {0}",
+                        "description": "Attempts to make a purchase of the given product. Will launch the native IAP screen and return the result.",
+                        "params": {
+                            "purchaseConfig": {
+                                "name": "Purchase Config",
+                                "desc": "Object defining the product ID and purchase information."
+                            }
+                        }
+                    },
+                    "iap-consume-purchase-async": {
+                        "list-name": "Consume Purchase Async",
+                        "display-text": "Consume Purchase Async {0}",
+                        "description": "Consumes the given purchase. This will remove the purchase from the player's available purchases inventory and reset its availability in the catalog.",
+                        "params": {
+                            "token": {
+                                "name": "Purchase Token",
+                                "desc": "String representing the purchaseToken of the item to consume."
+                            }
+                        }
+                    },
+                    "leaderboard-get-leaderboard-async": {
+                        "list-name": "Get Leaderboard Async",
+                        "display-text": "Get Leaderboard Async {0}",
+                        "description": "Gets the leaderboard with the given name. Access the leaderboard API via the Leaderboard returned here.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            }
+                        }
+                    },
+                    "leaderboard-send-entry-async": {
+                        "list-name": "Send Entry Async",
+                        "display-text": "Send Entry Async {0} {1} {2}",
+                        "description": "Sends an entry to be added to the leaderboard, or updated if already existing. Will only update if the score is a higher than the player's previous entry.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            },
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score for the entry."
+                            },
+                            "details": {
+                                "name": "Details",
+                                "desc": "Optional additional details about the entry."
+                            }
+                        }
+                    },
+                    "leaderboard-get-entries-async": {
+                        "list-name": "Get Entries Async",
+                        "display-text": "Get Entries Async {0} {1} {2}",
+                        "description": "Gets a list of leaderboard entries in the leaderboard.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            },
+                            "count": {
+                                "name": "Count",
+                                "desc": "Number of entries to get."
+                            },
+                            "offset": {
+                                "name": "Offset",
+                                "desc": "Offset from the first entry (top rank) to start the count from. Default is 0."
+                            }
+                        }
+                    },
+                    "leaderboard-get-player-entry-async": {
+                        "list-name": "Get Player Entry Async",
+                        "display-text": "Get Player Entry Async {0}",
+                        "description": "Gets the player's entry in the leaderboard.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            }
+                        }
+                    },
+                    "leaderboard-get-entry-count-async": {
+                        "list-name": "Get Entry Count Async",
+                        "display-text": "Get Entry Count Async {0}",
+                        "description": "Gets the total number of entries in the leaderboard.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            }
+                        }
+                    },
+                    "leaderboard-get-connected-players-entries-async": {
+                        "list-name": "Get Connected Players Entries Async",
+                        "display-text": "Get Connected Players Entries Async {0} {1} {2}",
+                        "description": "Gets a list of leaderboard entries of connected players in the leaderboard.",
+                        "params": {
+                            "name": {
+                                "name": "Name",
+                                "desc": "Name of the leaderboard."
+                            },
+                            "count": {
+                                "name": "Count",
+                                "desc": "Number of entries to get."
+                            },
+                            "offset": {
+                                "name": "Offset",
+                                "desc": "Offset from the first entry (top rank) to start the count from. Default is 0."
+                            }
+                        }
+                    },
+                    "player-get-data-async": {
+                        "list-name": "Get Data Async",
+                        "display-text": "Get Data Async {0}",
+                        "description": "Gets the game data with the specific keys from the platform's storage.",
+                        "params": {
+                            "keys": {
+                                "name": "Keys",
+                                "desc": "Array of keys for the data to get."
+                            }
+                        }
+                    },
+                    "player-set-data-async": {
+                        "list-name": "Set Data Async",
+                        "display-text": "Set Data Async {0}",
+                        "description": "Uploads game data to the platform's storage. Max size is 1MB.",
+                        "params": {
+                            "data": {
+                                "name": "Data",
+                                "desc": "Key-value pairs of the data to upload. Nullable values will remove the data."
+                            }
+                        }
+                    },
+                    "player-get-connected-players-async": {
+                        "list-name": "Get Connected Players Async",
+                        "display-text": "Get Connected Players Async {0}",
+                        "description": "Gets the friends of the player who have also played this game before.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Options for the friends to get."
+                            }
+                        }
+                    },
+                    "player-get-signed-player-info-async": {
+                        "list-name": "Get Signed Player Info Async",
+                        "display-text": "Get Signed Player Info Async",
+                        "description": "Gets a signed player object that includes the player ID and signature for validation. This can be used to send something to a backend server for validation, such as game or purchase data."
+                    },
+                    "session-get-entry-point-async": {
+                        "list-name": "Get Entry Point Async",
+                        "display-text": "Get Entry Point Async",
+                        "description": "Gets the entry point of where the game started from."
+                    },
+                    "session-set-session-data": {
+                        "list-name": "Set Session Data",
+                        "display-text": "Set Session Data {0}",
+                        "description": "Sets the data for this session. This is not persistent and is only used to populate webhook events.",
+                        "params": {
+                            "data": {
+                                "name": "Data",
+                                "desc": "Data to set."
+                            }
+                        }
+                    },
                     "show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",
@@ -137,6 +629,102 @@
                     }
                 },
                 "expressions": {
+                    "context-id": {
+                        "description": "Returns the ID of the current context, if one exists. Otherwise returns null.",
+                        "translated-name": "Context ID"
+                    },
+                    "context-share-result": {
+                        "description": "Returns the number of friends the content was shared with.",
+                        "translated-name": "Context Share Result"
+                    },
+                    "iap-enabled": {
+                        "description": "Returns whether or not IAP is currently enabled. 0 for false, 1 for true.",
+                        "translated-name": "Is IAP Enabled"
+                    },
+                    "iap-catalog": {
+                        "description": "Returns a JSON string with the product catalog. Returns an empty string if no purchases are available.",
+                        "translated-name": "Product Catalog"
+                    },
+                    "iap-purchases": {
+                        "description": "Returns a JSON string with the purchases the player has made.",
+                        "translated-name": "Purchases"
+                    },
+                    "iap-purchase-receipt": {
+                        "description": "Returns a JSON string with the purchase receipt for the most recent purchase.",
+                        "translated-name": "Purchase Receipt"
+                    },
+                    "current-leaderboard": {
+                        "description": "Returns a JSON string with the current leaderboard.",
+                        "translated-name": "Current Leaderboard"
+                    },
+                    "leaderboard-send-result": {
+                        "description": "Returns a JSON string with the entry returned from SendEntryAsync.",
+                        "translated-name": "Leaderboard Send Result"
+                    },
+                    "leaderboard-entries": {
+                        "description": "Returns a JSON string with the entries returned from GetEntriesAsync.",
+                        "translated-name": "Leaderboard Entries"
+                    },
+                    "leaderboard-player-entry": {
+                        "description": "Returns a JSON string with the player's entry in the given leaderboard.",
+                        "translated-name": "Player Entry"
+                    },
+                    "leaderboard-entry-count": {
+                        "description": "Returns the number of entries in the given leaderboard.",
+                        "translated-name": "Entry Count"
+                    },
+                    "leaderboard-connected-players-entries": {
+                        "description": "Returns a JSON string with the entries returned from GetConnectedPlayersEntriesAsync.",
+                        "translated-name": "Connected Players Entries"
+                    },
+                    "player-id": {
+                        "description": "Returns the player's ID.",
+                        "translated-name": "Player ID"
+                    },
+                    "player-name": {
+                        "description": "Returns the player's name.",
+                        "translated-name": "Player Name"
+                    },
+                    "player-photo": {
+                        "description": "Returns the player's photo.",
+                        "translated-name": "Player Photo"
+                    },
+                    "player-is-first-play": {
+                        "description": "Returns whether or not this is the first time the player has played this game. 0 for false, 1 for true.",
+                        "translated-name": "Is First Play"
+                    },
+                    "player-data": {
+                        "description": "Returns a JSON string with the player's saved data on the current platform.",
+                        "translated-name": "Player Data"
+                    },
+                    "player-connected-players": {
+                        "description": "Returns a JSON string with an array of the player's connections that play this game.",
+                        "translated-name": "Connected Players"
+                    },
+                    "player-signed-info": {
+                        "description": "Returns a JSON string with the signed info for the player.",
+                        "translated-name": "Player Signed Info"
+                    },
+                    "entry-point-data": {
+                        "description": "Returns a JSON string with the entry point data for the current session.",
+                        "translated-name": "Entry Point Data"
+                    },
+                    "entry-point": {
+                        "description": "Returns a string with the entry point for the current session.",
+                        "translated-name": "Entry Point"
+                    },
+                    "locale": {
+                        "description": "Returns a string with the player's locale.",
+                        "translated-name": "Locale"
+                    },
+                    "traffic-source": {
+                        "description": "Returns a JSON string with the URL parameters attached to the game.",
+                        "translated-name": "Traffic Source"
+                    },
+                    "error-status": {
+                        "description": "Returns a JSON string with the error that was thrown last by the SDK.",
+                        "translated-name": "Error Status"
+                    }
                 }
             }
         }
