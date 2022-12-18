@@ -97,7 +97,6 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         ////////////////////////////////////////////
         this.AddDOMMessageHandler("iap_set_enabled", enabled => {
             this._isIAPEnabled = enabled;
-            this.Trigger(C3.Plugins.wortal.Cnds.IAPEnabledSet);
         });
 
         this.AddDOMMessageHandler("iap_get_catalog_callback", catalog => {

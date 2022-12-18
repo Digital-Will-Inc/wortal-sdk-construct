@@ -215,12 +215,6 @@
     "iap": {
         "conditions": [
             {
-                "id": "iap-enabled-set",
-                "scriptName": "IAPEnabledSet",
-                "highlight": false,
-                "isTrigger": true
-            },
-            {
                 "id": "iap-get-catalog-callback",
                 "scriptName": "IAPGetCatalogCallback",
                 "highlight": false,

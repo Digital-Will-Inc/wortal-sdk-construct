@@ -49,10 +49,6 @@ self.C3.Plugins.wortal.Cnds =
     ////////////////////////////////////////////
     // In-App Purchasing API
     ////////////////////////////////////////////
-    IAPEnabledSet() {
-        return true;
-    },
-
     IAPGetCatalogCallback() {
         return true;
     },
