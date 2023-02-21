@@ -150,6 +150,11 @@
                         "display-text": "Error Callback",
                         "description": "Called when an async SDK function has been rejected. Contains the error message thrown by the SDK."
                     },
+                    "pause-callback": {
+                        "list-name": "Pause Callback",
+                        "display-text": "Pause Callback",
+                        "description": "Called when the platform SDK has fired a pause event."
+                    },
                     "on-before-ad": {
                         "list-name": "On Before Ad",
                         "display-text": "On Before Ad",

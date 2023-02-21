@@ -13,6 +13,8 @@
             this.AddRuntimeMessageHandlers([
                 ["wortal-sdk", data => this._WortalSDK(data)]
             ]);
+
+            window.Wortal.onPause(() => this.PostToRuntime("pause_callback"));
         }
 
         _WortalSDK(data) {

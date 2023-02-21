@@ -216,6 +216,10 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             this._errorStatus = error;
             this.Trigger(C3.Plugins.wortal.Cnds.ErrorCallback);
         });
+
+        this.AddDOMMessageHandler("pause_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.PauseCallback);
+        });
 	}
 
 	Release()
