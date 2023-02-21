@@ -569,6 +569,12 @@
                 "highlight": true,
                 "isTrigger": true
             },
+            {
+                "id": "pause-callback",
+                "scriptName": "PauseCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
 			{
 				"id": "on-before-ad",
 				"scriptName": "OnBeforeAd",

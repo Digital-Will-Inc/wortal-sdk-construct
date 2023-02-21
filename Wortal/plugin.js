@@ -45,7 +45,7 @@ const PLUGIN_CLASS = SDK.Plugins.wortal = class WortalPlugin extends SDK.IPlugin
             "c3runtime/wortal-session.js"
         ]);
 
-        this._info.AddRemoteScriptDependency("https://cdn.html5gameportal.com/wortal-sdk/wortal-core-1.2.0.js");
+        this._info.AddRemoteScriptDependency("https://storage.googleapis.com/html5gameportal.com/wortal-sdk/wortal-core-1.3.0.js");
 
 		SDK.Lang.PushContext(".properties");
 
