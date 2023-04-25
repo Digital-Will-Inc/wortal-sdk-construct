@@ -19,6 +19,7 @@
                 this._GetEntryPointData();
                 this._GetLocale();
                 this._GetTrafficSource();
+                this._GetPlatform();
             }, 1000);
         };
 
@@ -66,6 +67,11 @@
         _SetSessionData(data) {
             window.Wortal.session.setSessionData(JSON.parse(data));
         };
+
+        _GetPlatform() {
+            const platform = window.Wortal.session.getPlatform();
+            this.PostToRuntime("session_set_platform", platform);
+        }
     }
 
     self.RuntimeInterface.AddDOMHandlerClass(HANDLER_CLASS);

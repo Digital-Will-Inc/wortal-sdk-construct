@@ -24,6 +24,12 @@
                 "scriptName": "AdViewedCallback",
                 "highlight": true,
                 "isTrigger": true
+            },
+            {
+                "id": "ads-no-fill-callback",
+                "scriptName": "AdNoFillCallback",
+                "highlight": true,
+                "isTrigger": true
             }
         ],
         "actions": [
@@ -122,8 +128,26 @@
                 "isTrigger": true
             },
             {
+                "id": "context-type-set",
+                "scriptName": "ContextTypeSet",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-get-players-callback",
+                "scriptName": "ContextGetPlayersCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
                 "id": "context-share-callback",
                 "scriptName": "ContextShareCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-share-link-callback",
+                "scriptName": "ContextShareLinkCallback",
                 "highlight": false,
                 "isTrigger": true
             },
@@ -159,8 +183,26 @@
                 "highlight": false
             },
             {
+                "id": "context-get-type",
+                "scriptName": "ContextGetType",
+                "highlight": false
+            },
+            {
+                "id": "context-get-players-async",
+                "scriptName": "ContextGetPlayersAsync",
+                "highlight": false
+            },
+            {
                 "id": "context-share-async",
                 "scriptName": "ContextShareAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "context-share-link-async",
+                "scriptName": "ContextShareLinkAsync",
                 "highlight": false,
                 "params": [
                     { "id": "payload", "type": "string" }
@@ -203,6 +245,16 @@
             {
                 "id": "context-id",
                 "expressionName": "ContextID",
+                "returnType": "string"
+            },
+            {
+                "id": "context-type",
+                "expressionName": "ContextType",
+                "returnType": "string"
+            },
+            {
+                "id": "context-players",
+                "expressionName": "ContextPlayers",
                 "returnType": "string"
             },
             {
@@ -433,6 +485,12 @@
                 "isTrigger": true
             },
             {
+                "id": "player-flush-data-callback",
+                "scriptName": "PlayerFlushDataCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
                 "id": "player-get-connected-players-callback",
                 "scriptName": "PlayerGetConnectedPlayersCallback",
                 "highlight": false,
@@ -441,6 +499,30 @@
             {
                 "id": "player-get-signed-player-info-callback",
                 "scriptName": "PlayerGetSignedPlayerInfoCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-get-asid-callback",
+                "scriptName": "PlayerGetASIDCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-get-signed-asid-callback",
+                "scriptName": "PlayerGetSignedASIDCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-can-subscribe-bot-callback",
+                "scriptName": "PlayerCanSubscribeBotCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "player-subscribe-bot-callback",
+                "scriptName": "PlayerSubscribeBotCallback",
                 "highlight": false,
                 "isTrigger": true
             }
@@ -463,6 +545,11 @@
                 ]
             },
             {
+                "id": "player-flush-data-async",
+                "scriptName": "PlayerFlushDataAsync",
+                "highlight": false
+            },
+            {
                 "id": "player-get-connected-players-async",
                 "scriptName": "PlayerGetConnectedPlayersAsync",
                 "highlight": false,
@@ -473,6 +560,26 @@
             {
                 "id": "player-get-signed-player-info-async",
                 "scriptName": "PlayerGetSignedPlayerInfoAsync",
+                "highlight": false
+            },
+            {
+                "id": "player-get-asid-async",
+                "scriptName": "PlayerGetASIDAsync",
+                "highlight": false
+            },
+            {
+                "id": "player-get-signed-asid-async",
+                "scriptName": "PlayerGetASIDAsync",
+                "highlight": false
+            },
+            {
+                "id": "player-can-subscribe-bot-async",
+                "scriptName": "PlayerCanSubscribeBotAsync",
+                "highlight": false
+            },
+            {
+                "id": "player-subscribe-bot-async",
+                "scriptName": "PlayerSubscribeBotAsync",
                 "highlight": false
             }
         ],
@@ -511,6 +618,21 @@
                 "id": "player-signed-info",
                 "expressionName": "PlayerSignedInfo",
                 "returnType": "string"
+            },
+            {
+                "id": "player-asid",
+                "expressionName": "PlayerASID",
+                "returnType": "string"
+            },
+            {
+                "id": "player-signed-asid",
+                "expressionName": "PlayerSignedASID",
+                "returnType": "string"
+            },
+            {
+                "id": "player-can-subscribe-bot",
+                "expressionName": "PlayerCanSubscribeBot",
+                "returnType": "number"
             }
         ]
     },
@@ -557,6 +679,11 @@
             {
                 "id": "traffic-source",
                 "expressionName": "TrafficSource",
+                "returnType": "string"
+            },
+            {
+                "id": "session-platform",
+                "expressionName": "SessionPlatform",
                 "returnType": "string"
             }
         ]

@@ -19,6 +19,10 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    AdNoFillCallback() {
+        return true;
+    },
+
     ////////////////////////////////////////////
     // Context API
     ////////////////////////////////////////////
@@ -26,7 +30,19 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    ContextTypeSet() {
+        return true;
+    },
+
+    ContextGetPlayersCallback() {
+        return true;
+    },
+
     ContextShareCallback() {
+        return true;
+    },
+
+    ContextShareLinkCallback() {
         return true;
     },
 
@@ -103,11 +119,31 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    PlayerFlushDataCallback() {
+        return true;
+    },
+
     PlayerGetConnectedPlayersCallback() {
         return true;
     },
 
     PlayerGetSignedPlayerInfoCallback() {
+        return true;
+    },
+
+    PlayerGetASIDCallback() {
+        return true;
+    },
+
+    PlayerGetSignedASIDCallback() {
+        return true;
+    },
+
+    PlayerCanSubscribeBotCallback() {
+        return true;
+    },
+
+    PlayerSubscribeBotCallback() {
         return true;
     },
 

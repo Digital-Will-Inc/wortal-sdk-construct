@@ -72,8 +72,22 @@ self.C3.Plugins.wortal.Acts =
         this.WortalContext('context_get_id', {});
     },
 
+    ContextGetType() {
+        this.WortalContext('context_get_type', {});
+    },
+
+    ContextGetPlayersAsync() {
+        this.WortalContext('context_get_players', {});
+    },
+
     ContextShareAsync(payload) {
         this.WortalContext('context_share', {
+            payload: payload,
+        });
+    },
+
+    ContextShareLinkAsync(payload) {
+        this.WortalContext('context_share_link', {
             payload: payload,
         });
     },
@@ -185,6 +199,10 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
+    PlayerFlushDataAsync() {
+        this.WortalPlayer('player_flush_data', {});
+    },
+
     PlayerGetConnectedPlayersAsync(payload) {
         this.WortalPlayer('player_get_connected_players', {
             payload: payload,
@@ -195,17 +213,27 @@ self.C3.Plugins.wortal.Acts =
         this.WortalPlayer('player_get_signed_player_info', {});
     },
 
+    PlayerGetASIDAsync() {
+        this.WortalPlayer('player_get_asid', {});
+    },
+
+    PlayerGetSignedASIDAsync() {
+        this.WortalPlayer('player_get_signed_asid', {});
+    },
+
+    PlayerCanSubscribeBotAsync() {
+        this.WortalPlayer('player_can_subscribe_bot', {});
+    },
+
+    PlayerSubscribeBotAsync() {
+        this.WortalPlayer('player_subscribe_bot', {});
+    },
+
     ////////////////////////////////////////////
     // Session API
     ////////////////////////////////////////////
     SessionGetEntryPointAsync() {
         this.WortalSession('session_get_entry_point', {});
-    },
-
-    SessionSetSessionData(data) {
-        this.WortalSession('session_set_data', {
-            data: data,
-        });
     },
 
     ////////////////////////////////////////////
