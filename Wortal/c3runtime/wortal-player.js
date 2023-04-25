@@ -5,8 +5,13 @@
     const EVENT = {
         GET_DATA: "player_get_data",
         SET_DATA: "player_set_data",
+        FLUSH_DATA: "player_flush_data",
         GET_CONNECTED_PLAYERS: "player_get_connected_players",
         GET_SIGNED_PLAYER_INFO: "player_get_signed_player_info",
+        GET_ASID: "player_get_asid",
+        GET_SIGNED_ASID: "player_get_signed_asid",
+        CAN_SUBSCRIBE_BOT: "player_can_subscribe_bot",
+        SUBSCRIBE_BOT: "player_subscribe_bot",
     };
 
     const HANDLER_CLASS = class WortalPlayerDOMHandler extends self.DOMHandler {
@@ -36,11 +41,26 @@
                 case EVENT.SET_DATA:
                     this._SetDataAsync(args.data);
                     break;
+                case EVENT.FLUSH_DATA:
+                    this._FlushDataAsync();
+                    break;
                 case EVENT.GET_CONNECTED_PLAYERS:
                     this._GetConnectedPlayersAsync(args.payload);
                     break;
                 case EVENT.GET_SIGNED_PLAYER_INFO:
                     this._GetSignedPlayerInfo();
+                    break;
+                case EVENT.GET_ASID:
+                    this._GetASIDAsync();
+                    break;
+                case EVENT.GET_SIGNED_ASID:
+                    this._GetSignedASIDAsync();
+                    break;
+                case EVENT.CAN_SUBSCRIBE_BOT:
+                    this._CanSubscribeBotAsync();
+                    break;
+                case EVENT.SUBSCRIBE_BOT:
+                    this._SubscribeBotAsync();
                     break;
                 default:
                     console.warn("[WortalPlayer] Received invalid event: " + event);
@@ -106,6 +126,16 @@
                 });
         }
 
+        _FlushDataAsync() {
+            window.Wortal.player.flushDataAsync()
+                .then(() => {
+                    this.PostToRuntime("player_flush_data_callback");
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
+        }
+
         _GetConnectedPlayersAsync(payload) {
             let payloadObj;
             if (payload) {
@@ -124,6 +154,46 @@
             window.Wortal.player.getSignedPlayerInfoAsync()
                 .then(info => {
                     this.PostToRuntime("player_get_signed_player_info_callback", JSON.stringify(info));
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
+        }
+
+        _GetASIDAsync() {
+            window.Wortal.player.getASIDAsync()
+                .then(asid => {
+                    this.PostToRuntime("player_get_asid_callback", asid);
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
+        }
+
+        _GetSignedASIDAsync() {
+            window.Wortal.player.getSignedASIDAsync()
+                .then(signedASID => {
+                    this.PostToRuntime("player_get_signed_asid_callback", JSON.stringify(signedASID));
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
+        }
+
+        _CanSubscribeBotAsync() {
+            window.Wortal.player.canSubscribeBotAsync()
+                .then(canSubscribe => {
+                    this.PostToRuntime("player_can_subscribe_bot_callback", canSubscribe);
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
+        }
+
+        _SubscribeBotAsync() {
+            window.Wortal.player.subscribeBotAsync()
+                .then(() => {
+                    this.PostToRuntime("player_subscribe_bot_callback");
                 })
                 .catch(error => {
                     this.PostToRuntime("error_callback", JSON.stringify(error));

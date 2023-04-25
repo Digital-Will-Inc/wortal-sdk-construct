@@ -12,7 +12,7 @@ const SDK = self.SDK;
 const PLUGIN_ID = "wortal";
 ////////////////////////////////////////////
 
-const PLUGIN_VERSION = "2.0.0";
+const PLUGIN_VERSION = "2.2.0";
 const PLUGIN_CATEGORY = "general";
 
 const PLUGIN_CLASS = SDK.Plugins.wortal = class WortalPlugin extends SDK.IPluginBase
@@ -20,6 +20,8 @@ const PLUGIN_CLASS = SDK.Plugins.wortal = class WortalPlugin extends SDK.IPlugin
 	constructor()
 	{
 		super(PLUGIN_ID);
+
+        this._info.AddRemoteScriptDependency("https://storage.googleapis.com/html5gameportal.com/wortal-sdk/wortal-core-1.4.0.js");
 
 		SDK.Lang.PushContext("plugins." + PLUGIN_ID.toLowerCase());
 
@@ -44,8 +46,6 @@ const PLUGIN_CLASS = SDK.Plugins.wortal = class WortalPlugin extends SDK.IPlugin
             "c3runtime/wortal-player.js",
             "c3runtime/wortal-session.js"
         ]);
-
-        this._info.AddRemoteScriptDependency("https://storage.googleapis.com/html5gameportal.com/wortal-sdk/wortal-core-1.3.0.js");
 
 		SDK.Lang.PushContext(".properties");
 

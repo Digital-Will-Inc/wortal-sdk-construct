@@ -7,6 +7,14 @@ self.C3.Plugins.wortal.Exps =
         return this._contextId;
     },
 
+    ContextType() {
+        return this._contextType;
+    },
+
+    ContextPlayers() {
+        return this._contextPlayers;
+    },
+
     ContextShareResult() {
         return this._shareResult;
     },
@@ -88,6 +96,18 @@ self.C3.Plugins.wortal.Exps =
         return this._playerSignedInfo;
     },
 
+    PlayerASID() {
+        return this._playerASID;
+    },
+
+    PlayerSignedASID() {
+        return this._playerSignedASID;
+    },
+
+    PlayerCanSubscribeBot() {
+        return this._playerCanSubscribeBot ? 1 : 0;
+    },
+
     ////////////////////////////////////////////
     // Session API
     ////////////////////////////////////////////
@@ -105,6 +125,10 @@ self.C3.Plugins.wortal.Exps =
 
     TrafficSource() {
         return this._trafficSource;
+    },
+
+    SessionPlatform() {
+        return this._sessionPlatform;
     },
 
     ////////////////////////////////////////////

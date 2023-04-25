@@ -35,7 +35,8 @@
         _ShowInterstitial(placement, description) {
             window.Wortal.ads.showInterstitial(placement, description,
                 () => this.PostToRuntime("before_ad_callback"),
-                () => this.PostToRuntime("after_ad_callback"));
+                () => this.PostToRuntime("after_ad_callback"),
+                () => this.PostToRuntime("ad_no_fill_callback"));
         };
 
         _ShowRewarded(description) {
@@ -43,7 +44,8 @@
                 () => this.PostToRuntime("before_ad_callback"),
                 () => this.PostToRuntime("after_ad_callback"),
                 () => this.PostToRuntime("ad_dismissed_callback"),
-                () => this.PostToRuntime("ad_viewed_callback"));
+                () => this.PostToRuntime("ad_viewed_callback"),
+                () => this.PostToRuntime("ad_no_fill_callback"));
         };
     }
 
