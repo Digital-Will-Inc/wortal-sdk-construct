@@ -236,6 +236,12 @@ self.C3.Plugins.wortal.Acts =
         this.WortalSession('session_get_entry_point', {});
     },
 
+    SessionSetSessionData(data) {
+        this.WortalSession('session_set_data', {
+            data: data,
+        });
+    },
+
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
