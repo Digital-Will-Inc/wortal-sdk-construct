@@ -65,6 +65,32 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
+    AnalyticsLogSocialInvite(placement) {
+        this.WortalAnalytics('analytics_log_social_invite', {
+            placement: placement,
+        });
+    },
+
+    AnalyticsLogSocialShare(placement) {
+        this.WortalAnalytics('analytics_log_social_share', {
+            placement: placement,
+        });
+    },
+
+    AnalyticsLogPurchase(productID, details) {
+        this.WortalAnalytics('analytics_log_purchase', {
+            productID: productID,
+            details: details,
+        });
+    },
+
+    AnalyticsLogPurchaseSubscription(productID, details) {
+        this.WortalAnalytics('analytics_log_purchase_subscription', {
+            productID: productID,
+            details: details,
+        });
+    },
+
     ////////////////////////////////////////////
     // Context API
     ////////////////////////////////////////////
@@ -78,6 +104,12 @@ self.C3.Plugins.wortal.Acts =
 
     ContextGetPlayersAsync() {
         this.WortalContext('context_get_players', {});
+    },
+
+    ContextInviteAsync(payload) {
+        this.WortalContext('context_invite', {
+            payload: payload,
+        });
     },
 
     ContextShareAsync(payload) {
@@ -113,6 +145,13 @@ self.C3.Plugins.wortal.Acts =
     ContextCreateAsync(playerId) {
         this.WortalContext('context_create', {
             playerId: playerId,
+        });
+    },
+
+    ContextIsSizeBetween(min, max) {
+        return this.WortalContext('context_is_size_between', {
+            min: min,
+            max: max,
         });
     },
 
@@ -185,6 +224,31 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // Notifications API
+    ////////////////////////////////////////////
+    NotificationsScheduleAsync(payload) {
+        this.WortalNotifications('notifications_schedule', {
+            payload: payload,
+        });
+    },
+
+    NotificationsGetHistoryAsync() {
+        this.WortalNotifications('notifications_get_history', {});
+    },
+
+    NotificationsCancelAsync(id) {
+        this.WortalNotifications('notifications_cancel', {
+            id: id,
+        });
+    },
+
+    NotificationsCancelAllAsync(label) {
+        this.WortalNotifications('notifications_cancel_all', {
+            label: label,
+        });
+    },
+
+    ////////////////////////////////////////////
     // Player API
     ////////////////////////////////////////////
     PlayerGetDataAsync(keys) {
@@ -249,6 +313,14 @@ self.C3.Plugins.wortal.Acts =
         this.WortalSDK('set_loading_progress', {
             value: value
         });
+    },
+
+    PerformHapticFeedbackAsync() {
+        this.WortalSDK('perform_haptic_feedback', {});
+    },
+
+    GetSupportedAPIs() {
+        this.WortalSDK('get_supported_apis', {});
     },
 
     ///////////////////////////////////////////////////////////////////////////////

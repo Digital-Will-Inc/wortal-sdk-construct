@@ -115,6 +115,40 @@
                     { "id": "decision", "type": "string" },
                     { "id": "choice", "type": "string" }
                 ]
+            },
+            {
+                "id": "analytics-log-social-invite",
+                "scriptName": "AnalyticsLogSocialInvite",
+                "highlight": false,
+                "params": [
+                    { "id": "placement", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-social-share",
+                "scriptName": "AnalyticsLogSocialShare",
+                "highlight": false,
+                "params": [
+                    { "id": "placement", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-purchase",
+                "scriptName": "AnalyticsLogPurchase",
+                "highlight": false,
+                "params": [
+                    { "id": "productID", "type": "string" },
+                    { "id": "details", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-purchase-subscription",
+                "scriptName": "AnalyticsLogPurchaseSubscription",
+                "highlight": false,
+                "params": [
+                    { "id": "productID", "type": "string" },
+                    { "id": "details", "type": "string" }
+                ]
             }
         ],
         "expressions": []
@@ -136,6 +170,12 @@
             {
                 "id": "context-get-players-callback",
                 "scriptName": "ContextGetPlayersCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "context-invite-callback",
+                "scriptName": "ContextInviteCallback",
                 "highlight": false,
                 "isTrigger": true
             },
@@ -174,6 +214,12 @@
                 "scriptName": "ContextCreateCallback",
                 "highlight": false,
                 "isTrigger": true
+            },
+            {
+                "id": "context-size-response-set",
+                "scriptName": "ContextSizeResponseSet",
+                "highlight": false,
+                "isTrigger": true
             }
         ],
         "actions": [
@@ -191,6 +237,14 @@
                 "id": "context-get-players-async",
                 "scriptName": "ContextGetPlayersAsync",
                 "highlight": false
+            },
+            {
+                "id": "context-invite-async",
+                "scriptName": "ContextInviteAsync",
+                "highlight": true,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
             },
             {
                 "id": "context-share-async",
@@ -239,6 +293,15 @@
                 "params": [
                     { "id": "playerId", "type": "string" }
                 ]
+            },
+            {
+                "id": "context-is-size-between",
+                "scriptName": "ContextIsSizeBetween",
+                "highlight": false,
+                "params": [
+                    { "id": "min", "type": "number" },
+                    { "id": "max", "type": "number" }
+                ]
             }
         ],
         "expressions": [
@@ -261,6 +324,11 @@
                 "id": "context-share-result",
                 "expressionName": "ContextShareResult",
                 "returnType": "number"
+            },
+            {
+                "id": "context-size-response",
+                "expressionName": "ContextSizeResponse",
+                "returnType": "string"
             }
         ]
     },
@@ -467,6 +535,87 @@
                 "id": "leaderboard-connected-players-entries",
                 "expressionName": "LeaderboardConnectedPlayersEntries",
                 "returnType": "string"
+            }
+        ]
+    },
+    "notifications": {
+        "conditions": [
+            {
+                "id": "notifications-schedule-callback",
+                "scriptName": "NotificationsScheduleCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "notifications-get-history-callback",
+                "scriptName": "NotificationsGetHistoryCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "notifications-cancel-callback",
+                "scriptName": "NotificationsCancelCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "notifications-cancel-all-callback",
+                "scriptName": "NotificationsCancelAllCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "notifications-schedule-async",
+                "scriptName": "NotificationsScheduleAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "notifications-get-history-async",
+                "scriptName": "NotificationsGetHistoryAsync",
+                "highlight": false
+            },
+            {
+                "id": "notifications-cancel-async",
+                "scriptName": "NotificationsCancelAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "id", "type": "string" }
+                ]
+            },
+            {
+                "id": "notifications-cancel-all-async",
+                "scriptName": "NotificationsCancelAllAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "label", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "notifications-schedule-result",
+                "expressionName": "NotificationScheduleResult",
+                "returnType": "string"
+            },
+            {
+                "id": "notifications-scheduled",
+                "expressionName": "NotificationsScheduled",
+                "returnType": "string"
+            },
+            {
+                "id": "notifications-cancel-success",
+                "expressionName": "NotificationCancelSuccess",
+                "returnType": "number"
+            },
+            {
+                "id": "notifications-cancel-all-success",
+                "expressionName": "NotificationCancelAllSuccess",
+                "returnType": "number"
             }
         ]
     },
@@ -702,6 +851,18 @@
                 "highlight": true,
                 "isTrigger": true
             },
+            {
+                "id": "haptic-feedback-callback",
+                "scriptName": "HapticFeedbackCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "get-supported-apis-callback",
+                "scriptName": "GetSupportedAPIsCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
 			{
 				"id": "on-before-ad",
 				"scriptName": "OnBeforeAd",
@@ -805,12 +966,27 @@
                 "params": [
                     { "id": "value", "type": "number" }
                 ]
+            },
+            {
+                "id": "perform-haptic-feedback-async",
+                "scriptName": "PerformHapticFeedbackAsync",
+                "highlight": false
+            },
+            {
+                "id": "get-supported-apis",
+                "scriptName": "GetSupportedAPIs",
+                "highlight": false
             }
         ],
 		"expressions": [
             {
                 "id": "error-status",
                 "expressionName": "ErrorStatus",
+                "returnType": "string"
+            },
+            {
+                "id": "supported-apis",
+                "expressionName": "SupportedAPIs",
                 "returnType": "string"
             }
         ]

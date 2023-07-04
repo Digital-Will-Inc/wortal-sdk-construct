@@ -10,12 +10,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 
         // SDK properties
         this._errorStatus = "";
+        this._supportedAPIs = "";
 
         // Context properties
         this._contextId = "";
         this._contextType = "";
         this._contextPlayers = "";
         this._shareResult = 0;
+        this._contextSizeResponse = "";
 
         // IAP properties
         this._isIAPEnabled = false;
@@ -30,6 +32,12 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._leaderboardPlayerEntry = "";
         this._leaderboardEntryCount = 0;
         this._leaderboardConnectedPlayersEntries = "";
+
+        // Notifications properties
+        this._scheduleNotificationResult = "";
+        this._scheduledNotifications = "";
+        this._cancelNotificationSuccess = false;
+        this._cancelAllNotificationSuccess = false;
 
         // Player properties
         this._playerId = "";
@@ -91,6 +99,10 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             this.Trigger(C3.Plugins.wortal.Cnds.ContextGetPlayersCallback);
         });
 
+        this.AddDOMMessageHandler("context_invite_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.ContextInviteCallback);
+        });
+
         this.AddDOMMessageHandler("context_share_callback", shareResult => {
             this._shareResult = shareResult;
             this.Trigger(C3.Plugins.wortal.Cnds.ContextShareCallback);
@@ -114,6 +126,11 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 
         this.AddDOMMessageHandler("context_create_callback", () => {
             this.Trigger(C3.Plugins.wortal.Cnds.ContextCreateCallback);
+        });
+
+        this.AddDOMMessageHandler("context_set_size_response", response => {
+            this._contextSizeResponse = response;
+            this.Trigger(C3.Plugins.wortal.Cnds.ContextSizeResponseSet);
         });
 
         ////////////////////////////////////////////
@@ -173,6 +190,29 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this.AddDOMMessageHandler("leaderboard_get_connected_players_entries_callback", entries => {
             this._leaderboardConnectedPlayersEntries = entries;
             this.Trigger(C3.Plugins.wortal.Cnds.LeaderboardGetConnectedPlayersEntriesCallback);
+        });
+
+        ////////////////////////////////////////////
+        // Notifications API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("notifications_schedule_callback", scheduleResult => {
+            this._scheduleNotificationResult = scheduleResult;
+            this.Trigger(C3.Plugins.wortal.Cnds.NotificationsScheduleCallback);
+        });
+
+        this.AddDOMMessageHandler("notifications_get_history_callback", notifications => {
+            this._scheduledNotifications = notifications;
+            this.Trigger(C3.Plugins.wortal.Cnds.NotificationsGetHistoryCallback);
+        });
+
+        this.AddDOMMessageHandler("notifications_cancel_callback", success => {
+            this._cancelNotificationSuccess = success;
+            this.Trigger(C3.Plugins.wortal.Cnds.NotificationsCancelCallback);
+        });
+
+        this.AddDOMMessageHandler("notifications_cancel_all_callback", success => {
+            this._cancelAllNotificationSuccess = success;
+            this.Trigger(C3.Plugins.wortal.Cnds.NotificationsCancelAllCallback);
         });
 
         ////////////////////////////////////////////
@@ -271,6 +311,15 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this.AddDOMMessageHandler("pause_callback", () => {
             this.Trigger(C3.Plugins.wortal.Cnds.PauseCallback);
         });
+
+        this.AddDOMMessageHandler("haptic_feedback_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.HapticFeedbackCallback);
+        });
+
+        this.AddDOMMessageHandler("supported_apis_callback", result => {
+            this._supportedAPIs = result;
+            this.Trigger(C3.Plugins.wortal.Cnds.GetSupportedAPIsCallback);
+        });
 	}
 
 	Release()
@@ -316,6 +365,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             "args": args,
         }
         this.PostToDOM("wortal-leaderboard", obj);
+    }
+
+    WortalNotifications(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-notifications", obj);
     }
 
     WortalPlayer(event, args) {

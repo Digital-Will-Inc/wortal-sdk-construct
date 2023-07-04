@@ -10,6 +10,10 @@
         LOG_TUTORIAL_START: "analytics_log_tutorial_start",
         LOG_TUTORIAL_END: "analytics_log_tutorial_end",
         LOG_GAME_CHOICE: "analytics_log_game_choice",
+        LOG_SOCIAL_INVITE: "analytics_log_social_invite",
+        LOG_SOCIAL_SHARE: "analytics_log_social_share",
+        LOG_PURCHASE: "analytics_log_purchase",
+        LOG_PURCHASE_SUBSCRIPTION: "analytics_log_purchase_subscription",
     };
 
     const HANDLER_CLASS = class WortalAnalyticsDOMHandler extends self.DOMHandler {
@@ -46,6 +50,18 @@
                 case EVENT.LOG_GAME_CHOICE:
                     this._LogGameChoice(args.decision, args.choice);
                     break;
+                case EVENT.LOG_SOCIAL_INVITE:
+                    this._LogSocialInvite(args.placement);
+                    break;
+                case EVENT.LOG_SOCIAL_SHARE:
+                    this._LogSocialShare(args.placement);
+                    break;
+                case EVENT.LOG_PURCHASE:
+                    this._LogPurchase(args.productID, args.details);
+                    break;
+                case EVENT.LOG_PURCHASE_SUBSCRIPTION:
+                    this._LogPurchaseSubscription(args.productID, args.details);
+                    break;
                 default:
                     console.warn("[WortalAnalytics] Received invalid event: " + event);
                     break;
@@ -80,6 +96,22 @@
 
         _LogGameChoice(decision, choice) {
             window.Wortal.analytics.logGameChoice(decision, choice);
+        };
+
+        _LogSocialInvite(placement) {
+            window.Wortal.analytics.logSocialInvite(placement);
+        };
+
+        _LogSocialShare(placement) {
+            window.Wortal.analytics.logSocialShare(placement);
+        };
+
+        _LogPurchase(productID, details) {
+            window.Wortal.analytics.logPurchase(productID, details);
+        };
+
+        _LogPurchaseSubscription(productID, details) {
+            window.Wortal.analytics.logPurchaseSubscription(productID, details);
         };
     }
 

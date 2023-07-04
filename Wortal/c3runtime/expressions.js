@@ -19,6 +19,10 @@ self.C3.Plugins.wortal.Exps =
         return this._shareResult;
     },
 
+    ContextSizeResponse() {
+        return this._contextSizeResponse;
+    },
+
     ////////////////////////////////////////////
     // In-App Purchasing API
     ////////////////////////////////////////////
@@ -63,6 +67,25 @@ self.C3.Plugins.wortal.Exps =
 
     LeaderboardConnectedPlayersEntries() {
         return this._leaderboardConnectedPlayersEntries;
+    },
+
+    ////////////////////////////////////////////
+    // Notifications API
+    ////////////////////////////////////////////
+    NotificationScheduleResult() {
+        return this._scheduleNotificationResult;
+    },
+
+    NotificationsScheduled() {
+        return this._scheduledNotifications;
+    },
+
+    NotificationCancelSuccess() {
+        return this._cancelNotificationSuccess ? 1 : 0;
+    },
+
+    NotificationCancelAllSuccess() {
+        return this._cancelAllNotificationSuccess ? 1 : 0;
     },
 
     ////////////////////////////////////////////
@@ -136,5 +159,9 @@ self.C3.Plugins.wortal.Exps =
     ////////////////////////////////////////////
     ErrorStatus() {
         return this._errorStatus;
+    },
+
+    SupportedAPIs() {
+        return this._supportedAPIs;
     }
 };

@@ -38,6 +38,10 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    ContextInviteCallback() {
+        return true;
+    },
+
     ContextShareCallback() {
         return true;
     },
@@ -59,6 +63,10 @@ self.C3.Plugins.wortal.Cnds =
     },
 
     ContextCreateCallback() {
+        return true;
+    },
+
+    ContextSizeResponseSet() {
         return true;
     },
 
@@ -105,6 +113,25 @@ self.C3.Plugins.wortal.Cnds =
     },
 
     LeaderboardGetConnectedPlayersEntriesCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
+    // Notifications API
+    ////////////////////////////////////////////
+    NotificationsScheduleCallback() {
+        return true;
+    },
+
+    NotificationsGetHistoryCallback() {
+        return true;
+    },
+
+    NotificationsCancelCallback() {
+        return true;
+    },
+
+    NotificationsCancelAllCallback() {
         return true;
     },
 
@@ -162,6 +189,14 @@ self.C3.Plugins.wortal.Cnds =
     },
 
     PauseCallback() {
+        return true;
+    },
+
+    HapticFeedbackCallback() {
+        return true;
+    },
+
+    GetSupportedAPIsCallback() {
         return true;
     },
 

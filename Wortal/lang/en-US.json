@@ -16,6 +16,7 @@
                     "context": "Context API",
                     "iap": "In-App Purchasing API",
                     "leaderboard": "Leaderboard API",
+                    "notifications": "Notifications API",
                     "player": "Player API",
                     "session": "Session API"
                 },
@@ -60,6 +61,11 @@
                         "display-text": "Get Players Callback",
                         "description": "Called when the context get players promise has resolved."
                     },
+                    "context-invite-callback": {
+                        "list-name": "Invite Callback",
+                        "display-text": "Invite Callback",
+                        "description": "Called when the context invite promise has resolved."
+                    },
                     "context-share-callback": {
                         "list-name": "Share Callback",
                         "display-text": "Share Callback",
@@ -89,6 +95,11 @@
                         "list-name": "Create Callback",
                         "display-text": "Create Callback",
                         "description": "Called when the context create promise has resolved."
+                    },
+                    "context-size-response-set": {
+                        "list-name": "Context Size Response Set",
+                        "display-text": "Context Size Response Set",
+                        "description": "Called when a new context size response has been set."
                     },
                     "iap-get-catalog-callback": {
                         "list-name": "Get Catalog Callback",
@@ -139,6 +150,26 @@
                         "list-name": "Get Connected Players Entries Callback",
                         "display-text": "Get Connected Players Entries Callback",
                         "description": "Called when the leaderboard get connected players entries promise has resolved."
+                    },
+                    "notifications-schedule-callback": {
+                        "list-name": "Schedule Callback",
+                        "display-text": "Schedule Callback",
+                        "description": "Called when the notifications schedule promise has resolved."
+                    },
+                    "notifications-get-history-callback": {
+                        "list-name": "Get History Callback",
+                        "display-text": "Get History Callback",
+                        "description": "Called when the notifications get history promise has resolved."
+                    },
+                    "notifications-cancel-callback": {
+                        "list-name": "Cancel Callback",
+                        "display-text": "Cancel Callback",
+                        "description": "Called when the notifications cancel promise has resolved."
+                    },
+                    "notifications-cancel-all-callback": {
+                        "list-name": "Cancel All Callback",
+                        "display-text": "Cancel All Callback",
+                        "description": "Called when the notifications cancel all promise has resolved."
                     },
                     "player-get-data-callback": {
                         "list-name": "Get Data Callback",
@@ -199,6 +230,16 @@
                         "list-name": "Pause Callback",
                         "display-text": "Pause Callback",
                         "description": "Called when the platform SDK has fired a pause event."
+                    },
+                    "haptic-feedback-callback": {
+                        "list-name": "Haptic Feedback Callback",
+                        "display-text": "Haptic Feedback Callback",
+                        "description": "Called when the haptic feedback event has been requested."
+                    },
+                    "get-supported-apis-callback": {
+                        "list-name": "Get Supported APIs Callback",
+                        "display-text": "Get Supported APIs Callback",
+                        "description": "Called when the supported APIs have been returned."
                     },
                     "on-before-ad": {
                         "list-name": "On Before Ad",
@@ -341,6 +382,58 @@
                             }
                         }
                     },
+                    "analytics-log-social-invite": {
+                        "list-name": "Log Social Invite",
+                        "display-text": "Log Social Invite {0}",
+                        "description": "Logs an invite that the player sent to friends.",
+                        "params": {
+                            "placement": {
+                                "name": "Placement",
+                                "desc": "Name of the placement that the invite was sent from."
+                            }
+                        }
+                    },
+                    "analytics-log-social-share": {
+                        "list-name": "Log Social Share",
+                        "display-text": "Log Social Share {0}",
+                        "description": "Logs a social share that the player sent to friends.",
+                        "params": {
+                            "placement": {
+                                "name": "Placement",
+                                "desc": "Name of the placement that the share was sent from."
+                            }
+                        }
+                    },
+                    "analytics-log-purchase": {
+                        "list-name": "Log Purchase",
+                        "display-text": "Log Purchase {0} {1}",
+                        "description": "Logs a purchase the player made in the game.",
+                        "params": {
+                            "productID": {
+                                "name": "Product ID",
+                                "desc": "ID of the product that was purchased."
+                            },
+                            "details": {
+                                "name": "Details",
+                                "desc": "Additional details about the purchase."
+                            }
+                        }
+                    },
+                    "analytics-log-purchase-subscription": {
+                        "list-name": "Log Purchase Subscription",
+                        "display-text": "Log Purchase Subscription {0} {1}",
+                        "description": "Logs a subscription purchase the player made in the game.",
+                        "params": {
+                            "productID": {
+                                "name": "Product ID",
+                                "desc": "ID of the subscription that was purchased."
+                            },
+                            "details": {
+                                "name": "Details",
+                                "desc": "Additional details about the purchase."
+                            }
+                        }
+                    },
                     "context-get-id": {
                         "list-name": "Get ID",
                         "display-text": "Get ID",
@@ -355,6 +448,17 @@
                         "list-name": "Get Players Async",
                         "display-text": "Get Players Async",
                         "description": "Gets the players in the current context."
+                    },
+                    "context-invite-async": {
+                        "list-name": "Invite Async",
+                        "display-text": "Invite Async {0}",
+                        "description": "Invites friends to play the game.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the invite message."
+                            }
+                        }
                     },
                     "context-share-async": {
                         "list-name": "Share Async",
@@ -419,6 +523,21 @@
                             "playerId": {
                                 "name": "Player ID",
                                 "desc": "ID of player to create a context with."
+                            }
+                        }
+                    },
+                    "context-is-size-between": {
+                        "list-name": "Is Size Between",
+                        "display-text": "Is Size Between {0} {1}",
+                        "description": "Checks if the size of the current context is between two values.",
+                        "params": {
+                            "min": {
+                                "name": "Minimum",
+                                "desc": "Minimum bounds."
+                            },
+                            "max": {
+                                "name": "Maximum",
+                                "desc": "Maximum bounds."
                             }
                         }
                     },
@@ -541,6 +660,44 @@
                             "offset": {
                                 "name": "Offset",
                                 "desc": "Offset from the first entry (top rank) to start the count from. Default is 0."
+                            }
+                        }
+                    },
+                    "notifications-schedule-async": {
+                        "list-name": "Schedule Async",
+                        "display-text": "Schedule Async {0}",
+                        "description": "Schedules a notification to be delivered to the player at the given time.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Payload of the notification."
+                            }
+                        }
+                    },
+                    "notifications-get-history-async": {
+                        "list-name": "Get History Async",
+                        "display-text": "Get History Async",
+                        "description": "Gets a list of all notifications scheduled for the player over the last 30 days."
+                    },
+                    "notifications-cancel-async": {
+                        "list-name": "Cancel Async",
+                        "display-text": "Cancel Async {0}",
+                        "description": "Cancels a notification that has been scheduled for the player.",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID of the notification to cancel."
+                            }
+                        }
+                    },
+                    "notifications-cancel-all-async": {
+                        "list-name": "Cancel All Async",
+                        "display-text": "Cancel All Async {0}",
+                        "description": "Cancels all notifications that have been scheduled for the player.",
+                        "params": {
+                            "label": {
+                                "name": "Label",
+                                "desc": "Label of the notification category to cancel. Leave blank to cancel all notifications."
                             }
                         }
                     },
@@ -722,6 +879,16 @@
                                 "desc": "Percentage value of the loading progress. Range is 0 to 1."
                             }
                         }
+                    },
+                    "perform-haptic-feedback-async": {
+                        "list-name": "Perform Haptic Feedback Async",
+                        "display-text": "Perform Haptic Feedback Async",
+                        "description": "Performs haptic feedback on the device."
+                    },
+                    "get-supported-apis": {
+                        "list-name": "Get Supported APIs",
+                        "display-text": "Get Supported APIs",
+                        "description": "Gets a list of all the APIs supported on the current platform."
                     }
                 },
                 "expressions": {
@@ -740,6 +907,10 @@
                     "context-share-result": {
                         "description": "Returns the number of friends the content was shared with.",
                         "translated-name": "Context Share Result"
+                    },
+                    "context-size-response": {
+                        "description": "Returns the response of a isSizeBetween check.",
+                        "translated-name": "Context Size Response"
                     },
                     "iap-enabled": {
                         "description": "Returns whether or not IAP is currently enabled. 0 for false, 1 for true.",
@@ -780,6 +951,22 @@
                     "leaderboard-connected-players-entries": {
                         "description": "Returns a JSON string with the entries returned from GetConnectedPlayersEntriesAsync.",
                         "translated-name": "Connected Players Entries"
+                    },
+                    "notifications-schedule-result": {
+                        "description": "Returns a JSON string with the result of the ScheduleAsync call.",
+                        "translated-name": "Schedule Result"
+                    },
+                    "notifications-scheduled": {
+                        "description": "Returns a JSON string with an array of the scheduled notifications.",
+                        "translated-name": "Scheduled Notifications"
+                    },
+                    "notifications-cancel-success": {
+                        "description": "Returns whether or not the cancel was successful. 0 for false, 1 for true.",
+                        "translated-name": "Cancel Success"
+                    },
+                    "notifications-cancel-all-success": {
+                        "description": "Returns whether or not the cancel was successful. 0 for false, 1 for true.",
+                        "translated-name": "Cancel All Success"
                     },
                     "player-id": {
                         "description": "Returns the player's ID.",
@@ -844,6 +1031,10 @@
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",
                         "translated-name": "Error Status"
+                    },
+                    "supported-apis": {
+                        "description": "Returns a JSON string with a string array of all the supported APIs for the current platform.",
+                        "translated-name": "Supported APIs"
                     }
                 }
             }
