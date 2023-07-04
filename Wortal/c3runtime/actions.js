@@ -268,6 +268,10 @@ self.C3.Plugins.wortal.Acts =
         this.WortalSDK('perform_haptic_feedback', {});
     },
 
+    GetSupportedAPIs() {
+        this.WortalSDK('get_supported_apis', {});
+    },
+
     ///////////////////////////////////////////////////////////////////////////////
     // V1 FUNCTIONS -- DEPRECATED
     ///////////////////////////////////////////////////////////////////////////////

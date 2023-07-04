@@ -215,6 +215,11 @@
                         "display-text": "Haptic Feedback Callback",
                         "description": "Called when the haptic feedback event has been requested."
                     },
+                    "get-supported-apis-callback": {
+                        "list-name": "Get Supported APIs Callback",
+                        "display-text": "Get Supported APIs Callback",
+                        "description": "Called when the supported APIs have been returned."
+                    },
                     "on-before-ad": {
                         "list-name": "On Before Ad",
                         "display-text": "On Before Ad",
@@ -768,6 +773,11 @@
                         "list-name": "Perform Haptic Feedback Async",
                         "display-text": "Perform Haptic Feedback Async",
                         "description": "Performs haptic feedback on the device."
+                    },
+                    "get-supported-apis": {
+                        "list-name": "Get Supported APIs",
+                        "display-text": "Get Supported APIs",
+                        "description": "Gets a list of all the APIs supported on the current platform."
                     }
                 },
                 "expressions": {
@@ -894,6 +904,10 @@
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",
                         "translated-name": "Error Status"
+                    },
+                    "supported-apis": {
+                        "description": "Returns a JSON string with a string array of all the supported APIs for the current platform.",
+                        "translated-name": "Supported APIs"
                     }
                 }
             }

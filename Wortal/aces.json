@@ -742,6 +742,12 @@
                 "highlight": false,
                 "isTrigger": true
             },
+            {
+                "id": "get-supported-apis-callback",
+                "scriptName": "GetSupportedAPIsCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
 			{
 				"id": "on-before-ad",
 				"scriptName": "OnBeforeAd",
@@ -850,12 +856,22 @@
                 "id": "perform-haptic-feedback-async",
                 "scriptName": "PerformHapticFeedbackAsync",
                 "highlight": false
+            },
+            {
+                "id": "get-supported-apis",
+                "scriptName": "GetSupportedAPIs",
+                "highlight": false
             }
         ],
 		"expressions": [
             {
                 "id": "error-status",
                 "expressionName": "ErrorStatus",
+                "returnType": "string"
+            },
+            {
+                "id": "supported-apis",
+                "expressionName": "SupportedAPIs",
                 "returnType": "string"
             }
         ]

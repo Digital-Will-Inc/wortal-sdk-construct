@@ -140,5 +140,9 @@ self.C3.Plugins.wortal.Exps =
     ////////////////////////////////////////////
     ErrorStatus() {
         return this._errorStatus;
+    },
+
+    SupportedAPIs() {
+        return this._supportedAPIs;
     }
 };
