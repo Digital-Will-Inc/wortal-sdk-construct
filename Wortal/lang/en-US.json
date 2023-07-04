@@ -151,7 +151,7 @@
                         "display-text": "Get Connected Players Entries Callback",
                         "description": "Called when the leaderboard get connected players entries promise has resolved."
                     },
-                    "notifications_schedule_callback": {
+                    "notifications-schedule-callback": {
                         "list-name": "Schedule Callback",
                         "display-text": "Schedule Callback",
                         "description": "Called when the notifications schedule promise has resolved."
