@@ -16,7 +16,9 @@
                 ["wortal-sdk", data => this._WortalSDK(data)]
             ]);
 
-            window.Wortal.onPause(() => this.PostToRuntime("pause_callback"));
+            setTimeout(() => {
+                window.Wortal.onPause(() => this.PostToRuntime("pause_callback"));
+            }, 1000);
         }
 
         _WortalSDK(data) {
