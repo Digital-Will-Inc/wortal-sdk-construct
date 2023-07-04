@@ -9,7 +9,7 @@
 
 ### Loading Progress
 
-Wortal SDK requires reporting of the layout loading progress to be compliant with our partner platforms. Add the following to your event sheet:
+Wortal SDK requires reporting of the layout loading progress. Add the following to your event sheet:
 
 ![Loading Progress](https://github.com/Digital-Will-Inc/wortal-sdk-construct/blob/master/docs/img/construct-loading-progress.jpg)
 
