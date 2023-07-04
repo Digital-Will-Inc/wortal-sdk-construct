@@ -70,6 +70,25 @@ self.C3.Plugins.wortal.Exps =
     },
 
     ////////////////////////////////////////////
+    // Notifications API
+    ////////////////////////////////////////////
+    NotificationScheduleResult() {
+        return this._scheduleNotificationResult;
+    },
+
+    NotificationsScheduled() {
+        return this._scheduledNotifications;
+    },
+
+    NotificationCancelSuccess() {
+        return this._cancelNotificationSuccess ? 1 : 0;
+    },
+
+    NotificationCancelAllSuccess() {
+        return this._cancelAllNotificationSuccess ? 1 : 0;
+    },
+
+    ////////////////////////////////////////////
     // Player API
     ////////////////////////////////////////////
     PlayerID() {

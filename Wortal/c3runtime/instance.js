@@ -33,6 +33,12 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._leaderboardEntryCount = 0;
         this._leaderboardConnectedPlayersEntries = "";
 
+        // Notifications properties
+        this._scheduleNotificationResult = "";
+        this._scheduledNotifications = "";
+        this._cancelNotificationSuccess = false;
+        this._cancelAllNotificationSuccess = false;
+
         // Player properties
         this._playerId = "";
         this._playerName = "";
@@ -187,6 +193,29 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         });
 
         ////////////////////////////////////////////
+        // Notifications API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("notifications_schedule_callback", scheduleResult => {
+            this._scheduleNotificationResult = scheduleResult;
+            this.Trigger(C3.Plugins.wortal.Cnds.NotificationsScheduleCallback);
+        });
+
+        this.AddDOMMessageHandler("notifications_get_history_callback", notifications => {
+            this._scheduledNotifications = notifications;
+            this.Trigger(C3.Plugins.wortal.Cnds.NotificationsGetHistoryCallback);
+        });
+
+        this.AddDOMMessageHandler("notifications_cancel_callback", success => {
+            this._cancelNotificationSuccess = success;
+            this.Trigger(C3.Plugins.wortal.Cnds.NotificationsCancelCallback);
+        });
+
+        this.AddDOMMessageHandler("notifications_cancel_all_callback", success => {
+            this._cancelAllNotificationSuccess = success;
+            this.Trigger(C3.Plugins.wortal.Cnds.NotificationsCancelAllCallback);
+        });
+
+        ////////////////////////////////////////////
         // Player API
         ////////////////////////////////////////////
         this.AddDOMMessageHandler("player_set_id", id => {
@@ -336,6 +365,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             "args": args,
         }
         this.PostToDOM("wortal-leaderboard", obj);
+    }
+
+    WortalNotifications(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-notifications", obj);
     }
 
     WortalPlayer(event, args) {

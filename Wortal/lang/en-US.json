@@ -16,6 +16,7 @@
                     "context": "Context API",
                     "iap": "In-App Purchasing API",
                     "leaderboard": "Leaderboard API",
+                    "notifications": "Notifications API",
                     "player": "Player API",
                     "session": "Session API"
                 },
@@ -149,6 +150,26 @@
                         "list-name": "Get Connected Players Entries Callback",
                         "display-text": "Get Connected Players Entries Callback",
                         "description": "Called when the leaderboard get connected players entries promise has resolved."
+                    },
+                    "notifications_schedule_callback": {
+                        "list-name": "Schedule Callback",
+                        "display-text": "Schedule Callback",
+                        "description": "Called when the notifications schedule promise has resolved."
+                    },
+                    "notifications-get-history-callback": {
+                        "list-name": "Get History Callback",
+                        "display-text": "Get History Callback",
+                        "description": "Called when the notifications get history promise has resolved."
+                    },
+                    "notifications-cancel-callback": {
+                        "list-name": "Cancel Callback",
+                        "display-text": "Cancel Callback",
+                        "description": "Called when the notifications cancel promise has resolved."
+                    },
+                    "notifications-cancel-all-callback": {
+                        "list-name": "Cancel All Callback",
+                        "display-text": "Cancel All Callback",
+                        "description": "Called when the notifications cancel all promise has resolved."
                     },
                     "player-get-data-callback": {
                         "list-name": "Get Data Callback",
@@ -642,6 +663,44 @@
                             }
                         }
                     },
+                    "notifications-schedule-async": {
+                        "list-name": "Schedule Async",
+                        "display-text": "Schedule Async {0}",
+                        "description": "Schedules a notification to be delivered to the player at the given time.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Payload of the notification."
+                            }
+                        }
+                    },
+                    "notifications-get-history-async": {
+                        "list-name": "Get History Async",
+                        "display-text": "Get History Async",
+                        "description": "Gets a list of all notifications scheduled for the player over the last 30 days."
+                    },
+                    "notifications-cancel-async": {
+                        "list-name": "Cancel Async",
+                        "display-text": "Cancel Async {0}",
+                        "description": "Cancels a notification that has been scheduled for the player.",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID of the notification to cancel."
+                            }
+                        }
+                    },
+                    "notifications-cancel-all-async": {
+                        "list-name": "Cancel All Async",
+                        "display-text": "Cancel All Async {0}",
+                        "description": "Cancels all notifications that have been scheduled for the player.",
+                        "params": {
+                            "label": {
+                                "name": "Label",
+                                "desc": "Label of the notification category to cancel. Leave blank to cancel all notifications."
+                            }
+                        }
+                    },
                     "player-get-data-async": {
                         "list-name": "Get Data Async",
                         "display-text": "Get Data Async {0}",
@@ -892,6 +951,22 @@
                     "leaderboard-connected-players-entries": {
                         "description": "Returns a JSON string with the entries returned from GetConnectedPlayersEntriesAsync.",
                         "translated-name": "Connected Players Entries"
+                    },
+                    "notifications-schedule-result": {
+                        "description": "Returns a JSON string with the result of the ScheduleAsync call.",
+                        "translated-name": "Schedule Result"
+                    },
+                    "notifications-scheduled": {
+                        "description": "Returns a JSON string with an array of the scheduled notifications.",
+                        "translated-name": "Scheduled Notifications"
+                    },
+                    "notifications-cancel-success": {
+                        "description": "Returns whether or not the cancel was successful. 0 for false, 1 for true.",
+                        "translated-name": "Cancel Success"
+                    },
+                    "notifications-cancel-all-success": {
+                        "description": "Returns whether or not the cancel was successful. 0 for false, 1 for true.",
+                        "translated-name": "Cancel All Success"
                     },
                     "player-id": {
                         "description": "Returns the player's ID.",

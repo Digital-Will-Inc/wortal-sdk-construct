@@ -538,6 +538,87 @@
             }
         ]
     },
+    "notifications": {
+        "conditions": [
+            {
+                "id": "notifications-schedule-callback",
+                "scriptName": "NotificationsScheduleCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "notifications-get-history-callback",
+                "scriptName": "NotificationsGetHistoryCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "notifications-cancel-callback",
+                "scriptName": "NotificationsCancelCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "notifications-cancel-all-callback",
+                "scriptName": "NotificationsCancelAllCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "notifications-schedule-async",
+                "scriptName": "NotificationsScheduleAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "notifications-get-history-async",
+                "scriptName": "NotificationsGetHistoryAsync",
+                "highlight": false
+            },
+            {
+                "id": "notifications-cancel-async",
+                "scriptName": "NotificationsCancelAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "id", "type": "string" }
+                ]
+            },
+            {
+                "id": "notifications-cancel-all-async",
+                "scriptName": "NotificationsCancelAllAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "label", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "notifications-schedule-result",
+                "expressionName": "NotificationScheduleResult",
+                "returnType": "string"
+            },
+            {
+                "id": "notifications-scheduled",
+                "expressionName": "NotificationsScheduled",
+                "returnType": "string"
+            },
+            {
+                "id": "notifications-cancel-success",
+                "expressionName": "NotificationCancelSuccess",
+                "returnType": "number"
+            },
+            {
+                "id": "notifications-cancel-all-success",
+                "expressionName": "NotificationCancelAllSuccess",
+                "returnType": "number"
+            }
+        ]
+    },
     "player": {
         "conditions": [
             {

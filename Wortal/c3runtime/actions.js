@@ -224,6 +224,31 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // Notifications API
+    ////////////////////////////////////////////
+    NotificationsScheduleAsync(payload) {
+        this.WortalNotifications('notifications_schedule', {
+            payload: payload,
+        });
+    },
+
+    NotificationsGetHistoryAsync() {
+        this.WortalNotifications('notifications_get_history', {});
+    },
+
+    NotificationsCancelAsync(id) {
+        this.WortalNotifications('notifications_cancel', {
+            id: id,
+        });
+    },
+
+    NotificationsCancelAllAsync(label) {
+        this.WortalNotifications('notifications_cancel_all', {
+            label: label,
+        });
+    },
+
+    ////////////////////////////////////////////
     // Player API
     ////////////////////////////////////////////
     PlayerGetDataAsync(keys) {
