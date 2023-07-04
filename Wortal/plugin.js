@@ -43,6 +43,7 @@ const PLUGIN_CLASS = SDK.Plugins.wortal = class WortalPlugin extends SDK.IPlugin
             "c3runtime/wortal-context.js",
             "c3runtime/wortal-iap.js",
             "c3runtime/wortal-leaderboard.js",
+            "c3runtime/wortal-notifications.js",
             "c3runtime/wortal-player.js",
             "c3runtime/wortal-session.js"
         ]);

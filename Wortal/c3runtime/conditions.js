@@ -117,6 +117,25 @@ self.C3.Plugins.wortal.Cnds =
     },
 
     ////////////////////////////////////////////
+    // Notifications API
+    ////////////////////////////////////////////
+    NotificationsScheduleCallback() {
+        return true;
+    },
+
+    NotificationsGetHistoryCallback() {
+        return true;
+    },
+
+    NotificationsCancelCallback() {
+        return true;
+    },
+
+    NotificationsCancelAllCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
     // Player API
     ////////////////////////////////////////////
     PlayerGetDataCallback() {
