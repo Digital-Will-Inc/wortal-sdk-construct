@@ -736,6 +736,12 @@
                 "highlight": true,
                 "isTrigger": true
             },
+            {
+                "id": "haptic-feedback-callback",
+                "scriptName": "HapticFeedbackCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
 			{
 				"id": "on-before-ad",
 				"scriptName": "OnBeforeAd",
@@ -839,6 +845,11 @@
                 "params": [
                     { "id": "value", "type": "number" }
                 ]
+            },
+            {
+                "id": "perform-haptic-feedback-async",
+                "scriptName": "PerformHapticFeedbackAsync",
+                "highlight": false
             }
         ],
 		"expressions": [

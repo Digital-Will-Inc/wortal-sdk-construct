@@ -210,6 +210,11 @@
                         "display-text": "Pause Callback",
                         "description": "Called when the platform SDK has fired a pause event."
                     },
+                    "haptic-feedback-callback": {
+                        "list-name": "Haptic Feedback Callback",
+                        "display-text": "Haptic Feedback Callback",
+                        "description": "Called when the haptic feedback event has been requested."
+                    },
                     "on-before-ad": {
                         "list-name": "On Before Ad",
                         "display-text": "On Before Ad",
@@ -758,6 +763,11 @@
                                 "desc": "Percentage value of the loading progress. Range is 0 to 1."
                             }
                         }
+                    },
+                    "perform-haptic-feedback-async": {
+                        "list-name": "Perform Haptic Feedback Async",
+                        "display-text": "Perform Haptic Feedback Async",
+                        "description": "Performs haptic feedback on the device."
                     }
                 },
                 "expressions": {

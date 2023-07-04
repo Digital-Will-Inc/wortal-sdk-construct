@@ -4,6 +4,7 @@
     const DOM_COMPONENT_ID = "wortal_sdk_DOM";
     const EVENT = {
         SET_LOADING_PROGRESS: "set_loading_progress",
+        PERFORM_HAPTIC_FEEDBACK: "perform_haptic_feedback",
     };
 
     const HANDLER_CLASS = class WortalDOMHandler extends self.DOMHandler {
@@ -24,6 +25,9 @@
                 case EVENT.SET_LOADING_PROGRESS:
                     this._SetLoadingProgress(args.value);
                     break;
+                case EVENT.PERFORM_HAPTIC_FEEDBACK:
+                    this._PerformHapticFeedbackAsync();
+                    break;
                 default:
                     console.error("[WortalSDK] Call to deprecated function made. Please upgrade plugin to v2+");
                     break;
@@ -34,6 +38,16 @@
             if (window.Wortal) {
                 window.Wortal.setLoadingProgress(value * 100);
             }
+        }
+
+        _PerformHapticFeedbackAsync() {
+            window.Wortal.performHapticFeedbackAsync()
+                .then(() => {
+                    this.PostToRuntime("haptic_feedback_callback");
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
         }
     }
 
