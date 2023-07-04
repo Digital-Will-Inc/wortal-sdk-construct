@@ -10,6 +10,7 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 
         // SDK properties
         this._errorStatus = "";
+        this._supportedAPIs = "";
 
         // Context properties
         this._contextId = "";
@@ -284,7 +285,12 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 
         this.AddDOMMessageHandler("haptic_feedback_callback", () => {
             this.Trigger(C3.Plugins.wortal.Cnds.HapticFeedbackCallback);
-        }
+        });
+
+        this.AddDOMMessageHandler("supported_apis_callback", result => {
+            this._supportedAPIs = result;
+            this.Trigger(C3.Plugins.wortal.Cnds.GetSupportedAPIsCallback);
+        });
 	}
 
 	Release()
