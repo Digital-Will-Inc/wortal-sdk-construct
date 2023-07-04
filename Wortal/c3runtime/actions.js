@@ -80,6 +80,12 @@ self.C3.Plugins.wortal.Acts =
         this.WortalContext('context_get_players', {});
     },
 
+    ContextInviteAsync(payload) {
+        this.WortalContext('context_invite', {
+            payload: payload,
+        });
+    },
+
     ContextShareAsync(payload) {
         this.WortalContext('context_share', {
             payload: payload,

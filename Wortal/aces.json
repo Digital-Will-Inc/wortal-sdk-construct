@@ -140,6 +140,12 @@
                 "isTrigger": true
             },
             {
+                "id": "context-invite-callback",
+                "scriptName": "ContextInviteCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
                 "id": "context-share-callback",
                 "scriptName": "ContextShareCallback",
                 "highlight": false,
@@ -197,6 +203,14 @@
                 "id": "context-get-players-async",
                 "scriptName": "ContextGetPlayersAsync",
                 "highlight": false
+            },
+            {
+                "id": "context-invite-async",
+                "scriptName": "ContextInviteAsync",
+                "highlight": true,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
             },
             {
                 "id": "context-share-async",

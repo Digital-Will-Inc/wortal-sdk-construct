@@ -60,6 +60,11 @@
                         "display-text": "Get Players Callback",
                         "description": "Called when the context get players promise has resolved."
                     },
+                    "context-invite-callback": {
+                        "list-name": "Invite Callback",
+                        "display-text": "Invite Callback",
+                        "description": "Called when the context invite promise has resolved."
+                    },
                     "context-share-callback": {
                         "list-name": "Share Callback",
                         "display-text": "Share Callback",
@@ -360,6 +365,17 @@
                         "list-name": "Get Players Async",
                         "display-text": "Get Players Async",
                         "description": "Gets the players in the current context."
+                    },
+                    "context-invite-async": {
+                        "list-name": "Invite Async",
+                        "display-text": "Invite Async {0}",
+                        "description": "Invites friends to play the game.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the invite message."
+                            }
+                        }
                     },
                     "context-share-async": {
                         "list-name": "Share Async",

@@ -92,6 +92,10 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             this.Trigger(C3.Plugins.wortal.Cnds.ContextGetPlayersCallback);
         });
 
+        this.AddDOMMessageHandler("context_invite_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.ContextInviteCallback);
+        });
+
         this.AddDOMMessageHandler("context_share_callback", shareResult => {
             this._shareResult = shareResult;
             this.Trigger(C3.Plugins.wortal.Cnds.ContextShareCallback);
