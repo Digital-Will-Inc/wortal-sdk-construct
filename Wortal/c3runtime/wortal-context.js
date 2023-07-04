@@ -12,6 +12,7 @@
         UPDATE: "context_update",
         SWITCH: "context_switch",
         CREATE: "context_create",
+        SIZE: "context_is_size_between",
     };
 
     const HANDLER_CLASS = class WortalContextDOMHandler extends self.DOMHandler {
@@ -53,6 +54,9 @@
                     break;
                 case EVENT.SWITCH:
                     this._SwitchAsync(args.contextId);
+                    break;
+                case EVENT.SIZE:
+                    this._IsSizeBetween(args.min, args.max);
                     break;
                 default:
                     console.warn("[WortalContext] Received invalid event: " + event);
@@ -138,6 +142,11 @@
                 .catch(error => {
                     this.PostToRuntime("error_callback", JSON.stringify(error));
                 });
+        }
+
+        _IsSizeBetween(min, max) {
+            const response = window.Wortal.context.isSizeBetween(min, max);
+            this.PostToRuntime("context_set_size_response", JSON.stringify(response));
         }
     }
 

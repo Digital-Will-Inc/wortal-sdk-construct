@@ -116,6 +116,13 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
+    ContextIsSizeBetween(min, max) {
+        return this.WortalContext('context_is_size_between', {
+            min: min,
+            max: max,
+        });
+    },
+
     ////////////////////////////////////////////
     // In-App Purchasing API
     ////////////////////////////////////////////

@@ -90,6 +90,11 @@
                         "display-text": "Create Callback",
                         "description": "Called when the context create promise has resolved."
                     },
+                    "context-size-response-set": {
+                        "list-name": "Context Size Response Set",
+                        "display-text": "Context Size Response Set",
+                        "description": "Called when a new context size response has been set."
+                    },
                     "iap-get-catalog-callback": {
                         "list-name": "Get Catalog Callback",
                         "display-text": "Get Catalog Callback",
@@ -422,6 +427,21 @@
                             }
                         }
                     },
+                    "context-is-size-between": {
+                        "list-name": "Is Size Between",
+                        "display-text": "Is Size Between {0} {1}",
+                        "description": "Checks if the size of the current context is between two values.",
+                        "params": {
+                            "min": {
+                                "name": "Minimum",
+                                "desc": "Minimum bounds."
+                            },
+                            "max": {
+                                "name": "Maximum",
+                                "desc": "Maximum bounds."
+                            }
+                        }
+                    },
                     "iap-get-catalog-async": {
                         "list-name": "Get Catalog Async",
                         "display-text": "Get Catalog Async",
@@ -740,6 +760,10 @@
                     "context-share-result": {
                         "description": "Returns the number of friends the content was shared with.",
                         "translated-name": "Context Share Result"
+                    },
+                    "context-size-response": {
+                        "description": "Returns the response of a isSizeBetween check.",
+                        "translated-name": "Context Size Response"
                     },
                     "iap-enabled": {
                         "description": "Returns whether or not IAP is currently enabled. 0 for false, 1 for true.",
