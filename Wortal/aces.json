@@ -115,6 +115,40 @@
                     { "id": "decision", "type": "string" },
                     { "id": "choice", "type": "string" }
                 ]
+            },
+            {
+                "id": "analytics-log-social-invite",
+                "scriptName": "AnalyticsLogSocialInvite",
+                "highlight": false,
+                "params": [
+                    { "id": "placement", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-social-share",
+                "scriptName": "AnalyticsLogSocialShare",
+                "highlight": false,
+                "params": [
+                    { "id": "placement", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-purchase",
+                "scriptName": "AnalyticsLogPurchase",
+                "highlight": false,
+                "params": [
+                    { "id": "productID", "type": "string" },
+                    { "id": "details", "type": "string" }
+                ]
+            },
+            {
+                "id": "analytics-log-purchase-subscription",
+                "scriptName": "AnalyticsLogPurchaseSubscription",
+                "highlight": false,
+                "params": [
+                    { "id": "productID", "type": "string" },
+                    { "id": "details", "type": "string" }
+                ]
             }
         ],
         "expressions": []

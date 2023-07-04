@@ -65,6 +65,32 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
+    AnalyticsLogSocialInvite(placement) {
+        this.WortalAnalytics('analytics_log_social_invite', {
+            placement: placement,
+        });
+    },
+
+    AnalyticsLogSocialShare(placement) {
+        this.WortalAnalytics('analytics_log_social_share', {
+            placement: placement,
+        });
+    },
+
+    AnalyticsLogPurchase(productID, details) {
+        this.WortalAnalytics('analytics_log_purchase', {
+            productID: productID,
+            details: details,
+        });
+    },
+
+    AnalyticsLogPurchaseSubscription(productID, details) {
+        this.WortalAnalytics('analytics_log_purchase_subscription', {
+            productID: productID,
+            details: details,
+        });
+    },
+
     ////////////////////////////////////////////
     // Context API
     ////////////////////////////////////////////
