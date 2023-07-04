@@ -62,6 +62,10 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    ContextSizeResponseSet() {
+        return true;
+    },
+
     ////////////////////////////////////////////
     // In-App Purchasing API
     ////////////////////////////////////////////

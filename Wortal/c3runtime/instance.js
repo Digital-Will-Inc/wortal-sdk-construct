@@ -16,6 +16,7 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._contextType = "";
         this._contextPlayers = "";
         this._shareResult = 0;
+        this._contextSizeResponse = "";
 
         // IAP properties
         this._isIAPEnabled = false;
@@ -114,6 +115,11 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 
         this.AddDOMMessageHandler("context_create_callback", () => {
             this.Trigger(C3.Plugins.wortal.Cnds.ContextCreateCallback);
+        });
+
+        this.AddDOMMessageHandler("context_set_size_response", response => {
+            this._contextSizeResponse = response;
+            this.Trigger(C3.Plugins.wortal.Cnds.ContextSizeResponseSet);
         });
 
         ////////////////////////////////////////////

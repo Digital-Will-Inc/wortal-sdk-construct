@@ -19,6 +19,10 @@ self.C3.Plugins.wortal.Exps =
         return this._shareResult;
     },
 
+    ContextSizeResponse() {
+        return this._contextSizeResponse;
+    },
+
     ////////////////////////////////////////////
     // In-App Purchasing API
     ////////////////////////////////////////////

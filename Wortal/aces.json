@@ -174,6 +174,12 @@
                 "scriptName": "ContextCreateCallback",
                 "highlight": false,
                 "isTrigger": true
+            },
+            {
+                "id": "context-size-response-set",
+                "scriptName": "ContextSizeResponseSet",
+                "highlight": false,
+                "isTrigger": true
             }
         ],
         "actions": [
@@ -239,6 +245,15 @@
                 "params": [
                     { "id": "playerId", "type": "string" }
                 ]
+            },
+            {
+                "id": "context-is-size-between",
+                "scriptName": "ContextIsSizeBetween",
+                "highlight": false,
+                "params": [
+                    { "id": "min", "type": "number" },
+                    { "id": "max", "type": "number" }
+                ]
             }
         ],
         "expressions": [
@@ -261,6 +276,11 @@
                 "id": "context-share-result",
                 "expressionName": "ContextShareResult",
                 "returnType": "number"
+            },
+            {
+                "id": "context-size-response",
+                "expressionName": "ContextSizeResponse",
+                "returnType": "string"
             }
         ]
     },
