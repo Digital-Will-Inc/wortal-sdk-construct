@@ -361,6 +361,58 @@
                             }
                         }
                     },
+                    "analytics-log-social-invite": {
+                        "list-name": "Log Social Invite",
+                        "display-text": "Log Social Invite {0}",
+                        "description": "Logs an invite that the player sent to friends.",
+                        "params": {
+                            "placement": {
+                                "name": "Placement",
+                                "desc": "Name of the placement that the invite was sent from."
+                            }
+                        }
+                    },
+                    "analytics-log-social-share": {
+                        "list-name": "Log Social Share",
+                        "display-text": "Log Social Share {0}",
+                        "description": "Logs a social share that the player sent to friends.",
+                        "params": {
+                            "placement": {
+                                "name": "Placement",
+                                "desc": "Name of the placement that the share was sent from."
+                            }
+                        }
+                    },
+                    "analytics-log-purchase": {
+                        "list-name": "Log Purchase",
+                        "display-text": "Log Purchase {0} {1}",
+                        "description": "Logs a purchase the player made in the game.",
+                        "params": {
+                            "productID": {
+                                "name": "Product ID",
+                                "desc": "ID of the product that was purchased."
+                            },
+                            "details": {
+                                "name": "Details",
+                                "desc": "Additional details about the purchase."
+                            }
+                        }
+                    },
+                    "analytics-log-purchase-subscription": {
+                        "list-name": "Log Purchase Subscription",
+                        "display-text": "Log Purchase Subscription {0} {1}",
+                        "description": "Logs a subscription purchase the player made in the game.",
+                        "params": {
+                            "productID": {
+                                "name": "Product ID",
+                                "desc": "ID of the subscription that was purchased."
+                            },
+                            "details": {
+                                "name": "Details",
+                                "desc": "Additional details about the purchase."
+                            }
+                        }
+                    },
                     "context-get-id": {
                         "list-name": "Get ID",
                         "display-text": "Get ID",
