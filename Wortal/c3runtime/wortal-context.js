@@ -7,6 +7,7 @@
         GET_TYPE: "context_get_type",
         GET_PLAYERS: "context_get_players",
         CHOOSE: "context_choose",
+        INVITE: "context_invite",
         SHARE: "context_share",
         SHARE_LINK: "context_share_link",
         UPDATE: "context_update",
@@ -42,6 +43,9 @@
                     break;
                 case EVENT.CREATE:
                     this._CreateAsync(args.playerId);
+                    break;
+                case EVENT.INVITE:
+                    this._InviteAsync(args.payload);
                     break;
                 case EVENT.SHARE:
                     this._ShareAsync(args.payload);
@@ -82,7 +86,17 @@
                 .catch(error => {
                     this.PostToRuntime("error_callback", JSON.stringify(error));
                 });
-        }
+        };
+
+        _InviteAsync(payload) {
+            window.Wortal.context.inviteAsync(JSON.parse(payload))
+                .then(() => {
+                    this.PostToRuntime("context_invite_callback");
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
+        };
 
         _ShareAsync(payload) {
             window.Wortal.context.shareAsync(JSON.parse(payload))
@@ -102,7 +116,7 @@
                 .catch(error => {
                     this.PostToRuntime("error_callback", JSON.stringify(error));
                 });
-        }
+        };
 
         _UpdateAsync(payload) {
             window.Wortal.context.updateAsync(JSON.parse(payload))
@@ -142,12 +156,12 @@
                 .catch(error => {
                     this.PostToRuntime("error_callback", JSON.stringify(error));
                 });
-        }
+        };
 
         _IsSizeBetween(min, max) {
             const response = window.Wortal.context.isSizeBetween(min, max);
             this.PostToRuntime("context_set_size_response", JSON.stringify(response));
-        }
+        };
     }
 
     self.RuntimeInterface.AddDOMHandlerClass(HANDLER_CLASS);
