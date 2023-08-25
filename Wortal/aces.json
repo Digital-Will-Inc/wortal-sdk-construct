@@ -51,7 +51,13 @@
                 ]
             }
         ],
-        "expressions": []
+        "expressions": [
+            {
+                "id": "ads-is-ad-blocked",
+                "expressionName": "AdBlocked",
+                "returnType": "number"
+            }
+        ]
     },
     "analytics": {
         "conditions": [],
@@ -792,6 +798,18 @@
                 "scriptName": "SessionGetEntryPointCallback",
                 "highlight": false,
                 "isTrigger": true
+            },
+            {
+                "id": "session-on-orientation-change-callback",
+                "scriptName": "SessionOnOrientationChangeCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "session-switch-game-callback",
+                "scriptName": "SessionSwitchGameCallback",
+                "highlight": false,
+                "isTrigger": true
             }
         ],
         "actions": [
@@ -806,6 +824,14 @@
                 "highlight": false,
                 "params": [
                     { "id": "data", "type": "string" }
+                ]
+            },
+            {
+                "id": "session-switch-game-async",
+                "scriptName": "SessionSwitchGameAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "gameID", "type": "string" }
                 ]
             }
         ],
@@ -833,6 +859,16 @@
             {
                 "id": "session-platform",
                 "expressionName": "SessionPlatform",
+                "returnType": "string"
+            },
+            {
+                "id": "session-device",
+                "expressionName": "SessionDevice",
+                "returnType": "string"
+            },
+            {
+                "id": "session-orientation",
+                "expressionName": "SessionOrientation",
                 "returnType": "string"
             }
         ]

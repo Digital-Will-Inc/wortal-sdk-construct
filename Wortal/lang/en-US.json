@@ -222,6 +222,16 @@
                         "display-text": "Get Entry Point Callback",
                         "description": "Called when the session get entry point promise has resolved."
                     },
+                    "session-on-orientation-change-callback": {
+                        "list-name": "On Orientation Change Callback",
+                        "display-text": "On Orientation Change Callback",
+                        "description": "Called when the session on orientation change event has triggered."
+                    },
+                    "session-switch-game-callback": {
+                        "list-name": "Switch Game Callback",
+                        "display-text": "Switch Game Callback",
+                        "description": "Called when the session switch game promise has resolved."
+                    },
                     "tournament-get-current-callback": {
                         "list-name": "Get Current Callback",
                         "display-text": "Get Current Callback",
@@ -811,6 +821,17 @@
                             }
                         }
                     },
+                    "session-switch-game-async": {
+                        "list-name": "Switch Game Async",
+                        "display-text": "Switch Game Async {0}",
+                        "description": "Switches to a different game.",
+                        "params": {
+                            "gameID": {
+                                "name": "Game ID",
+                                "desc": "ID of the game to switch to."
+                            }
+                        }
+                    },
                     "tournament-get-current-async": {
                         "list-name": "Get Current Async",
                         "display-text": "Get Current Async",
@@ -977,6 +998,10 @@
                     }
                 },
                 "expressions": {
+                    "ads-is-ad-blocked": {
+                        "description": "Returns whether or not ads are blocked on the current platform. 0 for false, 1 for true.",
+                        "translated-name": "Is Ad Blocked"
+                    },
                     "context-id": {
                         "description": "Returns the ID of the current context, if one exists. Otherwise returns null.",
                         "translated-name": "Context ID"
@@ -1112,6 +1137,14 @@
                     "session-platform": {
                         "description": "Returns a string with the platform the game is being played on.",
                         "translated-name": "Platform"
+                    },
+                    "session-device": {
+                        "description": "Returns a string with the device the game is being played on.",
+                        "translated-name": "Device"
+                    },
+                    "session-orientation": {
+                        "description": "Returns a string with the orientation of the device the game is being played in.",
+                        "translated-name": "Orientation"
                     },
                     "tournament-current": {
                         "description": "Returns a JSON string with the current tournament.",

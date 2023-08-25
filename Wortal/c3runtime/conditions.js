@@ -181,6 +181,14 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    SessionOnOrientationChangeCallback() {
+        return true;
+    },
+
+    SessionSwitchGameCallback() {
+        return true;
+    },
+
     ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////

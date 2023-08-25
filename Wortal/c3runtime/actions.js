@@ -306,6 +306,12 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
+    SessionSwitchGameAsync(gameID) {
+        this.WortalSession('session_switch_game', {
+            gameID: gameID,
+        });
+    },
+
     ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////

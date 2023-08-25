@@ -12,6 +12,9 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._errorStatus = "";
         this._supportedAPIs = "";
 
+        // Ads properties
+        this._isAdBlocked = false;
+
         // Context properties
         this._contextId = "";
         this._contextType = "";
@@ -57,6 +60,8 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._locale = "";
         this._trafficSource = "";
         this._sessionPlatform = "";
+        this._sessionDevice = "";
+        this._sessionOrientation = "";
 
         // Tournament properties
         this._tournamentCurrent = "";
@@ -66,6 +71,10 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         ////////////////////////////////////////////
         // Ads API
         ////////////////////////////////////////////
+        this.AddDOMMessageHandler("ads_is_ad_blocked", blocked => {
+            this._isAdBlocked = blocked;
+        });
+
         this.AddDOMMessageHandler("before_ad_callback", () => {
             this.Trigger(C3.Plugins.wortal.Cnds.BeforeAdCallback);
         });
@@ -303,6 +312,23 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 
         this.AddDOMMessageHandler("session_set_platform", platform => {
             this._sessionPlatform = platform;
+        });
+
+        this.AddDOMMessageHandler("session_set_device", device => {
+            this._sessionDevice = device;
+        });
+
+        this.AddDOMMessageHandler("session_set_orientation", orientation => {
+            this._sessionOrientation = orientation;
+        });
+
+        this.AddDOMMessageHandler("session_on_orientation_change_callback", orientation => {
+            this._sessionOrientation = orientation;
+            this.Trigger(C3.Plugins.wortal.Cnds.SessionOnOrientationChangeCallback);
+        });
+
+        this.AddDOMMessageHandler("session_switch_game_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.SessionSwitchGameCallback);
         });
 
         ////////////////////////////////////////////
