@@ -18,7 +18,8 @@
                     "leaderboard": "Leaderboard API",
                     "notifications": "Notifications API",
                     "player": "Player API",
-                    "session": "Session API"
+                    "session": "Session API",
+                    "tournament": "Tournament API"
                 },
                 "conditions": {
                     "ads-before-ad-callback": {
@@ -220,6 +221,36 @@
                         "list-name": "Get Entry Point Callback",
                         "display-text": "Get Entry Point Callback",
                         "description": "Called when the session get entry point promise has resolved."
+                    },
+                    "tournament-get-current-callback": {
+                        "list-name": "Get Current Callback",
+                        "display-text": "Get Current Callback",
+                        "description": "Called when the tournament get current promise has resolved."
+                    },
+                    "tournament-get-all-callback": {
+                        "list-name": "Get All Callback",
+                        "display-text": "Get All Callback",
+                        "description": "Called when the tournament get all promise has resolved."
+                    },
+                    "tournament-post-score-callback": {
+                        "list-name": "Post Score Callback",
+                        "display-text": "Post Score Callback",
+                        "description": "Called when the tournament post score promise has resolved."
+                    },
+                    "tournament-create-callback": {
+                        "list-name": "Create Callback",
+                        "display-text": "Create Callback",
+                        "description": "Called when the tournament create promise has resolved."
+                    },
+                    "tournament-share-callback": {
+                        "list-name": "Share Callback",
+                        "display-text": "Share Callback",
+                        "description": "Called when the tournament share promise has resolved."
+                    },
+                    "tournament-join-callback": {
+                        "list-name": "Join Callback",
+                        "display-text": "Join Callback",
+                        "description": "Called when the tournament join promise has resolved."
                     },
                     "error-callback": {
                         "list-name": "Error Callback",
@@ -780,6 +811,60 @@
                             }
                         }
                     },
+                    "tournament-get-current-async": {
+                        "list-name": "Get Current Async",
+                        "display-text": "Get Current Async",
+                        "description": "Gets the tournament the player is currently in."
+                    },
+                    "tournament-get-all-async": {
+                        "list-name": "Get All Async",
+                        "display-text": "Get All Async",
+                        "description": "Gets a list of all tournaments the player is currently in."
+                    },
+                    "tournament-post-score-async": {
+                        "list-name": "Post Score Async",
+                        "display-text": "Post Score Async {0}",
+                        "description": "Posts a score to the tournament.",
+                        "params": {
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score for the entry."
+                            }
+                        }
+                    },
+                    "tournament-create-async": {
+                        "list-name": "Create Async",
+                        "display-text": "Create Async {0}",
+                        "description": "Creates a tournament. ",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Payload to create the tournament with. Will trigger a UI for the player to create."
+                            }
+                        }
+                    },
+                    "tournament-share-async": {
+                        "list-name": "Share Async",
+                        "display-text": "Share Async {0}",
+                        "description": "Shares a tournament to the player's friends. Will trigger a UI for the player to choose which friends to share with.",
+                        "params": {
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Object defining the share message."
+                            }
+                        }
+                    },
+                    "tournament-join-async": {
+                        "list-name": "Join Async",
+                        "display-text": "Join Async {0}",
+                        "description": "Joins a tournament.",
+                        "params": {
+                            "tournamentID": {
+                                "name": "Tournament ID",
+                                "desc": "ID of the tournament to join."
+                            }
+                        }
+                    },
                     "show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",
@@ -1027,6 +1112,18 @@
                     "session-platform": {
                         "description": "Returns a string with the platform the game is being played on.",
                         "translated-name": "Platform"
+                    },
+                    "tournament-current": {
+                        "description": "Returns a JSON string with the current tournament.",
+                        "translated-name": "Current Tournament"
+                    },
+                    "tournament-all": {
+                        "description": "Returns a JSON string with the tournaments returned from GetAllAsync.",
+                        "translated-name": "All Tournaments"
+                    },
+                    "tournament-created": {
+                        "description": "Returns a JSON string with the created tournament.",
+                        "translated-name": "Created Tournament"
                     },
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",

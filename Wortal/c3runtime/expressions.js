@@ -155,6 +155,21 @@ self.C3.Plugins.wortal.Exps =
     },
 
     ////////////////////////////////////////////
+    // Tournament API
+    ////////////////////////////////////////////
+    TournamentCurrent() {
+        return this._tournamentCurrent;
+    },
+
+    TournamentAll() {
+        return this._tournamentAll;
+    },
+
+    TournamentCreated() {
+        return this._tournamentCreated;
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     ErrorStatus() {

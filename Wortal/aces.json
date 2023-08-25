@@ -837,6 +837,107 @@
             }
         ]
     },
+    "tournament": {
+        "conditions": [
+            {
+                "id": "tournament-get-current-callback",
+                "scriptName": "TournamentGetCurrentCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "tournament-get-all-callback",
+                "scriptName": "TournamentGetAllCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "tournament-post-score-callback",
+                "scriptName": "TournamentPostScoreCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "tournament-create-callback",
+                "scriptName": "TournamentCreateCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "tournament-share-callback",
+                "scriptName": "TournamentShareCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "tournament-join-callback",
+                "scriptName": "TournamentJoinCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "tournament-get-current-async",
+                "scriptName": "TournamentGetCurrentAsync",
+                "highlight": false
+            },
+            {
+                "id": "tournament-get-all-async",
+                "scriptName": "TournamentGetAllAsync",
+                "highlight": false
+            },
+            {
+                "id": "tournament-post-score-async",
+                "scriptName": "TournamentPostScoreAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "score", "type": "number" }
+                ]
+            },
+            {
+                "id": "tournament-create-async",
+                "scriptName": "TournamentCreateAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "tournament-share-async",
+                "scriptName": "TournamentShareAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "tournament-join-async",
+                "scriptName": "TournamentJoinAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "tournamentID", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "tournament-current",
+                "expressionName": "TournamentCurrent",
+                "returnType": "string"
+            },
+            {
+                "id": "tournament-all",
+                "expressionName": "TournamentAll",
+                "returnType": "string"
+            },
+            {
+                "id": "tournament-created",
+                "expressionName": "TournamentCreated",
+                "returnType": "string"
+            }
+        ]
+    },
 	"wortal": {
 		"conditions": [
             {
