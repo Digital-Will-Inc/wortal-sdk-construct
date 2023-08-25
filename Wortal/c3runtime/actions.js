@@ -307,6 +307,41 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // Tournament API
+    ////////////////////////////////////////////
+    TournamentGetCurrentAsync() {
+        this.WortalTournament('tournament_get_current', {});
+    },
+
+    TournamentGetAllAsync() {
+        this.WortalTournament('tournament_get_all', {});
+    },
+
+    TournamentPostScoreAsync(score) {
+        this.WortalTournament('tournament_post_score', {
+            score: score,
+        });
+    },
+
+    TournamentCreateAsync(payload) {
+        this.WortalTournament('tournament_create', {
+            payload: payload,
+        });
+    },
+
+    TournamentShareAsync(payload) {
+        this.WortalTournament('tournament_share', {
+            payload: payload,
+        });
+    },
+
+    TournamentJoinAsync(tournamentID) {
+        this.WortalTournament('tournament_join', {
+            tournamentID: tournamentID,
+        });
+    },
+
+    ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
     SetLoadingProgress(value) {

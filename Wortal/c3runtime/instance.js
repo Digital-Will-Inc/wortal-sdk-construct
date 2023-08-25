@@ -58,6 +58,11 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._trafficSource = "";
         this._sessionPlatform = "";
 
+        // Tournament properties
+        this._tournamentCurrent = "";
+        this._tournamentAll = "";
+        this._tournamentCreated = "";
+
         ////////////////////////////////////////////
         // Ads API
         ////////////////////////////////////////////
@@ -301,6 +306,36 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         });
 
         ////////////////////////////////////////////
+        // Tournament API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("tournament_get_current_callback", tournament => {
+            this._tournamentCurrent = tournament;
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentGetCurrentCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_get_all_callback", tournaments => {
+            this._tournamentAll = tournaments;
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentGetAllCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_post_score_callback", () => {
+             this.Trigger(C3.Plugins.wortal.Cnds.TournamentPostScoreCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_create_callback", tournament => {
+            this._tournamentCreated = tournament;
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentCreateCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_share_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentShareCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_join_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentJoinCallback);
+        });
+
+        ////////////////////////////////////////////
         // SDK API
         ////////////////////////////////////////////
         this.AddDOMMessageHandler("error_callback", error => {
@@ -389,6 +424,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             "args": args,
         }
         this.PostToDOM("wortal-session", obj);
+    }
+
+    WortalTournament(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-tournament", obj);
     }
 
     WortalSDK(event, args) {
