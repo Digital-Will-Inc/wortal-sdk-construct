@@ -181,6 +181,41 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    SessionOnOrientationChangeCallback() {
+        return true;
+    },
+
+    SessionSwitchGameCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
+    // Tournament API
+    ////////////////////////////////////////////
+    TournamentGetCurrentCallback() {
+        return true;
+    },
+
+    TournamentGetAllCallback() {
+        return true;
+    },
+
+    TournamentPostScoreCallback() {
+        return true;
+    },
+
+    TournamentCreateCallback() {
+        return true;
+    },
+
+    TournamentShareCallback() {
+        return true;
+    },
+
+    TournamentJoinCallback() {
+        return true;
+    },
+
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////

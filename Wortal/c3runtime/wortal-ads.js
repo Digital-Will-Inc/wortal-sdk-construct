@@ -14,6 +14,8 @@
             this.AddRuntimeMessageHandlers([
                 ["wortal-ads", data => this._WortalAds(data)]
             ]);
+
+            this._IsAdBlocked();
         }
 
         _WortalAds(data) {
@@ -31,6 +33,11 @@
                     break;
             }
         }
+
+        _IsAdBlocked() {
+            const blocked = window.Wortal.ads.isAdBlocked();
+            this.PostToRuntime("ads_is_ad_blocked", blocked);
+        };
 
         _ShowInterstitial(placement, description) {
             window.Wortal.ads.showInterstitial(placement, description,

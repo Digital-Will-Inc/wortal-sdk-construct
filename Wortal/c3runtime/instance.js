@@ -12,6 +12,9 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._errorStatus = "";
         this._supportedAPIs = "";
 
+        // Ads properties
+        this._isAdBlocked = false;
+
         // Context properties
         this._contextId = "";
         this._contextType = "";
@@ -57,10 +60,21 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._locale = "";
         this._trafficSource = "";
         this._sessionPlatform = "";
+        this._sessionDevice = "";
+        this._sessionOrientation = "";
+
+        // Tournament properties
+        this._tournamentCurrent = "";
+        this._tournamentAll = "";
+        this._tournamentCreated = "";
 
         ////////////////////////////////////////////
         // Ads API
         ////////////////////////////////////////////
+        this.AddDOMMessageHandler("ads_is_ad_blocked", blocked => {
+            this._isAdBlocked = blocked;
+        });
+
         this.AddDOMMessageHandler("before_ad_callback", () => {
             this.Trigger(C3.Plugins.wortal.Cnds.BeforeAdCallback);
         });
@@ -300,6 +314,53 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             this._sessionPlatform = platform;
         });
 
+        this.AddDOMMessageHandler("session_set_device", device => {
+            this._sessionDevice = device;
+        });
+
+        this.AddDOMMessageHandler("session_set_orientation", orientation => {
+            this._sessionOrientation = orientation;
+        });
+
+        this.AddDOMMessageHandler("session_on_orientation_change_callback", orientation => {
+            this._sessionOrientation = orientation;
+            this.Trigger(C3.Plugins.wortal.Cnds.SessionOnOrientationChangeCallback);
+        });
+
+        this.AddDOMMessageHandler("session_switch_game_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.SessionSwitchGameCallback);
+        });
+
+        ////////////////////////////////////////////
+        // Tournament API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("tournament_get_current_callback", tournament => {
+            this._tournamentCurrent = tournament;
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentGetCurrentCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_get_all_callback", tournaments => {
+            this._tournamentAll = tournaments;
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentGetAllCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_post_score_callback", () => {
+             this.Trigger(C3.Plugins.wortal.Cnds.TournamentPostScoreCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_create_callback", tournament => {
+            this._tournamentCreated = tournament;
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentCreateCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_share_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentShareCallback);
+        });
+
+        this.AddDOMMessageHandler("tournament_join_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.TournamentJoinCallback);
+        });
+
         ////////////////////////////////////////////
         // SDK API
         ////////////////////////////////////////////
@@ -389,6 +450,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             "args": args,
         }
         this.PostToDOM("wortal-session", obj);
+    }
+
+    WortalTournament(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-tournament", obj);
     }
 
     WortalSDK(event, args) {

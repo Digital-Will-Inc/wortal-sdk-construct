@@ -1,6 +1,13 @@
 self.C3.Plugins.wortal.Exps =
 {
     ////////////////////////////////////////////
+    // Ads API
+    ////////////////////////////////////////////
+    AdBlocked() {
+        return this._isAdBlocked ? 1 : 0;
+    },
+
+    ////////////////////////////////////////////
     // Context API
     ////////////////////////////////////////////
     ContextID() {
@@ -152,6 +159,29 @@ self.C3.Plugins.wortal.Exps =
 
     SessionPlatform() {
         return this._sessionPlatform;
+    },
+
+    SessionDevice() {
+        return this._sessionDevice;
+    },
+
+    SessionOrientation() {
+        return this._sessionOrientation;
+    },
+
+    ////////////////////////////////////////////
+    // Tournament API
+    ////////////////////////////////////////////
+    TournamentCurrent() {
+        return this._tournamentCurrent;
+    },
+
+    TournamentAll() {
+        return this._tournamentAll;
+    },
+
+    TournamentCreated() {
+        return this._tournamentCreated;
     },
 
     ////////////////////////////////////////////
