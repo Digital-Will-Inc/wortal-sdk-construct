@@ -350,6 +350,14 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
+    InitializeAsync() {
+        this.WortalSDK('initialize', {});
+    },
+
+    StartGameAsync() {
+        this.WortalSDK('start_game', {});
+    },
+
     SetLoadingProgress(value) {
         this.WortalSDK('set_loading_progress', {
             value: value

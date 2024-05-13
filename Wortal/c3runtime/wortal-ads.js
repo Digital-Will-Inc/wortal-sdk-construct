@@ -15,7 +15,13 @@
                 ["wortal-ads", data => this._WortalAds(data)]
             ]);
 
-            this._IsAdBlocked();
+            if (window.Wortal && window.Wortal.isInitialized) {
+                this._IsAdBlocked();
+            } else {
+                window.addEventListener("wortal-sdk-initialized", () => {
+                    this._IsAdBlocked();
+                });
+            }
         }
 
         _WortalAds(data) {

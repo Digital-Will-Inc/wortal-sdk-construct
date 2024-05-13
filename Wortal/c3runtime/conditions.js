@@ -219,6 +219,14 @@ self.C3.Plugins.wortal.Cnds =
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
+    InitializeCallback() {
+        return true;
+    },
+
+    StartGameCallback() {
+        return true;
+    },
+
     ErrorCallback() {
         return true;
     },

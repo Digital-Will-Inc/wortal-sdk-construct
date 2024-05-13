@@ -3,6 +3,8 @@
 {
     const DOM_COMPONENT_ID = "wortal_sdk_DOM";
     const EVENT = {
+        INITIALIZE: "initialize",
+        START_GAME: "start_game",
         SET_LOADING_PROGRESS: "set_loading_progress",
         PERFORM_HAPTIC_FEEDBACK: "perform_haptic_feedback",
         GET_SUPPORTED_APIS: "get_supported_apis",
@@ -16,15 +18,26 @@
                 ["wortal-sdk", data => this._WortalSDK(data)]
             ]);
 
-            setTimeout(() => {
+            // The SDK needs a little time to initialize before we can call onPause.
+            if (window.Wortal && window.Wortal.isInitialized) {
                 window.Wortal.onPause(() => this.PostToRuntime("pause_callback"));
-            }, 1000);
+            } else {
+                window.addEventListener("wortal-sdk-initialized", () => {
+                    window.Wortal.onPause(() => this.PostToRuntime("pause_callback"));
+                });
+            }
         }
 
         _WortalSDK(data) {
             let event = data["event"];
             let args = data["args"];
             switch (event) {
+                case EVENT.INITIALIZE:
+                    this._InitializeAsync();
+                    break;
+                case EVENT.START_GAME:
+                    this._StartGameAsync();
+                    break;
                 case EVENT.SET_LOADING_PROGRESS:
                     this._SetLoadingProgress(args.value);
                     break;
@@ -38,6 +51,26 @@
                     console.error("[WortalSDK] Call to deprecated function made. Please upgrade plugin to v2+");
                     break;
             }
+        }
+
+        _InitializeAsync() {
+            window.Wortal.initializeAsync()
+                .then(() => {
+                    this.PostToRuntime("initialize_callback");
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
+        }
+
+        _StartGameAsync() {
+            window.Wortal.startGameAsync()
+                .then(() => {
+                    this.PostToRuntime("start_game_callback");
+                })
+                .catch(error => {
+                    this.PostToRuntime("error_callback", JSON.stringify(error));
+                });
         }
 
         _SetLoadingProgress(value) {

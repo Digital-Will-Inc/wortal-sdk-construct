@@ -9,6 +9,7 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 		super(inst, DOM_COMPONENT_ID);
 
         // SDK properties
+        this._isInitialized = false;
         this._errorStatus = "";
         this._supportedAPIs = "";
 
@@ -364,6 +365,15 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         ////////////////////////////////////////////
         // SDK API
         ////////////////////////////////////////////
+        this.AddDOMMessageHandler("initialize_callback", () => {
+            this._isInitialized = true;
+            this.Trigger(C3.Plugins.wortal.Cnds.InitializeCallback);
+        });
+
+        this.AddDOMMessageHandler("start_game_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.StartGameCallback);
+        });
+
         this.AddDOMMessageHandler("error_callback", error => {
             this._errorStatus = error;
             this.Trigger(C3.Plugins.wortal.Cnds.ErrorCallback);
