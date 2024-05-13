@@ -19,7 +19,13 @@
 
             // We want to set the expression flag right away because the game might want to change what
             // they present to the player depending on this status. Ex: Don't display shop pop-ups after first load.
-            this._IsEnabled();
+            if (window.Wortal && window.Wortal.isInitialized) {
+                this._IsEnabled();
+            } else {
+                window.addEventListener("wortal-sdk-initialized", () => {
+                    this._IsEnabled();
+                });
+            }
         };
 
         _WortalIAP(data) {

@@ -22,13 +22,21 @@
                 ["wortal-player", data => this._WortalPlayer(data)]
             ]);
 
-            // These shouldn't change at runtime, so we can just set them here.
-            setTimeout(() => {
+            const runSetup = () => {
                 this._GetID();
                 this._GetName();
                 this._GetPhoto();
                 this._IsFirstPlay();
-            }, 1000);
+            };
+
+            // These shouldn't change at runtime, so we can just set them here.
+            if (window.Wortal && window.Wortal.isInitialized) {
+                runSetup();
+            } else {
+                window.addEventListener("wortal-sdk-initialized", () => {
+                    runSetup();
+                });
+            }
         };
 
         _WortalPlayer(data) {

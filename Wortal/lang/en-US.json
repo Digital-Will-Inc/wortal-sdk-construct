@@ -262,6 +262,16 @@
                         "display-text": "Join Callback",
                         "description": "Called when the tournament join promise has resolved."
                     },
+                    "initialize-callback": {
+                        "list-name": "Initialize Callback",
+                        "display-text": "Initialize Callback",
+                        "description": "Called when the SDK has been initialized."
+                    },
+                    "start-game-callback": {
+                        "list-name": "Start Game Callback",
+                        "display-text": "Start Game Callback",
+                        "description": "Called when the game has started."
+                    },
                     "error-callback": {
                         "list-name": "Error Callback",
                         "display-text": "Error Callback",
@@ -975,6 +985,16 @@
                             }
                         }
                     },
+                    "initialize-async": {
+                        "list-name": "Initialize Async",
+                        "display-text": "Initialize Async",
+                        "description": "Initializes the SDK."
+                    },
+                    "start-game-async": {
+                        "list-name": "Start Game Async",
+                        "display-text": "Start Game Async",
+                        "description": "Starts the game."
+                    },
                     "set-loading-progress": {
                         "list-name": "Set Loading Progress",
                         "display-text": "Set Loading Progress {0}",
@@ -1157,6 +1177,10 @@
                     "tournament-created": {
                         "description": "Returns a JSON string with the created tournament.",
                         "translated-name": "Created Tournament"
+                    },
+                    "initialized": {
+                        "description": "Returns whether or not the SDK has been initialized. 0 for false, 1 for true.",
+                        "translated-name": "Initialized"
                     },
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",

@@ -187,6 +187,10 @@ self.C3.Plugins.wortal.Exps =
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
+    Initialized() {
+        return this._isInitialized ? 1 : 0;
+    },
+
     ErrorStatus() {
         return this._errorStatus;
     },

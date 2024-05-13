@@ -977,6 +977,18 @@
 	"wortal": {
 		"conditions": [
             {
+                "id": "initialize-callback",
+                "scriptName": "InitializeCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "start-game-callback",
+                "scriptName": "StartGameCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
                 "id": "error-callback",
                 "scriptName": "ErrorCallback",
                 "highlight": true,
@@ -1097,6 +1109,16 @@
                 ]
             },
             {
+                "id": "initialize-async",
+                "scriptName": "InitializeAsync",
+                "highlight": true
+            },
+            {
+                "id": "start-game-async",
+                "scriptName": "StartGameAsync",
+                "highlight": true
+            },
+            {
                 "id": "set-loading-progress",
                 "scriptName": "SetLoadingProgress",
                 "highlight": true,
@@ -1116,6 +1138,11 @@
             }
         ],
 		"expressions": [
+            {
+                "id": "initialized",
+                "expressionName": "Initialized",
+                "returnType": "number"
+            },
             {
                 "id": "error-status",
                 "expressionName": "ErrorStatus",
