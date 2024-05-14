@@ -11,6 +11,7 @@
                 },
                 "aceCategories": {
                     "wortal": "Wortal SDK API",
+                    "achievements": "Achievement API",
                     "ads": "Ads API",
                     "analytics": "Analytics API",
                     "context": "Context API",
@@ -19,9 +20,20 @@
                     "notifications": "Notifications API",
                     "player": "Player API",
                     "session": "Session API",
+                    "stats": "Stats API",
                     "tournament": "Tournament API"
                 },
                 "conditions": {
+                    "achievements-get-achievements-callback": {
+                        "list-name": "Get Achievements Callback",
+                        "display-text": "Get Achievements Callback",
+                        "description": "Called when the achievements get achievements promise has resolved."
+                    },
+                    "achievements-unlock-achievement-callback": {
+                        "list-name": "Unlock Achievement Callback",
+                        "display-text": "Unlock Achievement Callback",
+                        "description": "Called when the achievements unlock achievement promise has resolved."
+                    },
                     "ads-before-ad-callback": {
                         "list-name": "Before Ad Callback",
                         "display-text": "Before Ad Callback",
@@ -232,6 +244,16 @@
                         "display-text": "Switch Game Callback",
                         "description": "Called when the session switch game promise has resolved."
                     },
+                    "stats-get-stats-callback": {
+                        "list-name": "Get Stats Callback",
+                        "display-text": "Get Stats Callback",
+                        "description": "Called when the stats get stats promise has resolved."
+                    },
+                    "stats-post-stats-callback": {
+                        "list-name": "Post Stats Callback",
+                        "display-text": "Post Stats Callback",
+                        "description": "Called when the stats post stats promise has resolved."
+                    },
                     "tournament-get-current-callback": {
                         "list-name": "Get Current Callback",
                         "display-text": "Get Current Callback",
@@ -261,6 +283,16 @@
                         "list-name": "Join Callback",
                         "display-text": "Join Callback",
                         "description": "Called when the tournament join promise has resolved."
+                    },
+                    "initialize-callback": {
+                        "list-name": "Initialize Callback",
+                        "display-text": "Initialize Callback",
+                        "description": "Called when the SDK has been initialized."
+                    },
+                    "start-game-callback": {
+                        "list-name": "Start Game Callback",
+                        "display-text": "Start Game Callback",
+                        "description": "Called when the game has started."
                     },
                     "error-callback": {
                         "list-name": "Error Callback",
@@ -304,6 +336,22 @@
                     }
                 },
                 "actions": {
+                    "achievements-get-achievements-async": {
+                        "list-name": "Get Achievements",
+                        "display-text": "Get Achievements",
+                        "description": "Gets the achievements the player has earned."
+                    },
+                    "achievements-unlock-achievement-async": {
+                        "list-name": "Unlock Achievement",
+                        "display-text": "Unlock Achievement {0}",
+                        "description": "Unlocks an achievement for the player.",
+                        "params": {
+                            "achievementID": {
+                                "name": "Achievement",
+                                "desc": "Name of the achievement to unlock."
+                            }
+                        }
+                    },
                     "ads-show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",
@@ -327,6 +375,21 @@
                             "description": {
                                 "name": "Description",
                                 "desc": "Description of the ad placement. Ex: ReviveAndContinue"
+                            }
+                        }
+                    },
+                    "ads-show-banner": {
+                        "list-name": "Show Banner",
+                        "display-text": "Show Banner {0} {1}",
+                        "description": "Shows a banner ad.",
+                        "params": {
+                            "shouldShow": {
+                                "name": "Should Show",
+                                "desc": "Determines if this call is to show or hide the banner. 0 for hide, 1 for show."
+                            },
+                            "position": {
+                                "name": "Banner Position",
+                                "desc": "Position of the ad placement. Options are: top, bottom."
                             }
                         }
                     },
@@ -832,6 +895,40 @@
                             }
                         }
                     },
+                    "stats-get-stats-async": {
+                        "list-name": "Get Stats Async",
+                        "display-text": "Get Stats Async {0} {1}",
+                        "description": "Gets the player's stats.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Level to get the stats for."
+                            },
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Additional payload to filter the stats."
+                            }
+                        }
+                    },
+                    "stats-post-stats-async": {
+                        "list-name": "Post Stats Async",
+                        "display-text": "Post Stats Async {0} {1} {2}",
+                        "description": "Posts the player's stats.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Level to post the stats for."
+                            },
+                            "value": {
+                                "name": "Value",
+                                "desc": "Value to post."
+                            },
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Additional payload to filter the stats."
+                            }
+                        }
+                    },
                     "tournament-get-current-async": {
                         "list-name": "Get Current Async",
                         "display-text": "Get Current Async",
@@ -975,6 +1072,16 @@
                             }
                         }
                     },
+                    "initialize-async": {
+                        "list-name": "Initialize Async",
+                        "display-text": "Initialize Async",
+                        "description": "Initializes the SDK."
+                    },
+                    "start-game-async": {
+                        "list-name": "Start Game Async",
+                        "display-text": "Start Game Async",
+                        "description": "Starts the game."
+                    },
                     "set-loading-progress": {
                         "list-name": "Set Loading Progress",
                         "display-text": "Set Loading Progress {0}",
@@ -998,6 +1105,14 @@
                     }
                 },
                 "expressions": {
+                    "achievements-get": {
+                        "description": "Returns a JSON string with the achievements the player has earned.",
+                        "translated-name": "Achievements"
+                    },
+                    "achievements-unlock-result": {
+                        "description": "Returns the result of the UnlockAchievementAsync call.",
+                        "translated-name": "Unlock Result"
+                    },
                     "ads-is-ad-blocked": {
                         "description": "Returns whether or not ads are blocked on the current platform. 0 for false, 1 for true.",
                         "translated-name": "Is Ad Blocked"
@@ -1146,6 +1261,10 @@
                         "description": "Returns a string with the orientation of the device the game is being played in.",
                         "translated-name": "Orientation"
                     },
+                    "stats": {
+                        "description": "Returns a JSON string with the player's stats.",
+                        "translated-name": "Stats"
+                    },
                     "tournament-current": {
                         "description": "Returns a JSON string with the current tournament.",
                         "translated-name": "Current Tournament"
@@ -1157,6 +1276,10 @@
                     "tournament-created": {
                         "description": "Returns a JSON string with the created tournament.",
                         "translated-name": "Created Tournament"
+                    },
+                    "initialized": {
+                        "description": "Returns whether or not the SDK has been initialized. 0 for false, 1 for true.",
+                        "translated-name": "Initialized"
                     },
                     "error-status": {
                         "description": "Returns a JSON string with the error that was thrown last by the SDK.",

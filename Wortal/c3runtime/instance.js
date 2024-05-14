@@ -9,8 +9,13 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 		super(inst, DOM_COMPONENT_ID);
 
         // SDK properties
+        this._isInitialized = false;
         this._errorStatus = "";
         this._supportedAPIs = "";
+
+        // Achievments properties
+        this._achievements = "";
+        this._isAchievementUnlocked = false;
 
         // Ads properties
         this._isAdBlocked = false;
@@ -63,10 +68,26 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._sessionDevice = "";
         this._sessionOrientation = "";
 
+        // Stats properties
+        this._stats = "";
+
         // Tournament properties
         this._tournamentCurrent = "";
         this._tournamentAll = "";
         this._tournamentCreated = "";
+
+        ////////////////////////////////////////////
+        // Achievements API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("achievements_get_callback", achievements => {
+            this._achievements = achievements;
+            this.Trigger(C3.Plugins.wortal.Cnds.AchievementsGetCallback);
+        });
+
+        this.AddDOMMessageHandler("achievements_unlock_callback", wasUnlocked => {
+            this._isAchievementUnlocked = wasUnlocked;
+            this.Trigger(C3.Plugins.wortal.Cnds.AchievementUnlockCallback);
+        });
 
         ////////////////////////////////////////////
         // Ads API
@@ -332,6 +353,18 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         });
 
         ////////////////////////////////////////////
+        // Stats API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("stats_get_callback", stats => {
+            this._stats = stats;
+            this.Trigger(C3.Plugins.wortal.Cnds.StatsGetStatsCallback);
+        });
+
+        this.AddDOMMessageHandler("stats_post_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.StatsPostStatsCallback);
+        });
+
+        ////////////////////////////////////////////
         // Tournament API
         ////////////////////////////////////////////
         this.AddDOMMessageHandler("tournament_get_current_callback", tournament => {
@@ -364,6 +397,15 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         ////////////////////////////////////////////
         // SDK API
         ////////////////////////////////////////////
+        this.AddDOMMessageHandler("initialize_callback", () => {
+            this._isInitialized = true;
+            this.Trigger(C3.Plugins.wortal.Cnds.InitializeCallback);
+        });
+
+        this.AddDOMMessageHandler("start_game_callback", () => {
+            this.Trigger(C3.Plugins.wortal.Cnds.StartGameCallback);
+        });
+
         this.AddDOMMessageHandler("error_callback", error => {
             this._errorStatus = error;
             this.Trigger(C3.Plugins.wortal.Cnds.ErrorCallback);
@@ -387,6 +429,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
 	{
 		super.Release();
 	}
+
+    WortalAchievements(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-achievements", obj);
+    }
 
     WortalAds(event, args) {
         const obj = {
@@ -450,6 +500,14 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             "args": args,
         }
         this.PostToDOM("wortal-session", obj);
+    }
+
+    WortalStats(event, args) {
+        const obj = {
+            "event": event,
+            "args": args,
+        }
+        this.PostToDOM("wortal-stats", obj);
     }
 
     WortalTournament(event, args) {

@@ -1,6 +1,19 @@
 self.C3.Plugins.wortal.Acts =
 {
     ////////////////////////////////////////////
+    // Achievements API
+    ////////////////////////////////////////////
+    AchievementsGetAchievementsAsync() {
+        this.WortalAchievements('achievements_get', {});
+    },
+
+    AchievementsUnlockAchievementAsync(achievementId) {
+        this.WortalAchievements('achievements_unlock', {
+            achievementId: achievementId,
+        });
+    },
+
+    ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
     AdsShowInterstitial(placement, description) {
@@ -13,6 +26,13 @@ self.C3.Plugins.wortal.Acts =
     AdsShowRewarded(description) {
         this.WortalAds('ads_show_rewarded', {
             description: description,
+        });
+    },
+
+    AdsShowBanner(shouldShow, position) {
+        this.WortalAds('ads_show_banner', {
+            shouldShow: shouldShow,
+            position: position,
         });
     },
 
@@ -313,6 +333,24 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // Stats API
+    ////////////////////////////////////////////
+    StatsGetStatsAsync(level, payload) {
+        this.WortalStats('stats_get', {
+            level: level,
+            payload: payload,
+        });
+    },
+
+    StatsPostStatsAsync(level, value, payload) {
+        this.WortalStats('stats_post', {
+            level: level,
+            value: value,
+            payload: payload,
+        });
+    },
+
+    ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////
     TournamentGetCurrentAsync() {
@@ -350,6 +388,14 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
+    InitializeAsync() {
+        this.WortalSDK('initialize', {});
+    },
+
+    StartGameAsync() {
+        this.WortalSDK('start_game', {});
+    },
+
     SetLoadingProgress(value) {
         this.WortalSDK('set_loading_progress', {
             value: value

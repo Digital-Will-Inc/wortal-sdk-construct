@@ -1,6 +1,17 @@
 self.C3.Plugins.wortal.Exps =
 {
     ////////////////////////////////////////////
+    // Achievements API
+    ////////////////////////////////////////////
+    AchievementsGet() {
+        return this._achievements;
+    },
+
+    AchievementUnlockResult() {
+        return this._isAchievementUnlocked;
+    },
+
+    ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
     AdBlocked() {
@@ -170,6 +181,13 @@ self.C3.Plugins.wortal.Exps =
     },
 
     ////////////////////////////////////////////
+    // Stats API
+    ////////////////////////////////////////////
+    Stats() {
+        return this._stats;
+    },
+
+    ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////
     TournamentCurrent() {
@@ -187,6 +205,10 @@ self.C3.Plugins.wortal.Exps =
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
+    Initialized() {
+        return this._isInitialized ? 1 : 0;
+    },
+
     ErrorStatus() {
         return this._errorStatus;
     },

@@ -16,7 +16,7 @@
                 ["wortal-session", data => this._WortalSession(data)]
             ]);
 
-            setTimeout(() => {
+            const runSetup = () => {
                 this._GetEntryPointData();
                 this._GetLocale();
                 this._GetTrafficSource();
@@ -24,7 +24,15 @@
                 this._GetDevice();
                 this._GetOrientation();
                 window.Wortal.session.onOrientationChange(orientation => this.PostToRuntime("session_on_orientation_change_callback", orientation));
-            }, 1000);
+            };
+
+            if (window.Wortal && window.Wortal.isInitialized) {
+                runSetup();
+            } else {
+                window.addEventListener("wortal-sdk-initialized", () => {
+                    runSetup();
+                });
+            }
         };
 
         _WortalSession(data) {

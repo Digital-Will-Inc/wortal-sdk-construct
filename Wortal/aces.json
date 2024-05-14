@@ -1,4 +1,47 @@
 ﻿{
+    "achievements": {
+        "conditions": [
+            {
+                "id": "achievements-get-achievements-callback",
+                "scriptName": "AchievementsGetAchievementsCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "achievements-unlock-achievement-callback",
+                "scriptName": "AchievementsUnlockAchievementCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "achievements-get-achievements-async",
+                "scriptName": "AchievementsGetAchievementsAsync",
+                "highlight": false
+            },
+            {
+                "id": "achievements-unlock-achievement-async",
+                "scriptName": "AchievementsUnlockAchievementAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "achievementID", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "achievements-get",
+                "expressionName": "AchievementsGet",
+                "returnType": "string"
+            },
+            {
+                "id": "achievements-unlock-result",
+                "expressionName": "AchievementUnlockResult",
+                "returnType": "number"
+            }
+        ]
+    },
     "ads": {
         "conditions": [
             {
@@ -48,6 +91,15 @@
                 "highlight": true,
                 "params": [
                     { "id": "description", "type": "string" }
+                ]
+            },
+            {
+                "id": "ads-show-banner",
+                "scriptName": "AdsShowBanner",
+                "highlight": false,
+                "params": [
+                    { "id": "shouldShow", "type": "number" },
+                    { "id": "position", "type": "string" }
                 ]
             }
         ],
@@ -873,6 +925,50 @@
             }
         ]
     },
+    "stats": {
+        "conditions": [
+            {
+                "id": "stats-get-stats-callback",
+                "scriptName": "StatsGetStatsCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "stats-post-stats-callback",
+                "scriptName": "StatsPostStatsCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "stats-get-stats-async",
+                "scriptName": "StatsGetStatsAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "level", "type": "string" },
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "stats-post-stats-async",
+                "scriptName": "StatsPostStatsAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "level", "type": "string" },
+                    { "id": "value", "type": "number" },
+                    { "id": "payload", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "stats",
+                "expressionName": "Stats",
+                "returnType": "string"
+            }
+        ]
+    },
     "tournament": {
         "conditions": [
             {
@@ -976,6 +1072,18 @@
     },
 	"wortal": {
 		"conditions": [
+            {
+                "id": "initialize-callback",
+                "scriptName": "InitializeCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
+                "id": "start-game-callback",
+                "scriptName": "StartGameCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
             {
                 "id": "error-callback",
                 "scriptName": "ErrorCallback",
@@ -1097,6 +1205,16 @@
                 ]
             },
             {
+                "id": "initialize-async",
+                "scriptName": "InitializeAsync",
+                "highlight": true
+            },
+            {
+                "id": "start-game-async",
+                "scriptName": "StartGameAsync",
+                "highlight": true
+            },
+            {
                 "id": "set-loading-progress",
                 "scriptName": "SetLoadingProgress",
                 "highlight": true,
@@ -1116,6 +1234,11 @@
             }
         ],
 		"expressions": [
+            {
+                "id": "initialized",
+                "expressionName": "Initialized",
+                "returnType": "number"
+            },
             {
                 "id": "error-status",
                 "expressionName": "ErrorStatus",

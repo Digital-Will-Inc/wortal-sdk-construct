@@ -1,6 +1,17 @@
 self.C3.Plugins.wortal.Cnds =
 {
     ////////////////////////////////////////////
+    // Achievements API
+    ////////////////////////////////////////////
+    AchievementsGetCallback() {
+        return true;
+    },
+
+    AchievementUnlockCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
     BeforeAdCallback() {
@@ -190,6 +201,17 @@ self.C3.Plugins.wortal.Cnds =
     },
 
     ////////////////////////////////////////////
+    // Stats API
+    ////////////////////////////////////////////
+    StatsGetStatsCallback() {
+        return true;
+    },
+
+    StatsPostStatsCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////
     TournamentGetCurrentCallback() {
@@ -219,6 +241,14 @@ self.C3.Plugins.wortal.Cnds =
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
+    InitializeCallback() {
+        return true;
+    },
+
+    StartGameCallback() {
+        return true;
+    },
+
     ErrorCallback() {
         return true;
     },
