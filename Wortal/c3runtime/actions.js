@@ -16,6 +16,13 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
+    AdsShowBanner(shouldShow, position) {
+        this.WortalAds('ads_show_banner', {
+            shouldShow: shouldShow,
+            position: position,
+        });
+    },
+
     ////////////////////////////////////////////
     // Analytics API
     ////////////////////////////////////////////
