@@ -13,6 +13,10 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._errorStatus = "";
         this._supportedAPIs = "";
 
+        // Achievments properties
+        this._achievements = "";
+        this._isAchievementUnlocked = false;
+
         // Ads properties
         this._isAdBlocked = false;
 
@@ -68,6 +72,19 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._tournamentCurrent = "";
         this._tournamentAll = "";
         this._tournamentCreated = "";
+
+        ////////////////////////////////////////////
+        // Achievements API
+        ////////////////////////////////////////////
+        this.AddDOMMessageHandler("achievements_get_callback", achievements => {
+            this._achievements = achievements;
+            this.Trigger(C3.Plugins.wortal.Cnds.AchievementsGetCallback);
+        });
+
+        this.AddDOMMessageHandler("achievements_unlock_callback", wasUnlocked => {
+            this._isAchievementUnlocked = wasUnlocked;
+            this.Trigger(C3.Plugins.wortal.Cnds.AchievementUnlockCallback);
+        });
 
         ////////////////////////////////////////////
         // Ads API

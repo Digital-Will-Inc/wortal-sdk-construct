@@ -1,4 +1,47 @@
 ﻿{
+    "achievements": {
+        "conditions": [
+            {
+                "id": "achievements-get-achievements-callback",
+                "scriptName": "AchievementsGetAchievementsCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "achievements-unlock-achievement-callback",
+                "scriptName": "AchievementsUnlockAchievementCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "achievements-get-achievements-async",
+                "scriptName": "AchievementsGetAchievementsAsync",
+                "highlight": false
+            },
+            {
+                "id": "achievements-unlock-achievement-async",
+                "scriptName": "AchievementsUnlockAchievementAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "achievementID", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "achievements-get",
+                "expressionName": "AchievementsGet",
+                "returnType": "string"
+            },
+            {
+                "id": "achievements-unlock-result",
+                "expressionName": "AchievementUnlockResult",
+                "returnType": "number"
+            }
+        ]
+    },
     "ads": {
         "conditions": [
             {

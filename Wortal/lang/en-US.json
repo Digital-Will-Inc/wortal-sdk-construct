@@ -11,6 +11,7 @@
                 },
                 "aceCategories": {
                     "wortal": "Wortal SDK API",
+                    "achievements": "Achievement API",
                     "ads": "Ads API",
                     "analytics": "Analytics API",
                     "context": "Context API",
@@ -22,6 +23,16 @@
                     "tournament": "Tournament API"
                 },
                 "conditions": {
+                    "achievements-get-achievements-callback": {
+                        "list-name": "Get Achievements Callback",
+                        "display-text": "Get Achievements Callback",
+                        "description": "Called when the achievements get achievements promise has resolved."
+                    },
+                    "achievements-unlock-achievement-callback": {
+                        "list-name": "Unlock Achievement Callback",
+                        "display-text": "Unlock Achievement Callback",
+                        "description": "Called when the achievements unlock achievement promise has resolved."
+                    },
                     "ads-before-ad-callback": {
                         "list-name": "Before Ad Callback",
                         "display-text": "Before Ad Callback",
@@ -314,6 +325,22 @@
                     }
                 },
                 "actions": {
+                    "achievements-get-achievements-async": {
+                        "list-name": "Get Achievements",
+                        "display-text": "Get Achievements",
+                        "description": "Gets the achievements the player has earned."
+                    },
+                    "achievements-unlock-achievement-async": {
+                        "list-name": "Unlock Achievement",
+                        "display-text": "Unlock Achievement {0}",
+                        "description": "Unlocks an achievement for the player.",
+                        "params": {
+                            "achievementID": {
+                                "name": "Achievement",
+                                "desc": "Name of the achievement to unlock."
+                            }
+                        }
+                    },
                     "ads-show-interstitial": {
                         "list-name": "Show Interstitial",
                         "display-text": "Show Interstitial {0} {1}",
@@ -1033,6 +1060,14 @@
                     }
                 },
                 "expressions": {
+                    "achievements-get": {
+                        "description": "Returns a JSON string with the achievements the player has earned.",
+                        "translated-name": "Achievements"
+                    },
+                    "achievements-unlock-result": {
+                        "description": "Returns the result of the UnlockAchievementAsync call.",
+                        "translated-name": "Unlock Result"
+                    },
                     "ads-is-ad-blocked": {
                         "description": "Returns whether or not ads are blocked on the current platform. 0 for false, 1 for true.",
                         "translated-name": "Is Ad Blocked"

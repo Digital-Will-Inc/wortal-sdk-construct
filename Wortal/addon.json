@@ -21,6 +21,7 @@
 		"c3runtime/actions.js",
 		"c3runtime/expressions.js",
         "c3runtime/domSide.js",
+        "c3runtime/wortal-achievements.js",
         "c3runtime/wortal-ads.js",
         "c3runtime/wortal-analytics.js",
         "c3runtime/wortal-context.js",

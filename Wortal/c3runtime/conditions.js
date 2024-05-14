@@ -1,6 +1,17 @@
 self.C3.Plugins.wortal.Cnds =
 {
     ////////////////////////////////////////////
+    // Achievements API
+    ////////////////////////////////////////////
+    AchievementsGetCallback() {
+        return true;
+    },
+
+    AchievementUnlockCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
     BeforeAdCallback() {

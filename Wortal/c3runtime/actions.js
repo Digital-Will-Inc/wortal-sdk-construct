@@ -1,6 +1,19 @@
 self.C3.Plugins.wortal.Acts =
 {
     ////////////////////////////////////////////
+    // Achievements API
+    ////////////////////////////////////////////
+    AchievementsGetAchievementsAsync() {
+        this.WortalAchievements('achievements_get', {});
+    },
+
+    AchievementsUnlockAchievementAsync(achievementId) {
+        this.WortalAchievements('achievements_unlock', {
+            achievementId: achievementId,
+        });
+    },
+
+    ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
     AdsShowInterstitial(placement, description) {
