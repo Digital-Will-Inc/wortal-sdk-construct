@@ -333,6 +333,24 @@ self.C3.Plugins.wortal.Acts =
     },
 
     ////////////////////////////////////////////
+    // Stats API
+    ////////////////////////////////////////////
+    StatsGetStatsAsync(level, payload) {
+        this.WortalStats('stats_get', {
+            level: level,
+            payload: payload,
+        });
+    },
+
+    StatsPostStatsAsync(level, value, payload) {
+        this.WortalStats('stats_post', {
+            level: level,
+            value: value,
+            payload: payload,
+        });
+    },
+
+    ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////
     TournamentGetCurrentAsync() {
