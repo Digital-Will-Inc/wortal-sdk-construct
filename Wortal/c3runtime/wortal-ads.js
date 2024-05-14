@@ -5,6 +5,7 @@
     const EVENT = {
         SHOW_INTERSTITIAL: "ads_show_interstitial",
         SHOW_REWARDED: "ads_show_rewarded",
+        SHOW_BANNER: "ads_show_banner",
     };
 
     const HANDLER_CLASS = class WortalAdsDOMHandler extends self.DOMHandler {
@@ -34,6 +35,9 @@
                 case EVENT.SHOW_REWARDED:
                     this._ShowRewarded(args.description);
                     break;
+                case EVENT.SHOW_BANNER:
+                    this._ShowBanner(args.shouldShow, args.placement);
+                    break;
                 default:
                     console.warn("[WortalAds] Received invalid event: " + event);
                     break;
@@ -59,6 +63,11 @@
                 () => this.PostToRuntime("ad_dismissed_callback"),
                 () => this.PostToRuntime("ad_viewed_callback"),
                 () => this.PostToRuntime("ad_no_fill_callback"));
+        };
+
+        _ShowBanner(shouldShow, position) {
+            const shouldShowBanner = shouldShow > 0;
+            window.Wortal.ads.showBanner(shouldShowBanner, position);
         };
     }
 

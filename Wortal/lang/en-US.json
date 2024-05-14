@@ -340,6 +340,21 @@
                             }
                         }
                     },
+                    "ads-show-banner": {
+                        "list-name": "Show Banner",
+                        "display-text": "Show Banner {0} {1}",
+                        "description": "Shows a banner ad.",
+                        "params": {
+                            "shouldShow": {
+                                "name": "Should Show",
+                                "desc": "Determines if this call is to show or hide the banner. 0 for hide, 1 for show."
+                            },
+                            "position": {
+                                "name": "Banner Position",
+                                "desc": "Position of the ad placement. Options are: top, bottom."
+                            }
+                        }
+                    },
                     "analytics-log-level-start": {
                         "list-name": "Log Level Start",
                         "display-text": "Log Level Start {0}",

@@ -49,6 +49,15 @@
                 "params": [
                     { "id": "description", "type": "string" }
                 ]
+            },
+            {
+                "id": "ads-show-banner",
+                "scriptName": "AdsShowBanner",
+                "highlight": false,
+                "params": [
+                    { "id": "shouldShow", "type": "number" },
+                    { "id": "position", "type": "string" }
+                ]
             }
         ],
         "expressions": [
