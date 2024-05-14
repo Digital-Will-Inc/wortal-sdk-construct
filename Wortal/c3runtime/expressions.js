@@ -1,6 +1,17 @@
 self.C3.Plugins.wortal.Exps =
 {
     ////////////////////////////////////////////
+    // Achievements API
+    ////////////////////////////////////////////
+    AchievementsGet() {
+        return this._achievements;
+    },
+
+    AchievementUnlockResult() {
+        return this._isAchievementUnlocked;
+    },
+
+    ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
     AdBlocked() {
