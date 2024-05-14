@@ -925,6 +925,50 @@
             }
         ]
     },
+    "stats": {
+        "conditions": [
+            {
+                "id": "stats-get-stats-callback",
+                "scriptName": "StatsGetStatsCallback",
+                "highlight": false,
+                "isTrigger": true
+            },
+            {
+                "id": "stats-post-stats-callback",
+                "scriptName": "StatsPostStatsCallback",
+                "highlight": false,
+                "isTrigger": true
+            }
+        ],
+        "actions": [
+            {
+                "id": "stats-get-stats-async",
+                "scriptName": "StatsGetStatsAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "level", "type": "string" },
+                    { "id": "payload", "type": "string" }
+                ]
+            },
+            {
+                "id": "stats-post-stats-async",
+                "scriptName": "StatsPostStatsAsync",
+                "highlight": false,
+                "params": [
+                    { "id": "level", "type": "string" },
+                    { "id": "value", "type": "number" },
+                    { "id": "payload", "type": "string" }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "stats",
+                "expressionName": "Stats",
+                "returnType": "string"
+            }
+        ]
+    },
     "tournament": {
         "conditions": [
             {

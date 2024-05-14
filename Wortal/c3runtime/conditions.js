@@ -201,6 +201,17 @@ self.C3.Plugins.wortal.Cnds =
     },
 
     ////////////////////////////////////////////
+    // Stats API
+    ////////////////////////////////////////////
+    StatsGetStatsCallback() {
+        return true;
+    },
+
+    StatsPostStatsCallback() {
+        return true;
+    },
+
+    ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////
     TournamentGetCurrentCallback() {

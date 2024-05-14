@@ -20,6 +20,7 @@
                     "notifications": "Notifications API",
                     "player": "Player API",
                     "session": "Session API",
+                    "stats": "Stats API",
                     "tournament": "Tournament API"
                 },
                 "conditions": {
@@ -242,6 +243,16 @@
                         "list-name": "Switch Game Callback",
                         "display-text": "Switch Game Callback",
                         "description": "Called when the session switch game promise has resolved."
+                    },
+                    "stats-get-stats-callback": {
+                        "list-name": "Get Stats Callback",
+                        "display-text": "Get Stats Callback",
+                        "description": "Called when the stats get stats promise has resolved."
+                    },
+                    "stats-post-stats-callback": {
+                        "list-name": "Post Stats Callback",
+                        "display-text": "Post Stats Callback",
+                        "description": "Called when the stats post stats promise has resolved."
                     },
                     "tournament-get-current-callback": {
                         "list-name": "Get Current Callback",
@@ -884,6 +895,40 @@
                             }
                         }
                     },
+                    "stats-get-stats-async": {
+                        "list-name": "Get Stats Async",
+                        "display-text": "Get Stats Async {0} {1}",
+                        "description": "Gets the player's stats.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Level to get the stats for."
+                            },
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Additional payload to filter the stats."
+                            }
+                        }
+                    },
+                    "stats-post-stats-async": {
+                        "list-name": "Post Stats Async",
+                        "display-text": "Post Stats Async {0} {1} {2}",
+                        "description": "Posts the player's stats.",
+                        "params": {
+                            "level": {
+                                "name": "Level",
+                                "desc": "Level to post the stats for."
+                            },
+                            "value": {
+                                "name": "Value",
+                                "desc": "Value to post."
+                            },
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Additional payload to filter the stats."
+                            }
+                        }
+                    },
                     "tournament-get-current-async": {
                         "list-name": "Get Current Async",
                         "display-text": "Get Current Async",
@@ -1215,6 +1260,10 @@
                     "session-orientation": {
                         "description": "Returns a string with the orientation of the device the game is being played in.",
                         "translated-name": "Orientation"
+                    },
+                    "stats": {
+                        "description": "Returns a JSON string with the player's stats.",
+                        "translated-name": "Stats"
                     },
                     "tournament-current": {
                         "description": "Returns a JSON string with the current tournament.",
