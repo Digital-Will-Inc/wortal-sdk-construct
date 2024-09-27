@@ -3,217 +3,268 @@ self.C3.Plugins.wortal.Exps =
     ////////////////////////////////////////////
     // Achievements API
     ////////////////////////////////////////////
-    AchievementsGet() {
+    AchievementsGet()
+    {
         return this._achievements;
     },
 
-    AchievementUnlockResult() {
+    AchievementUnlockResult()
+    {
         return this._isAchievementUnlocked;
     },
 
     ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
-    AdBlocked() {
+    AdBlocked()
+    {
         return this._isAdBlocked ? 1 : 0;
+    },
+
+    IsAdEnabled()
+    {
+        return this._isAdEnabled ? 1 : 0;
     },
 
     ////////////////////////////////////////////
     // Context API
     ////////////////////////////////////////////
-    ContextID() {
+    ContextID()
+    {
         return this._contextId;
     },
 
-    ContextType() {
+    ContextType()
+    {
         return this._contextType;
     },
 
-    ContextPlayers() {
+    ContextPlayers()
+    {
         return this._contextPlayers;
     },
 
-    ContextShareResult() {
+    ContextShareResult()
+    {
         return this._shareResult;
     },
 
-    ContextSizeResponse() {
+    ContextSizeResponse()
+    {
         return this._contextSizeResponse;
     },
 
     ////////////////////////////////////////////
     // In-App Purchasing API
     ////////////////////////////////////////////
-    IAPEnabled() {
+    IAPEnabled()
+    {
         return this._isIAPEnabled ? 1 : 0;
     },
 
-    IAPCatalog() {
+    IAPCatalog()
+    {
         return this._iapCatalog;
     },
 
-    IAPPurchases() {
+    IAPPurchases()
+    {
         return this._iapPurchases;
     },
 
-    IAPPurchaseReceipt() {
+    IAPPurchaseReceipt()
+    {
         return this._iapPurchaseReceipt;
     },
 
     ////////////////////////////////////////////
     // Leaderboard API
     ////////////////////////////////////////////
-    CurrentLeaderboard() {
+    CurrentLeaderboard()
+    {
         return this._leaderboard;
     },
 
-    LeaderboardSendResult() {
+    LeaderboardSendResult()
+    {
         return this._leaderboardSendResult;
     },
 
-    LeaderboardEntries() {
+    LeaderboardEntries()
+    {
         return this._leaderboardEntries;
     },
 
-    LeaderboardPlayerEntry() {
+    LeaderboardPlayerEntry()
+    {
         return this._leaderboardPlayerEntry;
     },
 
-    LeaderboardEntryCount() {
+    LeaderboardEntryCount()
+    {
         return this._leaderboardEntryCount;
     },
 
-    LeaderboardConnectedPlayersEntries() {
+    LeaderboardConnectedPlayersEntries()
+    {
         return this._leaderboardConnectedPlayersEntries;
     },
 
     ////////////////////////////////////////////
     // Notifications API
     ////////////////////////////////////////////
-    NotificationScheduleResult() {
+    NotificationScheduleResult()
+    {
         return this._scheduleNotificationResult;
     },
 
-    NotificationsScheduled() {
+    NotificationsScheduled()
+    {
         return this._scheduledNotifications;
     },
 
-    NotificationCancelSuccess() {
+    NotificationCancelSuccess()
+    {
         return this._cancelNotificationSuccess ? 1 : 0;
     },
 
-    NotificationCancelAllSuccess() {
+    NotificationCancelAllSuccess()
+    {
         return this._cancelAllNotificationSuccess ? 1 : 0;
     },
 
     ////////////////////////////////////////////
     // Player API
     ////////////////////////////////////////////
-    PlayerID() {
+    PlayerID()
+    {
         return this._playerId;
     },
 
-    PlayerName() {
+    PlayerName()
+    {
         return this._playerName;
     },
 
-    PlayerPhoto() {
+    PlayerPhoto()
+    {
         return this._playerPhoto;
     },
 
-    PlayerIsFirstPlay() {
+    PlayerIsFirstPlay()
+    {
         return this._isFirstPlay ? 1 : 0;
     },
 
-    PlayerData() {
+    PlayerData()
+    {
         return this._playerData;
     },
 
-    PlayerConnectedPlayers() {
+    PlayerConnectedPlayers()
+    {
         return this._playerConnectedPlayers;
     },
 
-    PlayerSignedInfo() {
+    PlayerSignedInfo()
+    {
         return this._playerSignedInfo;
     },
 
-    PlayerASID() {
+    PlayerASID()
+    {
         return this._playerASID;
     },
 
-    PlayerSignedASID() {
+    PlayerSignedASID()
+    {
         return this._playerSignedASID;
     },
 
-    PlayerCanSubscribeBot() {
+    PlayerCanSubscribeBot()
+    {
         return this._playerCanSubscribeBot ? 1 : 0;
     },
 
     ////////////////////////////////////////////
     // Session API
     ////////////////////////////////////////////
-    EntryPointData() {
+    EntryPointData()
+    {
         return this._entryPointData;
     },
 
-    EntryPoint() {
+    EntryPoint()
+    {
         return this._entryPoint;
     },
 
-    Locale() {
+    Locale()
+    {
         return this._locale;
     },
 
-    TrafficSource() {
+    TrafficSource()
+    {
         return this._trafficSource;
     },
 
-    SessionPlatform() {
+    SessionPlatform()
+    {
         return this._sessionPlatform;
     },
 
-    SessionDevice() {
+    SessionDevice()
+    {
         return this._sessionDevice;
     },
 
-    SessionOrientation() {
+    SessionOrientation()
+    {
         return this._sessionOrientation;
     },
 
     ////////////////////////////////////////////
     // Stats API
     ////////////////////////////////////////////
-    Stats() {
+    Stats()
+    {
         return this._stats;
     },
 
     ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////
-    TournamentCurrent() {
+    TournamentCurrent()
+    {
         return this._tournamentCurrent;
     },
 
-    TournamentAll() {
+    TournamentAll()
+    {
         return this._tournamentAll;
     },
 
-    TournamentCreated() {
+    TournamentCreated()
+    {
         return this._tournamentCreated;
     },
 
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
-    Initialized() {
+    Initialized()
+    {
         return this._isInitialized ? 1 : 0;
     },
 
-    ErrorStatus() {
+    ErrorStatus()
+    {
         return this._errorStatus;
     },
 
-    SupportedAPIs() {
+    SupportedAPIs()
+    {
         return this._supportedAPIs;
     }
 };
