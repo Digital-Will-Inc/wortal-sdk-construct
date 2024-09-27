@@ -6,7 +6,7 @@
             "wortal": {
                 "name": "Wortal SDK",
                 "description": "Plugin for integrating the Wortal SDK.",
-                "help-url": "https://sdk.html5gameportal.com",
+                "help-url": "https://docs.games-api.ai/wortal-construct",
                 "properties": {},
                 "aceCategories": {
                     "wortal": "Wortal SDK API",
