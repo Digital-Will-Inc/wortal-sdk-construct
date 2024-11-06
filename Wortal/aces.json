@@ -1291,6 +1291,12 @@
                 "isTrigger": true
             },
             {
+                "id": "resume-callback",
+                "scriptName": "ResumeCallback",
+                "highlight": true,
+                "isTrigger": true
+            },
+            {
                 "id": "haptic-feedback-callback",
                 "scriptName": "HapticFeedbackCallback",
                 "highlight": false,

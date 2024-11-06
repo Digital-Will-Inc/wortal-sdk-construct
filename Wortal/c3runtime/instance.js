@@ -489,6 +489,11 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             this.Trigger(C3.Plugins.wortal.Cnds.PauseCallback);
         });
 
+        this.AddDOMMessageHandler("resume_callback", () =>
+        {
+            this.Trigger(C3.Plugins.wortal.Cnds.ResumeCallback);
+        })
+
         this.AddDOMMessageHandler("haptic_feedback_callback", () =>
         {
             this.Trigger(C3.Plugins.wortal.Cnds.HapticFeedbackCallback);

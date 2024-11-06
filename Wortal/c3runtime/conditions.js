@@ -3,265 +3,328 @@ self.C3.Plugins.wortal.Cnds =
     ////////////////////////////////////////////
     // Achievements API
     ////////////////////////////////////////////
-    AchievementsGetCallback() {
+    AchievementsGetCallback()
+    {
         return true;
     },
 
-    AchievementUnlockCallback() {
+    AchievementUnlockCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
-    BeforeAdCallback() {
+    BeforeAdCallback()
+    {
         return true;
     },
 
-    AfterAdCallback() {
+    AfterAdCallback()
+    {
         return true;
     },
 
-    AdDismissedCallback() {
+    AdDismissedCallback()
+    {
         return true;
     },
 
-    AdViewedCallback() {
+    AdViewedCallback()
+    {
         return true;
     },
 
-    AdNoFillCallback() {
+    AdNoFillCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // Context API
     ////////////////////////////////////////////
-    ContextIDSet() {
+    ContextIDSet()
+    {
         return true;
     },
 
-    ContextTypeSet() {
+    ContextTypeSet()
+    {
         return true;
     },
 
-    ContextGetPlayersCallback() {
+    ContextGetPlayersCallback()
+    {
         return true;
     },
 
-    ContextInviteCallback() {
+    ContextInviteCallback()
+    {
         return true;
     },
 
-    ContextShareCallback() {
+    ContextShareCallback()
+    {
         return true;
     },
 
-    ContextShareLinkCallback() {
+    ContextShareLinkCallback()
+    {
         return true;
     },
 
-    ContextUpdateCallback() {
+    ContextUpdateCallback()
+    {
         return true;
     },
 
-    ContextChooseCallback() {
+    ContextChooseCallback()
+    {
         return true;
     },
 
-    ContextSwitchCallback() {
+    ContextSwitchCallback()
+    {
         return true;
     },
 
-    ContextCreateCallback() {
+    ContextCreateCallback()
+    {
         return true;
     },
 
-    ContextSizeResponseSet() {
+    ContextSizeResponseSet()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // In-App Purchasing API
     ////////////////////////////////////////////
-    IAPGetCatalogCallback() {
+    IAPGetCatalogCallback()
+    {
         return true;
     },
 
-    IAPGetPurchasesCallback() {
+    IAPGetPurchasesCallback()
+    {
         return true;
     },
 
-    IAPMakePurchaseCallback() {
+    IAPMakePurchaseCallback()
+    {
         return true;
     },
 
-    IAPConsumePurchaseCallback() {
+    IAPConsumePurchaseCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // Leaderboard API
     ////////////////////////////////////////////
-    LeaderboardGetLeaderboardCallback() {
+    LeaderboardGetLeaderboardCallback()
+    {
         return true;
     },
 
-    LeaderboardSendEntryCallback() {
+    LeaderboardSendEntryCallback()
+    {
         return true;
     },
 
-    LeaderboardGetEntriesCallback() {
+    LeaderboardGetEntriesCallback()
+    {
         return true;
     },
 
-    LeaderboardGetPlayerEntryCallback() {
+    LeaderboardGetPlayerEntryCallback()
+    {
         return true;
     },
 
-    LeaderboardGetEntryCountCallback() {
+    LeaderboardGetEntryCountCallback()
+    {
         return true;
     },
 
-    LeaderboardGetConnectedPlayersEntriesCallback() {
+    LeaderboardGetConnectedPlayersEntriesCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // Notifications API
     ////////////////////////////////////////////
-    NotificationsScheduleCallback() {
+    NotificationsScheduleCallback()
+    {
         return true;
     },
 
-    NotificationsGetHistoryCallback() {
+    NotificationsGetHistoryCallback()
+    {
         return true;
     },
 
-    NotificationsCancelCallback() {
+    NotificationsCancelCallback()
+    {
         return true;
     },
 
-    NotificationsCancelAllCallback() {
+    NotificationsCancelAllCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // Player API
     ////////////////////////////////////////////
-    PlayerGetDataCallback() {
+    PlayerGetDataCallback()
+    {
         return true;
     },
 
-    PlayerSetDataCallback() {
+    PlayerSetDataCallback()
+    {
         return true;
     },
 
-    PlayerFlushDataCallback() {
+    PlayerFlushDataCallback()
+    {
         return true;
     },
 
-    PlayerGetConnectedPlayersCallback() {
+    PlayerGetConnectedPlayersCallback()
+    {
         return true;
     },
 
-    PlayerGetSignedPlayerInfoCallback() {
+    PlayerGetSignedPlayerInfoCallback()
+    {
         return true;
     },
 
-    PlayerGetASIDCallback() {
+    PlayerGetASIDCallback()
+    {
         return true;
     },
 
-    PlayerGetSignedASIDCallback() {
+    PlayerGetSignedASIDCallback()
+    {
         return true;
     },
 
-    PlayerCanSubscribeBotCallback() {
+    PlayerCanSubscribeBotCallback()
+    {
         return true;
     },
 
-    PlayerSubscribeBotCallback() {
+    PlayerSubscribeBotCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // Session API
     ////////////////////////////////////////////
-    SessionGetEntryPointCallback() {
+    SessionGetEntryPointCallback()
+    {
         return true;
     },
 
-    SessionOnOrientationChangeCallback() {
+    SessionOnOrientationChangeCallback()
+    {
         return true;
     },
 
-    SessionSwitchGameCallback() {
+    SessionSwitchGameCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // Stats API
     ////////////////////////////////////////////
-    StatsGetStatsCallback() {
+    StatsGetStatsCallback()
+    {
         return true;
     },
 
-    StatsPostStatsCallback() {
+    StatsPostStatsCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////
-    TournamentGetCurrentCallback() {
+    TournamentGetCurrentCallback()
+    {
         return true;
     },
 
-    TournamentGetAllCallback() {
+    TournamentGetAllCallback()
+    {
         return true;
     },
 
-    TournamentPostScoreCallback() {
+    TournamentPostScoreCallback()
+    {
         return true;
     },
 
-    TournamentCreateCallback() {
+    TournamentCreateCallback()
+    {
         return true;
     },
 
-    TournamentShareCallback() {
+    TournamentShareCallback()
+    {
         return true;
     },
 
-    TournamentJoinCallback() {
+    TournamentJoinCallback()
+    {
         return true;
     },
 
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
-    InitializeCallback() {
+    InitializeCallback()
+    {
         return true;
     },
 
-    StartGameCallback() {
+    StartGameCallback()
+    {
         return true;
     },
 
-    ErrorCallback() {
+    ErrorCallback()
+    {
         return true;
     },
 
-    PauseCallback() {
+    PauseCallback()
+    {
         return true;
     },
 
-    HapticFeedbackCallback() {
+    ResumeCallback()
+    {
         return true;
     },
 
-    GetSupportedAPIsCallback() {
+    HapticFeedbackCallback()
+    {
+        return true;
+    },
+
+    GetSupportedAPIsCallback()
+    {
         return true;
     },
 
@@ -272,8 +335,8 @@ self.C3.Plugins.wortal.Cnds =
     // Do not remove these as the docs state that will break projects that
     // were using them.
 
-    OnBeforeAd() {return false;},
-    OnAfterAd() {return false;},
-    OnAdDismissed() {return false;},
-    OnAdViewed() {return false;},
+    OnBeforeAd() { return false; },
+    OnAfterAd() { return false; },
+    OnAdDismissed() { return false; },
+    OnAdViewed() { return false; },
 };
