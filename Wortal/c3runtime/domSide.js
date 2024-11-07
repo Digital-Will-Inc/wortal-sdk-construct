@@ -30,7 +30,7 @@
                 window.addEventListener("wortal-sdk-initialized", () =>
                 {
                     window.Wortal.onPause(() => this.PostToRuntime("pause_callback"));
-                    window.Wortal.onREsume(() => this.PostToRuntime("resume_callback"));
+                    window.Wortal.onResume(() => this.PostToRuntime("resume_callback"));
                 });
             }
         }

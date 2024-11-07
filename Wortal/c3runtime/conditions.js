@@ -244,6 +244,11 @@ self.C3.Plugins.wortal.Cnds =
         return true;
     },
 
+    SessionOnAudioStatusChangeCallback()
+    {
+        return true;
+    },
+
     ////////////////////////////////////////////
     // Stats API
     ////////////////////////////////////////////

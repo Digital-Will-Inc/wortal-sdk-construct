@@ -1023,6 +1023,12 @@
                 "scriptName": "SessionSwitchGameCallback",
                 "highlight": false,
                 "isTrigger": true
+            },
+            {
+                "id": "session-on-audio-status-change-callback",
+                "scriptName": "SessionOnAudioStatusChangeCallback",
+                "highlight": false,
+                "isTrigger": true
             }
         ],
         "actions": [

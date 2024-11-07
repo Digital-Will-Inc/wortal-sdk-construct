@@ -3,11 +3,13 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // Achievements API
     ////////////////////////////////////////////
-    AchievementsGetAchievementsAsync() {
+    AchievementsGetAchievementsAsync()
+    {
         this.WortalAchievements('achievements_get', {});
     },
 
-    AchievementsUnlockAchievementAsync(achievementId) {
+    AchievementsUnlockAchievementAsync(achievementId)
+    {
         this.WortalAchievements('achievements_unlock', {
             achievementId: achievementId,
         });
@@ -16,20 +18,23 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // Ads API
     ////////////////////////////////////////////
-    AdsShowInterstitial(placement, description) {
+    AdsShowInterstitial(placement, description)
+    {
         this.WortalAds('ads_show_interstitial', {
             placement: placement,
             description: description,
         });
     },
 
-    AdsShowRewarded(description) {
+    AdsShowRewarded(description)
+    {
         this.WortalAds('ads_show_rewarded', {
             description: description,
         });
     },
 
-    AdsShowBanner(shouldShow, position) {
+    AdsShowBanner(shouldShow, position)
+    {
         this.WortalAds('ads_show_banner', {
             shouldShow: shouldShow,
             position: position,
@@ -39,13 +44,15 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // Analytics API
     ////////////////////////////////////////////
-    AnalyticsLogLevelStart(level) {
+    AnalyticsLogLevelStart(level)
+    {
         this.WortalAnalytics('analytics_log_level_start', {
             level: level,
         });
     },
 
-    AnalyticsLogLevelEnd(level, score, wasCompleted) {
+    AnalyticsLogLevelEnd(level, score, wasCompleted)
+    {
         this.WortalAnalytics('analytics_log_level_end', {
             level: level,
             score: score,
@@ -53,58 +60,67 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
-    AnalyticsLogLevelUp(level) {
+    AnalyticsLogLevelUp(level)
+    {
         this.WortalAnalytics('analytics_log_level_up', {
             level: level,
         });
     },
 
-    AnalyticsLogScore(score) {
+    AnalyticsLogScore(score)
+    {
         this.WortalAnalytics('analytics_log_score', {
             score: score,
         });
     },
 
-    AnalyticsLogTutorialStart(tutorial) {
+    AnalyticsLogTutorialStart(tutorial)
+    {
         this.WortalAnalytics('analytics_log_tutorial_start', {
             tutorial: tutorial,
         });
     },
 
-    AnalyticsLogTutorialEnd(tutorial, wasCompleted) {
+    AnalyticsLogTutorialEnd(tutorial, wasCompleted)
+    {
         this.WortalAnalytics('analytics_log_tutorial_end', {
             tutorial: tutorial,
             wasCompleted: wasCompleted,
         });
     },
 
-    AnalyticsLogGameChoice(decision, choice) {
+    AnalyticsLogGameChoice(decision, choice)
+    {
         this.WortalAnalytics('analytics_log_game_choice', {
             decision: decision,
             choice: choice,
         });
     },
 
-    AnalyticsLogSocialInvite(placement) {
+    AnalyticsLogSocialInvite(placement)
+    {
         this.WortalAnalytics('analytics_log_social_invite', {
             placement: placement,
         });
     },
 
-    AnalyticsLogSocialShare(placement) {
+    AnalyticsLogSocialShare(placement)
+    {
         this.WortalAnalytics('analytics_log_social_share', {
             placement: placement,
         });
     },
 
-    AnalyticsLogPurchase(productID, details) {
+    AnalyticsLogPurchase(productID, details)
+    {
         this.WortalAnalytics('analytics_log_purchase', {
             productID: productID,
             details: details,
         });
     },
 
-    AnalyticsLogPurchaseSubscription(productID, details) {
+    AnalyticsLogPurchaseSubscription(productID, details)
+    {
         this.WortalAnalytics('analytics_log_purchase_subscription', {
             productID: productID,
             details: details,
@@ -114,61 +130,72 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // Context API
     ////////////////////////////////////////////
-    ContextGetID() {
+    ContextGetID()
+    {
         this.WortalContext('context_get_id', {});
     },
 
-    ContextGetType() {
+    ContextGetType()
+    {
         this.WortalContext('context_get_type', {});
     },
 
-    ContextGetPlayersAsync() {
+    ContextGetPlayersAsync()
+    {
         this.WortalContext('context_get_players', {});
     },
 
-    ContextInviteAsync(payload) {
+    ContextInviteAsync(payload)
+    {
         this.WortalContext('context_invite', {
             payload: payload,
         });
     },
 
-    ContextShareAsync(payload) {
+    ContextShareAsync(payload)
+    {
         this.WortalContext('context_share', {
             payload: payload,
         });
     },
 
-    ContextShareLinkAsync(payload) {
+    ContextShareLinkAsync(payload)
+    {
         this.WortalContext('context_share_link', {
             payload: payload,
         });
     },
 
-    ContextUpdateAsync(payload) {
+    ContextUpdateAsync(payload)
+    {
         this.WortalContext('context_update', {
             payload: payload,
         });
     },
 
-    ContextChooseAsync(payload) {
+    ContextChooseAsync(payload)
+    {
         this.WortalContext('context_choose', {
             payload: payload,
         });
     },
 
-    ContextSwitchAsync(contextId) {
+    ContextSwitchAsync(contextId)
+    {
         this.WortalContext('context_switch', {
             contextId: contextId,
         });
     },
 
-    ContextCreateAsync(playerId) {
+    ContextCreateAsync(playerId)
+    {
         this.WortalContext('context_create', {
             playerId: playerId,
         });
     },
 
-    ContextIsSizeBetween(min, max) {
+    ContextIsSizeBetween(min, max)
+    {
         return this.WortalContext('context_is_size_between', {
             min: min,
             max: max,
@@ -178,21 +205,25 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // In-App Purchasing API
     ////////////////////////////////////////////
-    IAPGetCatalogAsync() {
+    IAPGetCatalogAsync()
+    {
         this.WortalIAP('iap_get_catalog', {});
     },
 
-    IAPGetPurchasesAsync() {
+    IAPGetPurchasesAsync()
+    {
         this.WortalIAP('iap_get_purchases', {});
     },
 
-    IAPMakePurchaseAsync(purchaseConfig) {
+    IAPMakePurchaseAsync(purchaseConfig)
+    {
         this.WortalIAP('iap_make_purchase', {
             purchaseConfig: purchaseConfig,
         });
     },
 
-    IAPConsumePurchaseAsync(token) {
+    IAPConsumePurchaseAsync(token)
+    {
         this.WortalIAP('iap_consume_purchase', {
             token: token,
         });
@@ -201,13 +232,15 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // Leaderboard API
     ////////////////////////////////////////////
-    LeaderboardGetLeaderboardAsync(name) {
+    LeaderboardGetLeaderboardAsync(name)
+    {
         this.WortalLeaderboard('leaderboard_get_leaderboard', {
             name: name,
         });
     },
 
-    LeaderboardSendEntryAsync(name, score, details) {
+    LeaderboardSendEntryAsync(name, score, details)
+    {
         this.WortalLeaderboard('leaderboard_send_entry', {
             name: name,
             score: score,
@@ -215,7 +248,8 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
-    LeaderboardGetEntriesAsync(name, count, offset) {
+    LeaderboardGetEntriesAsync(name, count, offset)
+    {
         this.WortalLeaderboard('leaderboard_get_entries', {
             name: name,
             count: count,
@@ -223,19 +257,22 @@ self.C3.Plugins.wortal.Acts =
         });
     },
 
-    LeaderboardGetPlayerEntryAsync(name) {
+    LeaderboardGetPlayerEntryAsync(name)
+    {
         this.WortalLeaderboard('leaderboard_get_player_entry', {
             name: name,
         });
     },
 
-    LeaderboardGetEntryCountAsync(name) {
+    LeaderboardGetEntryCountAsync(name)
+    {
         this.WortalLeaderboard('leaderboard_get_entry_count', {
             name: name,
         });
     },
 
-    LeaderboardGetConnectedPlayersEntriesAsync(name, count, offset) {
+    LeaderboardGetConnectedPlayersEntriesAsync(name, count, offset)
+    {
         this.WortalLeaderboard('leaderboard_get_connected_players_entries', {
             name: name,
             count: count,
@@ -246,23 +283,27 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // Notifications API
     ////////////////////////////////////////////
-    NotificationsScheduleAsync(payload) {
+    NotificationsScheduleAsync(payload)
+    {
         this.WortalNotifications('notifications_schedule', {
             payload: payload,
         });
     },
 
-    NotificationsGetHistoryAsync() {
+    NotificationsGetHistoryAsync()
+    {
         this.WortalNotifications('notifications_get_history', {});
     },
 
-    NotificationsCancelAsync(id) {
+    NotificationsCancelAsync(id)
+    {
         this.WortalNotifications('notifications_cancel', {
             id: id,
         });
     },
 
-    NotificationsCancelAllAsync(label) {
+    NotificationsCancelAllAsync(label)
+    {
         this.WortalNotifications('notifications_cancel_all', {
             label: label,
         });
@@ -271,78 +312,107 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // Player API
     ////////////////////////////////////////////
-    PlayerGetDataAsync(keys) {
+    PlayerGetDataAsync(keys)
+    {
         this.WortalPlayer('player_get_data', {
             keys: keys,
         });
     },
 
-    PlayerSetDataAsync(data) {
+    PlayerSetDataAsync(data)
+    {
         this.WortalPlayer('player_set_data', {
             data: data,
         });
     },
 
-    PlayerFlushDataAsync() {
+    PlayerFlushDataAsync()
+    {
         this.WortalPlayer('player_flush_data', {});
     },
 
-    PlayerGetConnectedPlayersAsync(payload) {
+    PlayerGetConnectedPlayersAsync(payload)
+    {
         this.WortalPlayer('player_get_connected_players', {
             payload: payload,
         });
     },
 
-    PlayerGetSignedPlayerInfoAsync() {
+    PlayerGetSignedPlayerInfoAsync()
+    {
         this.WortalPlayer('player_get_signed_player_info', {});
     },
 
-    PlayerGetASIDAsync() {
+    PlayerGetASIDAsync()
+    {
         this.WortalPlayer('player_get_asid', {});
     },
 
-    PlayerGetSignedASIDAsync() {
+    PlayerGetSignedASIDAsync()
+    {
         this.WortalPlayer('player_get_signed_asid', {});
     },
 
-    PlayerCanSubscribeBotAsync() {
+    PlayerCanSubscribeBotAsync()
+    {
         this.WortalPlayer('player_can_subscribe_bot', {});
     },
 
-    PlayerSubscribeBotAsync() {
+    PlayerSubscribeBotAsync()
+    {
         this.WortalPlayer('player_subscribe_bot', {});
     },
 
     ////////////////////////////////////////////
     // Session API
     ////////////////////////////////////////////
-    SessionGetEntryPointAsync() {
+    SessionGetEntryPointAsync()
+    {
         this.WortalSession('session_get_entry_point', {});
     },
 
-    SessionSetSessionData(data) {
+    SessionSetSessionData(data)
+    {
         this.WortalSession('session_set_data', {
             data: data,
         });
     },
 
-    SessionSwitchGameAsync(gameID) {
+    SessionSwitchGameAsync(gameID)
+    {
         this.WortalSession('session_switch_game', {
             gameID: gameID,
         });
     },
 
+    SessionGameplayStart()
+    {
+        this.WortalSession('session_gameplay_start', {});
+    },
+
+    SessionGameplayStop()
+    {
+        this.WortalSession('session_gameplay_stop', {});
+    },
+
+    SessionHappyTime()
+    {
+        this.WortalSession('session_happy_time', {});
+    },
+
     ////////////////////////////////////////////
     // Stats API
     ////////////////////////////////////////////
-    StatsGetStatsAsync(level, payload) {
+    StatsGetStatsAsync(level, payload)
+    {
         this.WortalStats('stats_get', {
             level: level,
             payload: payload,
         });
     },
 
-    StatsPostStatsAsync(level, value, payload) {
+    StatsPostStatsAsync(level, value, payload)
+    {
         this.WortalStats('stats_post', {
             level: level,
             value: value,
@@ -353,33 +423,39 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // Tournament API
     ////////////////////////////////////////////
-    TournamentGetCurrentAsync() {
+    TournamentGetCurrentAsync()
+    {
         this.WortalTournament('tournament_get_current', {});
     },
 
-    TournamentGetAllAsync() {
+    TournamentGetAllAsync()
+    {
         this.WortalTournament('tournament_get_all', {});
     },
 
-    TournamentPostScoreAsync(score) {
+    TournamentPostScoreAsync(score)
+    {
         this.WortalTournament('tournament_post_score', {
             score: score,
         });
     },
 
-    TournamentCreateAsync(payload) {
+    TournamentCreateAsync(payload)
+    {
         this.WortalTournament('tournament_create', {
             payload: payload,
         });
     },
 
-    TournamentShareAsync(payload) {
+    TournamentShareAsync(payload)
+    {
         this.WortalTournament('tournament_share', {
             payload: payload,
         });
     },
 
-    TournamentJoinAsync(tournamentID) {
+    TournamentJoinAsync(tournamentID)
+    {
         this.WortalTournament('tournament_join', {
             tournamentID: tournamentID,
         });
@@ -388,25 +464,30 @@ self.C3.Plugins.wortal.Acts =
     ////////////////////////////////////////////
     // SDK API
     ////////////////////////////////////////////
-    InitializeAsync() {
+    InitializeAsync()
+    {
         this.WortalSDK('initialize', {});
     },
 
-    StartGameAsync() {
+    StartGameAsync()
+    {
         this.WortalSDK('start_game', {});
     },
 
-    SetLoadingProgress(value) {
+    SetLoadingProgress(value)
+    {
         this.WortalSDK('set_loading_progress', {
             value: value
         });
     },
 
-    PerformHapticFeedbackAsync() {
+    PerformHapticFeedbackAsync()
+    {
         this.WortalSDK('perform_haptic_feedback', {});
     },
 
-    GetSupportedAPIs() {
+    GetSupportedAPIs()
+    {
         this.WortalSDK('get_supported_apis', {});
     },
 
@@ -417,11 +498,11 @@ self.C3.Plugins.wortal.Acts =
     // Do not remove these as the docs state that will break projects that
     // were using them.
 
-    ShowInterstitial(placement, description) {},
-    ShowRewarded(description) {},
-    LogLevelStart(level) {},
-    LogLevelEnd(level, score) {},
-    LogLevelUp(level) {},
-    LogScore(score) {},
-    LogGameChoice(decision, choice) {},
+    ShowInterstitial(placement, description) { },
+    ShowRewarded(description) { },
+    LogLevelStart(level) { },
+    LogLevelEnd(level, score) { },
+    LogLevelUp(level) { },
+    LogScore(score) { },
+    LogGameChoice(decision, choice) { },
 };
