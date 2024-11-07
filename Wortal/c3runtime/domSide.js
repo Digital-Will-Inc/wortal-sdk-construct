@@ -10,8 +10,10 @@
         GET_SUPPORTED_APIS: "get_supported_apis",
     };
 
-    const HANDLER_CLASS = class WortalDOMHandler extends self.DOMHandler {
-        constructor(iRuntime) {
+    const HANDLER_CLASS = class WortalDOMHandler extends self.DOMHandler
+    {
+        constructor(iRuntime)
+        {
             super(iRuntime, DOM_COMPONENT_ID);
 
             this.AddRuntimeMessageHandlers([
@@ -19,19 +21,26 @@
             ]);
 
             // The SDK needs a little time to initialize before we can call onPause.
-            if (window.Wortal && window.Wortal.isInitialized) {
+            if (window.Wortal && window.Wortal.isInitialized)
+            {
                 window.Wortal.onPause(() => this.PostToRuntime("pause_callback"));
-            } else {
-                window.addEventListener("wortal-sdk-initialized", () => {
+                window.Wortal.onResume(() => this.PostToRuntime("resume_callback"));
+            } else
+            {
+                window.addEventListener("wortal-sdk-initialized", () =>
+                {
                     window.Wortal.onPause(() => this.PostToRuntime("pause_callback"));
+                    window.Wortal.onResume(() => this.PostToRuntime("resume_callback"));
                 });
             }
         }
 
-        _WortalSDK(data) {
+        _WortalSDK(data)
+        {
             let event = data["event"];
             let args = data["args"];
-            switch (event) {
+            switch (event)
+            {
                 case EVENT.INITIALIZE:
                     this._InitializeAsync();
                     break;
@@ -53,43 +62,55 @@
             }
         }
 
-        _InitializeAsync() {
+        _InitializeAsync()
+        {
             window.Wortal.initializeAsync()
-                .then(() => {
+                .then(() =>
+                {
                     this.PostToRuntime("initialize_callback");
                 })
-                .catch(error => {
+                .catch(error =>
+                {
                     this.PostToRuntime("error_callback", JSON.stringify(error));
                 });
         }
 
-        _StartGameAsync() {
+        _StartGameAsync()
+        {
             window.Wortal.startGameAsync()
-                .then(() => {
+                .then(() =>
+                {
                     this.PostToRuntime("start_game_callback");
                 })
-                .catch(error => {
+                .catch(error =>
+                {
                     this.PostToRuntime("error_callback", JSON.stringify(error));
                 });
         }
 
-        _SetLoadingProgress(value) {
-            if (window.Wortal) {
+        _SetLoadingProgress(value)
+        {
+            if (window.Wortal)
+            {
                 window.Wortal.setLoadingProgress(value * 100);
             }
         }
 
-        _PerformHapticFeedbackAsync() {
+        _PerformHapticFeedbackAsync()
+        {
             window.Wortal.performHapticFeedbackAsync()
-                .then(() => {
+                .then(() =>
+                {
                     this.PostToRuntime("haptic_feedback_callback");
                 })
-                .catch(error => {
+                .catch(error =>
+                {
                     this.PostToRuntime("error_callback", JSON.stringify(error));
                 });
         }
 
-        _GetSupportedAPIs() {
+        _GetSupportedAPIs()
+        {
             const result = window.Wortal.getSupportedAPIs();
             this.PostToRuntime("supported_apis_callback", JSON.stringify(result));
         }

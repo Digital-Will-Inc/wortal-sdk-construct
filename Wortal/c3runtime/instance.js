@@ -68,6 +68,7 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         this._sessionPlatform = "";
         this._sessionDevice = "";
         this._sessionOrientation = "";
+        this._sessionIsAudioEnabled = false;
 
         // Stats properties
         this._stats = "";
@@ -414,6 +415,17 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
             this.Trigger(C3.Plugins.wortal.Cnds.SessionSwitchGameCallback);
         });
 
+        this.AddDomMessageHandler("session_is_audio_enabled", isAudioEnabled =>
+        {
+            this._sessionIsAudioEnabled = isAudioEnabled;
+        });
+
+        this.AddDOMMessageHandler("session_on_audio_status_change", isAudioEnabled =>
+        {
+            this._sessionIsAudioEnabled = isAudioEnabled;
+            this.Trigger(C3.Plugins.wortal.Cnds.SessionOnAudioStatusChangeCallback);
+        })
+
         ////////////////////////////////////////////
         // Stats API
         ////////////////////////////////////////////
@@ -488,6 +500,11 @@ C3.Plugins.wortal.Instance = class WortalInstance extends C3.SDKInstanceBase
         {
             this.Trigger(C3.Plugins.wortal.Cnds.PauseCallback);
         });
+
+        this.AddDOMMessageHandler("resume_callback", () =>
+        {
+            this.Trigger(C3.Plugins.wortal.Cnds.ResumeCallback);
+        })
 
         this.AddDOMMessageHandler("haptic_feedback_callback", () =>
         {
