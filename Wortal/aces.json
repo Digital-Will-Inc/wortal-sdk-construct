@@ -1058,6 +1058,21 @@
                         "type": "string"
                     }
                 ]
+            },
+            {
+                "id": "session-gameplay-start",
+                "scriptName": "SessionGameplayStart",
+                "highlight": false
+            },
+            {
+                "id": "session-gameplay-stop",
+                "scriptName": "SessionGameplayStop",
+                "highlight": false
+            },
+            {
+                "id": "session-happy-time",
+                "scriptName": "SessionHappyTime",
+                "highlight": false
             }
         ],
         "expressions": [
@@ -1095,6 +1110,11 @@
                 "id": "session-orientation",
                 "expressionName": "SessionOrientation",
                 "returnType": "string"
+            },
+            {
+                "id": "session-is-audio-enabled",
+                "expressionName": "SessionIsAudioEnabled",
+                "returnType": "number"
             }
         ]
     },

@@ -224,6 +224,11 @@ self.C3.Plugins.wortal.Exps =
         return this._sessionOrientation;
     },
 
+    SessionIsAudioEnabled()
+    {
+        return this._sessionIsAudioEnabled;
+    },
+
     ////////////////////////////////////////////
     // Stats API
     ////////////////////////////////////////////

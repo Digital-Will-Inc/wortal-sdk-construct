@@ -243,6 +243,11 @@
                         "display-text": "Switch Game Callback",
                         "description": "Called when the session switch game promise has resolved."
                     },
+                    "session-on-audio-status-change-callback": {
+                        "list-name": "On Audio Status Change Callback",
+                        "display-text": "On Audio Status Change Callback",
+                        "description": "Called when the session on audio status change event has triggered."
+                    },
                     "stats-get-stats-callback": {
                         "list-name": "Get Stats Callback",
                         "display-text": "Get Stats Callback",
@@ -894,6 +899,21 @@
                             }
                         }
                     },
+                    "session-gameplay-start": {
+                        "list-name": "Gameplay Start",
+                        "display-text": "Gameplay Start",
+                        "description": "Tracks the start of a gameplay session, including resuming play after a break."
+                    },
+                    "session-gameplay-stop": {
+                        "list-name": "Gameplay Stop",
+                        "display-text": "Gameplay Stop",
+                        "description": "Tracks the end of a gameplay session, including pausing play or opening a menu."
+                    },
+                    "session-happy-time": {
+                        "list-name": "Happy Time",
+                        "display-text": "Happy Time",
+                        "description": "It makes the website celebrate"
+                    },
                     "stats-get-stats-async": {
                         "list-name": "Get Stats Async",
                         "display-text": "Get Stats Async {0} {1}",
@@ -1263,6 +1283,10 @@
                     "session-orientation": {
                         "description": "Returns a string with the orientation of the device the game is being played in.",
                         "translated-name": "Orientation"
+                    },
+                    "session-is-audio-enabled": {
+                        "description": "Returns a value of audio status.",
+                        "translated-name": "Audio Status"
                     },
                     "stats": {
                         "description": "Returns a JSON string with the player's stats.",
