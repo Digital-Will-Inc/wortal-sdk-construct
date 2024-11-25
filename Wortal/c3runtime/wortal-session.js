@@ -148,7 +148,7 @@
 
         _IsAudioEnabled()
         {
-            const isAudioEnabled = window.Wortal.isAudioEnabled();
+            const isAudioEnabled = window.Wortal.session.isAudioEnabled();
             this.PostToRuntime("session_is_audio_enabled", isAudioEnabled);
         }
 

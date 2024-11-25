@@ -12,7 +12,7 @@ const SDK = self.SDK;
 const PLUGIN_ID = "wortal";
 ////////////////////////////////////////////
 
-const PLUGIN_VERSION = "3.0.4";
+const PLUGIN_VERSION = "3.0.5";
 const PLUGIN_CATEGORY = "general";
 
 const PLUGIN_CLASS = SDK.Plugins.wortal = class WortalPlugin extends SDK.IPluginBase
